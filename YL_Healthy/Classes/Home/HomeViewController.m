@@ -16,8 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"首页";
+    self.navigationItem.title = @"优量健康";
     // Do any additional setup after loading the view from its nib.
+}
+- (IBAction)commitInfo:(UIButton *)sender {
+}
+- (IBAction)itemSearch:(UIButton *)sender {
+}
+- (IBAction)userInfo:(UIButton *)sender {
+}
+- (IBAction)setting:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "BaseNaviViewController.h"
+#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,10 +20,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    HomeViewController *homeVC = [HomeViewController new];
-    BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:homeVC];
+    LoginViewController *LoginVC = [LoginViewController new];
+//    BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:LoginVC];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = navi;
+    self.window.rootViewController = LoginVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

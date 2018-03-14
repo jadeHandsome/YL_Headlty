@@ -43,12 +43,11 @@
 //屏幕宽高
 #define   SIZEWIDTH  [[UIScreen mainScreen] bounds].size.width  //宽
 #define   SIZEHEIGHT  [[UIScreen mainScreen] bounds].size.height  //高
-#define HEIGHT(h)  h / 1800.0 * SIZEHEIGHT
-#define WIDTH(w)  w / 1080.0 * SIZEWIDTH
+#define HEIGHT(h)  h / 1280.0 * SIZEHEIGHT
+#define WIDTH(w)  w / 720.0 * SIZEWIDTH
 #define ISWXInsatall [WXApi isWXAppInstalled]
 
-#define REALHEIGHT(h)  h / 1920.0 * SIZEHEIGHT
-#define REALWIDTH(w)  w / 1080.0 * SIZEWIDTH
+
 /*
  机型判断
  */

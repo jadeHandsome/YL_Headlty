@@ -49,6 +49,12 @@
 		11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAFC2058F7E4005F09CD /* BaseNaviViewController.m */; };
 		11C5DB042058FDD8005F09CD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB022058FDD8005F09CD /* HomeViewController.m */; };
 		11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB032058FDD8005F09CD /* HomeViewController.xib */; };
+		11C5DB092059017E005F09CD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB072059017E005F09CD /* LoginViewController.m */; };
+		11C5DB0A2059017E005F09CD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB082059017E005F09CD /* LoginViewController.xib */; };
+		11C5DB0E20591038005F09CD /* CompleteInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB0C20591038005F09CD /* CompleteInfoController.m */; };
+		11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB0D20591038005F09CD /* CompleteInfoController.xib */; };
+		11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB11205919E9005F09CD /* KRDatePicker.m */; };
+		11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB13205919FA005F09CD /* KRDatePicker.xib */; };
 		1A4287F22058C54500139197 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287F12058C54500139197 /* AppDelegate.m */; };
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
@@ -143,6 +149,15 @@
 		11C5DB012058FDD8005F09CD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		11C5DB022058FDD8005F09CD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		11C5DB032058FDD8005F09CD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		11C5DB062059017E005F09CD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		11C5DB072059017E005F09CD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		11C5DB082059017E005F09CD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		11C5DB0B20591038005F09CD /* CompleteInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompleteInfoController.h; sourceTree = "<group>"; };
+		11C5DB0C20591038005F09CD /* CompleteInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompleteInfoController.m; sourceTree = "<group>"; };
+		11C5DB0D20591038005F09CD /* CompleteInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteInfoController.xib; sourceTree = "<group>"; };
+		11C5DB10205919E9005F09CD /* KRDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRDatePicker.h; sourceTree = "<group>"; };
+		11C5DB11205919E9005F09CD /* KRDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRDatePicker.m; sourceTree = "<group>"; };
+		11C5DB13205919FA005F09CD /* KRDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KRDatePicker.xib; sourceTree = "<group>"; };
 		1A4287ED2058C54500139197 /* YL_Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YL_Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4287F02058C54500139197 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A4287F12058C54500139197 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -234,6 +249,9 @@
 				11C5DAA62058F564005F09CD /* ZLPickPhoto */,
 				11C5DAB02058F564005F09CD /* 分类 */,
 				11C5DABE2058F564005F09CD /* 自定义banner */,
+				11C5DB10205919E9005F09CD /* KRDatePicker.h */,
+				11C5DB11205919E9005F09CD /* KRDatePicker.m */,
+				11C5DB13205919FA005F09CD /* KRDatePicker.xib */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -338,6 +356,12 @@
 		11C5DAFF2058FD45005F09CD /* Login&Register */ = {
 			isa = PBXGroup;
 			children = (
+				11C5DB062059017E005F09CD /* LoginViewController.h */,
+				11C5DB072059017E005F09CD /* LoginViewController.m */,
+				11C5DB082059017E005F09CD /* LoginViewController.xib */,
+				11C5DB0B20591038005F09CD /* CompleteInfoController.h */,
+				11C5DB0C20591038005F09CD /* CompleteInfoController.m */,
+				11C5DB0D20591038005F09CD /* CompleteInfoController.xib */,
 			);
 			path = "Login&Register";
 			sourceTree = "<group>";
@@ -460,8 +484,11 @@
 			files = (
 				1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */,
 				11C5DAEA2058F565005F09CD /* ZLPhotoCell.xib in Resources */,
+				11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */,
+				11C5DB0A2059017E005F09CD /* LoginViewController.xib in Resources */,
 				1A4287FA2058C54500139197 /* Assets.xcassets in Resources */,
 				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
+				11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */,
 				11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +563,7 @@
 				11C5DAE62058F565005F09CD /* TYTabTitleViewCell.m in Sources */,
 				11C5DAE02058F565005F09CD /* SDBrowserImageView.m in Sources */,
 				11C5DAE22058F565005F09CD /* SDWaitingView.m in Sources */,
+				11C5DB0E20591038005F09CD /* CompleteInfoController.m in Sources */,
 				11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */,
 				11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
@@ -561,10 +589,12 @@
 				11C5DAD12058F565005F09CD /* LDXScore.m in Sources */,
 				11C5DAE92058F565005F09CD /* ZLPhotoCell.m in Sources */,
 				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
+				11C5DB092059017E005F09CD /* LoginViewController.m in Sources */,
 				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
 				11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */,
 				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,
 				11C5DACD2058F565005F09CD /* KRMainNetTool.m in Sources */,
+				11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */,
 				11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */,
 				11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */,
 				11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */,

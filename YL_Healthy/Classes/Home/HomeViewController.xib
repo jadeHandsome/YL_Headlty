@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +20,72 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页" translatesAutoresizingMaskIntoConstraints="NO" id="dMC-EL-6iv">
+                    <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-KV-dQS">
+                    <rect key="frame" x="45" y="246.5" width="125" height="125.5"/>
+                    <state key="normal" backgroundImage="提交信息"/>
+                    <connections>
+                        <action selector="commitInfo:" destination="-1" eventType="touchUpInside" id="Nk1-pJ-FOZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaT-Qi-EgX">
+                    <rect key="frame" x="205" y="246.5" width="125" height="125.5"/>
+                    <state key="normal" backgroundImage="项目查询"/>
+                    <connections>
+                        <action selector="itemSearch:" destination="-1" eventType="touchUpInside" id="yD2-8L-yZb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-pY-YaF">
+                    <rect key="frame" x="45" y="402" width="125" height="125"/>
+                    <state key="normal" backgroundImage="个人信息"/>
+                    <connections>
+                        <action selector="userInfo:" destination="-1" eventType="touchUpInside" id="PZc-le-zP6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-W9-ZQU">
+                    <rect key="frame" x="205" y="402" width="125" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="c8n-W9-ZQU" secondAttribute="height" multiplier="1:1" id="pRH-o9-tDF"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="设置"/>
+                    <connections>
+                        <action selector="setting:" destination="-1" eventType="touchUpInside" id="LF0-0P-3ZU"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="c8n-W9-ZQU" secondAttribute="bottom" constant="140" id="1It-fu-2eF"/>
+                <constraint firstItem="MBi-pY-YaF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="1nQ-aK-3MM"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="width" secondItem="MBi-pY-YaF" secondAttribute="width" id="3Qb-md-O15"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="height" secondItem="p0Y-KV-dQS" secondAttribute="height" id="8Ed-es-emu"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="height" secondItem="AaT-Qi-EgX" secondAttribute="height" id="EZK-BO-svc"/>
+                <constraint firstAttribute="trailing" secondItem="dMC-EL-6iv" secondAttribute="trailing" id="Eca-jx-tVi"/>
+                <constraint firstAttribute="trailing" secondItem="c8n-W9-ZQU" secondAttribute="trailing" constant="45" id="L0n-GM-3gd"/>
+                <constraint firstAttribute="bottom" secondItem="dMC-EL-6iv" secondAttribute="bottom" id="L6b-b1-ejo"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="width" secondItem="AaT-Qi-EgX" secondAttribute="width" id="RNc-xV-GcN"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="height" secondItem="MBi-pY-YaF" secondAttribute="height" id="aLc-6p-HGc"/>
+                <constraint firstAttribute="bottom" secondItem="MBi-pY-YaF" secondAttribute="bottom" constant="140" id="aUX-eh-yOR"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="top" secondItem="AaT-Qi-EgX" secondAttribute="bottom" constant="30" id="cnl-dU-cvh"/>
+                <constraint firstAttribute="trailing" secondItem="AaT-Qi-EgX" secondAttribute="trailing" constant="45" id="hvk-dc-Hkv"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" id="lhx-HB-MDP"/>
+                <constraint firstItem="dMC-EL-6iv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nmm-B8-xac"/>
+                <constraint firstItem="dMC-EL-6iv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-64" id="qQz-6q-EKB"/>
+                <constraint firstItem="MBi-pY-YaF" firstAttribute="top" secondItem="p0Y-KV-dQS" secondAttribute="bottom" constant="30" id="rwC-Zy-k6G"/>
+                <constraint firstItem="c8n-W9-ZQU" firstAttribute="width" secondItem="p0Y-KV-dQS" secondAttribute="width" id="ugC-ZB-o5a"/>
+                <constraint firstItem="p0Y-KV-dQS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="xVa-il-Ua8"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="个人信息" width="129" height="129"/>
+        <image name="提交信息" width="129" height="129"/>
+        <image name="设置" width="129" height="129"/>
+        <image name="项目查询" width="129" height="129"/>
+        <image name="首页" width="360" height="640"/>
+    </resources>
 </document>
