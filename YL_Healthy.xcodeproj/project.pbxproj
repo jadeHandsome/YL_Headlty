@@ -7,9 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */; };
+		11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0C2058F564005F09CD /* UIImage+Color.m */; };
+		11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0E2058F564005F09CD /* UIView+EX.m */; };
+		11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA102058F564005F09CD /* CBSegmentView.m */; };
+		11C5DAC72058F565005F09CD /* CCDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA122058F564005F09CD /* CCDatePickerView.m */; };
+		11C5DAC82058F565005F09CD /* CodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA152058F564005F09CD /* CodeView.m */; };
+		11C5DAC92058F565005F09CD /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA172058F564005F09CD /* NSString+Category.m */; };
+		11C5DACB2058F565005F09CD /* ImageCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA1B2058F564005F09CD /* ImageCenterButton.m */; };
+		11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA1D2058F564005F09CD /* KRBaseTool.m */; };
+		11C5DACD2058F565005F09CD /* KRMainNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA1F2058F564005F09CD /* KRMainNetTool.m */; };
+		11C5DACE2058F565005F09CD /* KRMySegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA212058F564005F09CD /* KRMySegmentView.m */; };
+		11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA232058F564005F09CD /* KRMyTextView.m */; };
+		11C5DAD02058F565005F09CD /* KRUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA252058F564005F09CD /* KRUserInfo.m */; };
+		11C5DAD12058F565005F09CD /* LDXScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA272058F564005F09CD /* LDXScore.m */; };
+		11C5DAD22058F565005F09CD /* NSString+LocaString.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA2A2058F564005F09CD /* NSString+LocaString.m */; };
+		11C5DAE02058F565005F09CD /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA912058F564005F09CD /* SDBrowserImageView.m */; };
+		11C5DAE12058F565005F09CD /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA932058F564005F09CD /* SDPhotoBrowser.m */; };
+		11C5DAE22058F565005F09CD /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA962058F564005F09CD /* SDWaitingView.m */; };
+		11C5DAE32058F565005F09CD /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA9A2058F564005F09CD /* TYPagerController.m */; };
+		11C5DAE42058F565005F09CD /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA9C2058F564005F09CD /* TYTabButtonPagerController.m */; };
+		11C5DAE52058F565005F09CD /* TYTabPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA9E2058F564005F09CD /* TYTabPagerController.m */; };
+		11C5DAE62058F565005F09CD /* TYTabTitleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAA12058F564005F09CD /* TYTabTitleViewCell.m */; };
+		11C5DAE72058F565005F09CD /* YHArcSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAA32058F564005F09CD /* YHArcSlider.m */; };
+		11C5DAE82058F565005F09CD /* YHMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAA52058F564005F09CD /* YHMath.m */; };
+		11C5DAE92058F565005F09CD /* ZLPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAA82058F564005F09CD /* ZLPhotoCell.m */; };
+		11C5DAEA2058F565005F09CD /* ZLPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DAA92058F564005F09CD /* ZLPhotoCell.xib */; };
+		11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAAB2058F564005F09CD /* ZLPhotoHelper.m */; };
+		11C5DAEC2058F565005F09CD /* ZLPickPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAAD2058F564005F09CD /* ZLPickPhotoViewController.m */; };
+		11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAAF2058F564005F09CD /* ZLShowImageViewController.m */; };
+		11C5DAEE2058F565005F09CD /* MBProgressHUD+KR.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAB22058F564005F09CD /* MBProgressHUD+KR.m */; };
+		11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DAB32058F564005F09CD /* MBProgressHUD.bundle */; };
+		11C5DAF02058F565005F09CD /* NSDictionary+deletNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAB52058F564005F09CD /* NSDictionary+deletNull.m */; };
+		11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAB72058F564005F09CD /* NSObject+KRExtention.m */; };
+		11C5DAF22058F565005F09CD /* NSString+CZNSStringExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAB92058F564005F09CD /* NSString+CZNSStringExt.m */; };
+		11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DABB2058F564005F09CD /* UITableView+KREmptyData.m */; };
+		11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DABD2058F564005F09CD /* UIView+BorderLine.m */; };
+		11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAC02058F564005F09CD /* NewPagedFlowView.m */; };
+		11C5DAF62058F565005F09CD /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAC22058F564005F09CD /* PGIndexBannerSubiew.m */; };
+		11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAF92058F6F5005F09CD /* BaseViewController.m */; };
+		11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DAFC2058F7E4005F09CD /* BaseNaviViewController.m */; };
+		11C5DB042058FDD8005F09CD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB022058FDD8005F09CD /* HomeViewController.m */; };
+		11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB032058FDD8005F09CD /* HomeViewController.xib */; };
 		1A4287F22058C54500139197 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287F12058C54500139197 /* AppDelegate.m */; };
-		1A4287F52058C54500139197 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287F42058C54500139197 /* ViewController.m */; };
-		1A4287F82058C54500139197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F62058C54500139197 /* Main.storyboard */; };
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
 		1A4288002058C54500139197 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287FF2058C54500139197 /* main.m */; };
@@ -17,12 +57,95 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11C5DA092058F564005F09CD /* CALayer+CircleBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CircleBoard.h"; sourceTree = "<group>"; };
+		11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CircleBoard.m"; sourceTree = "<group>"; };
+		11C5DA0B2058F564005F09CD /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		11C5DA0C2058F564005F09CD /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		11C5DA0D2058F564005F09CD /* UIView+EX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EX.h"; sourceTree = "<group>"; };
+		11C5DA0E2058F564005F09CD /* UIView+EX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EX.m"; sourceTree = "<group>"; };
+		11C5DA0F2058F564005F09CD /* CBSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSegmentView.h; sourceTree = "<group>"; };
+		11C5DA102058F564005F09CD /* CBSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSegmentView.m; sourceTree = "<group>"; };
+		11C5DA112058F564005F09CD /* CCDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDatePickerView.h; sourceTree = "<group>"; };
+		11C5DA122058F564005F09CD /* CCDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDatePickerView.m; sourceTree = "<group>"; };
+		11C5DA142058F564005F09CD /* CodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeView.h; sourceTree = "<group>"; };
+		11C5DA152058F564005F09CD /* CodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeView.m; sourceTree = "<group>"; };
+		11C5DA162058F564005F09CD /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		11C5DA172058F564005F09CD /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		11C5DA1A2058F564005F09CD /* ImageCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCenterButton.h; sourceTree = "<group>"; };
+		11C5DA1B2058F564005F09CD /* ImageCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCenterButton.m; sourceTree = "<group>"; };
+		11C5DA1C2058F564005F09CD /* KRBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRBaseTool.h; sourceTree = "<group>"; };
+		11C5DA1D2058F564005F09CD /* KRBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRBaseTool.m; sourceTree = "<group>"; };
+		11C5DA1E2058F564005F09CD /* KRMainNetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMainNetTool.h; sourceTree = "<group>"; };
+		11C5DA1F2058F564005F09CD /* KRMainNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMainNetTool.m; sourceTree = "<group>"; };
+		11C5DA202058F564005F09CD /* KRMySegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMySegmentView.h; sourceTree = "<group>"; };
+		11C5DA212058F564005F09CD /* KRMySegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMySegmentView.m; sourceTree = "<group>"; };
+		11C5DA222058F564005F09CD /* KRMyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMyTextView.h; sourceTree = "<group>"; };
+		11C5DA232058F564005F09CD /* KRMyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMyTextView.m; sourceTree = "<group>"; };
+		11C5DA242058F564005F09CD /* KRUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRUserInfo.h; sourceTree = "<group>"; };
+		11C5DA252058F564005F09CD /* KRUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRUserInfo.m; sourceTree = "<group>"; };
+		11C5DA262058F564005F09CD /* LDXScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDXScore.h; sourceTree = "<group>"; };
+		11C5DA272058F564005F09CD /* LDXScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDXScore.m; sourceTree = "<group>"; };
+		11C5DA282058F564005F09CD /* LRMacroDefinitionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRMacroDefinitionHeader.h; sourceTree = "<group>"; };
+		11C5DA292058F564005F09CD /* NSString+LocaString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LocaString.h"; sourceTree = "<group>"; };
+		11C5DA2A2058F564005F09CD /* NSString+LocaString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LocaString.m"; sourceTree = "<group>"; };
+		11C5DA902058F564005F09CD /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
+		11C5DA912058F564005F09CD /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
+		11C5DA922058F564005F09CD /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
+		11C5DA932058F564005F09CD /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
+		11C5DA942058F564005F09CD /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		11C5DA952058F564005F09CD /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
+		11C5DA962058F564005F09CD /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
+		11C5DA972058F564005F09CD /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		11C5DA992058F564005F09CD /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		11C5DA9A2058F564005F09CD /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		11C5DA9B2058F564005F09CD /* TYTabButtonPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabButtonPagerController.h; sourceTree = "<group>"; };
+		11C5DA9C2058F564005F09CD /* TYTabButtonPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabButtonPagerController.m; sourceTree = "<group>"; };
+		11C5DA9D2058F564005F09CD /* TYTabPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerController.h; sourceTree = "<group>"; };
+		11C5DA9E2058F564005F09CD /* TYTabPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerController.m; sourceTree = "<group>"; };
+		11C5DA9F2058F564005F09CD /* TYTabTitleCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleCellProtocol.h; sourceTree = "<group>"; };
+		11C5DAA02058F564005F09CD /* TYTabTitleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleViewCell.h; sourceTree = "<group>"; };
+		11C5DAA12058F564005F09CD /* TYTabTitleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabTitleViewCell.m; sourceTree = "<group>"; };
+		11C5DAA22058F564005F09CD /* YHArcSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHArcSlider.h; sourceTree = "<group>"; };
+		11C5DAA32058F564005F09CD /* YHArcSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHArcSlider.m; sourceTree = "<group>"; };
+		11C5DAA42058F564005F09CD /* YHMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMath.h; sourceTree = "<group>"; };
+		11C5DAA52058F564005F09CD /* YHMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHMath.m; sourceTree = "<group>"; };
+		11C5DAA72058F564005F09CD /* ZLPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoCell.h; sourceTree = "<group>"; };
+		11C5DAA82058F564005F09CD /* ZLPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoCell.m; sourceTree = "<group>"; };
+		11C5DAA92058F564005F09CD /* ZLPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLPhotoCell.xib; sourceTree = "<group>"; };
+		11C5DAAA2058F564005F09CD /* ZLPhotoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoHelper.h; sourceTree = "<group>"; };
+		11C5DAAB2058F564005F09CD /* ZLPhotoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoHelper.m; sourceTree = "<group>"; };
+		11C5DAAC2058F564005F09CD /* ZLPickPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPickPhotoViewController.h; sourceTree = "<group>"; };
+		11C5DAAD2058F564005F09CD /* ZLPickPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPickPhotoViewController.m; sourceTree = "<group>"; };
+		11C5DAAE2058F564005F09CD /* ZLShowImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLShowImageViewController.h; sourceTree = "<group>"; };
+		11C5DAAF2058F564005F09CD /* ZLShowImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLShowImageViewController.m; sourceTree = "<group>"; };
+		11C5DAB12058F564005F09CD /* MBProgressHUD+KR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KR.h"; sourceTree = "<group>"; };
+		11C5DAB22058F564005F09CD /* MBProgressHUD+KR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KR.m"; sourceTree = "<group>"; };
+		11C5DAB32058F564005F09CD /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		11C5DAB42058F564005F09CD /* NSDictionary+deletNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+deletNull.h"; sourceTree = "<group>"; };
+		11C5DAB52058F564005F09CD /* NSDictionary+deletNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+deletNull.m"; sourceTree = "<group>"; };
+		11C5DAB62058F564005F09CD /* NSObject+KRExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KRExtention.h"; sourceTree = "<group>"; };
+		11C5DAB72058F564005F09CD /* NSObject+KRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KRExtention.m"; sourceTree = "<group>"; };
+		11C5DAB82058F564005F09CD /* NSString+CZNSStringExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZNSStringExt.h"; sourceTree = "<group>"; };
+		11C5DAB92058F564005F09CD /* NSString+CZNSStringExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZNSStringExt.m"; sourceTree = "<group>"; };
+		11C5DABA2058F564005F09CD /* UITableView+KREmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+KREmptyData.h"; sourceTree = "<group>"; };
+		11C5DABB2058F564005F09CD /* UITableView+KREmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+KREmptyData.m"; sourceTree = "<group>"; };
+		11C5DABC2058F564005F09CD /* UIView+BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderLine.h"; sourceTree = "<group>"; };
+		11C5DABD2058F564005F09CD /* UIView+BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderLine.m"; sourceTree = "<group>"; };
+		11C5DABF2058F564005F09CD /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
+		11C5DAC02058F564005F09CD /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
+		11C5DAC12058F564005F09CD /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
+		11C5DAC22058F564005F09CD /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
+		11C5DAF72058F584005F09CD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		11C5DAF82058F6F5005F09CD /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		11C5DAF92058F6F5005F09CD /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		11C5DAFB2058F7E3005F09CD /* BaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNaviViewController.h; sourceTree = "<group>"; };
+		11C5DAFC2058F7E4005F09CD /* BaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNaviViewController.m; sourceTree = "<group>"; };
+		11C5DB012058FDD8005F09CD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		11C5DB022058FDD8005F09CD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		11C5DB032058FDD8005F09CD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		1A4287ED2058C54500139197 /* YL_Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YL_Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4287F02058C54500139197 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A4287F12058C54500139197 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1A4287F32058C54500139197 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1A4287F42058C54500139197 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1A4287F72058C54500139197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A4287F92058C54500139197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A4287FC2058C54500139197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4287FE2058C54500139197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +167,191 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C5DA052058F4BE005F09CD /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1A4287F02058C54500139197 /* AppDelegate.h */,
+				1A4287F12058C54500139197 /* AppDelegate.m */,
+				1A4287F92058C54500139197 /* Assets.xcassets */,
+				1A4287FB2058C54500139197 /* LaunchScreen.storyboard */,
+				1A4287FE2058C54500139197 /* Info.plist */,
+				1A4287FF2058C54500139197 /* main.m */,
+				11C5DAF72058F584005F09CD /* PrefixHeader.pch */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		11C5DA062058F4E9005F09CD /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DAF82058F6F5005F09CD /* BaseViewController.h */,
+				11C5DAF92058F6F5005F09CD /* BaseViewController.m */,
+				11C5DAFB2058F7E3005F09CD /* BaseNaviViewController.h */,
+				11C5DAFC2058F7E4005F09CD /* BaseNaviViewController.m */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		11C5DA072058F564005F09CD /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DA082058F564005F09CD /* Category */,
+				11C5DA0F2058F564005F09CD /* CBSegmentView.h */,
+				11C5DA102058F564005F09CD /* CBSegmentView.m */,
+				11C5DA112058F564005F09CD /* CCDatePickerView.h */,
+				11C5DA122058F564005F09CD /* CCDatePickerView.m */,
+				11C5DA132058F564005F09CD /* CodeView */,
+				11C5DA1A2058F564005F09CD /* ImageCenterButton.h */,
+				11C5DA1B2058F564005F09CD /* ImageCenterButton.m */,
+				11C5DA1C2058F564005F09CD /* KRBaseTool.h */,
+				11C5DA1D2058F564005F09CD /* KRBaseTool.m */,
+				11C5DA1E2058F564005F09CD /* KRMainNetTool.h */,
+				11C5DA1F2058F564005F09CD /* KRMainNetTool.m */,
+				11C5DA202058F564005F09CD /* KRMySegmentView.h */,
+				11C5DA212058F564005F09CD /* KRMySegmentView.m */,
+				11C5DA222058F564005F09CD /* KRMyTextView.h */,
+				11C5DA232058F564005F09CD /* KRMyTextView.m */,
+				11C5DA242058F564005F09CD /* KRUserInfo.h */,
+				11C5DA252058F564005F09CD /* KRUserInfo.m */,
+				11C5DA262058F564005F09CD /* LDXScore.h */,
+				11C5DA272058F564005F09CD /* LDXScore.m */,
+				11C5DA282058F564005F09CD /* LRMacroDefinitionHeader.h */,
+				11C5DA292058F564005F09CD /* NSString+LocaString.h */,
+				11C5DA2A2058F564005F09CD /* NSString+LocaString.m */,
+				11C5DA902058F564005F09CD /* SDBrowserImageView.h */,
+				11C5DA912058F564005F09CD /* SDBrowserImageView.m */,
+				11C5DA922058F564005F09CD /* SDPhotoBrowser.h */,
+				11C5DA932058F564005F09CD /* SDPhotoBrowser.m */,
+				11C5DA942058F564005F09CD /* SDPhotoBrowserConfig.h */,
+				11C5DA952058F564005F09CD /* SDWaitingView.h */,
+				11C5DA962058F564005F09CD /* SDWaitingView.m */,
+				11C5DA972058F564005F09CD /* Singleton.h */,
+				11C5DA982058F564005F09CD /* TYPagerController */,
+				11C5DAA22058F564005F09CD /* YHArcSlider.h */,
+				11C5DAA32058F564005F09CD /* YHArcSlider.m */,
+				11C5DAA42058F564005F09CD /* YHMath.h */,
+				11C5DAA52058F564005F09CD /* YHMath.m */,
+				11C5DAA62058F564005F09CD /* ZLPickPhoto */,
+				11C5DAB02058F564005F09CD /* 分类 */,
+				11C5DABE2058F564005F09CD /* 自定义banner */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		11C5DA082058F564005F09CD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DA092058F564005F09CD /* CALayer+CircleBoard.h */,
+				11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */,
+				11C5DA0B2058F564005F09CD /* UIImage+Color.h */,
+				11C5DA0C2058F564005F09CD /* UIImage+Color.m */,
+				11C5DA0D2058F564005F09CD /* UIView+EX.h */,
+				11C5DA0E2058F564005F09CD /* UIView+EX.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		11C5DA132058F564005F09CD /* CodeView */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DA142058F564005F09CD /* CodeView.h */,
+				11C5DA152058F564005F09CD /* CodeView.m */,
+				11C5DA162058F564005F09CD /* NSString+Category.h */,
+				11C5DA172058F564005F09CD /* NSString+Category.m */,
+			);
+			path = CodeView;
+			sourceTree = "<group>";
+		};
+		11C5DA982058F564005F09CD /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DA992058F564005F09CD /* TYPagerController.h */,
+				11C5DA9A2058F564005F09CD /* TYPagerController.m */,
+				11C5DA9B2058F564005F09CD /* TYTabButtonPagerController.h */,
+				11C5DA9C2058F564005F09CD /* TYTabButtonPagerController.m */,
+				11C5DA9D2058F564005F09CD /* TYTabPagerController.h */,
+				11C5DA9E2058F564005F09CD /* TYTabPagerController.m */,
+				11C5DA9F2058F564005F09CD /* TYTabTitleCellProtocol.h */,
+				11C5DAA02058F564005F09CD /* TYTabTitleViewCell.h */,
+				11C5DAA12058F564005F09CD /* TYTabTitleViewCell.m */,
+			);
+			path = TYPagerController;
+			sourceTree = "<group>";
+		};
+		11C5DAA62058F564005F09CD /* ZLPickPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DAA72058F564005F09CD /* ZLPhotoCell.h */,
+				11C5DAA82058F564005F09CD /* ZLPhotoCell.m */,
+				11C5DAA92058F564005F09CD /* ZLPhotoCell.xib */,
+				11C5DAAA2058F564005F09CD /* ZLPhotoHelper.h */,
+				11C5DAAB2058F564005F09CD /* ZLPhotoHelper.m */,
+				11C5DAAC2058F564005F09CD /* ZLPickPhotoViewController.h */,
+				11C5DAAD2058F564005F09CD /* ZLPickPhotoViewController.m */,
+				11C5DAAE2058F564005F09CD /* ZLShowImageViewController.h */,
+				11C5DAAF2058F564005F09CD /* ZLShowImageViewController.m */,
+			);
+			path = ZLPickPhoto;
+			sourceTree = "<group>";
+		};
+		11C5DAB02058F564005F09CD /* 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DAB12058F564005F09CD /* MBProgressHUD+KR.h */,
+				11C5DAB22058F564005F09CD /* MBProgressHUD+KR.m */,
+				11C5DAB32058F564005F09CD /* MBProgressHUD.bundle */,
+				11C5DAB42058F564005F09CD /* NSDictionary+deletNull.h */,
+				11C5DAB52058F564005F09CD /* NSDictionary+deletNull.m */,
+				11C5DAB62058F564005F09CD /* NSObject+KRExtention.h */,
+				11C5DAB72058F564005F09CD /* NSObject+KRExtention.m */,
+				11C5DAB82058F564005F09CD /* NSString+CZNSStringExt.h */,
+				11C5DAB92058F564005F09CD /* NSString+CZNSStringExt.m */,
+				11C5DABA2058F564005F09CD /* UITableView+KREmptyData.h */,
+				11C5DABB2058F564005F09CD /* UITableView+KREmptyData.m */,
+				11C5DABC2058F564005F09CD /* UIView+BorderLine.h */,
+				11C5DABD2058F564005F09CD /* UIView+BorderLine.m */,
+			);
+			path = "分类";
+			sourceTree = "<group>";
+		};
+		11C5DABE2058F564005F09CD /* 自定义banner */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DABF2058F564005F09CD /* NewPagedFlowView.h */,
+				11C5DAC02058F564005F09CD /* NewPagedFlowView.m */,
+				11C5DAC12058F564005F09CD /* PGIndexBannerSubiew.h */,
+				11C5DAC22058F564005F09CD /* PGIndexBannerSubiew.m */,
+			);
+			path = "自定义banner";
+			sourceTree = "<group>";
+		};
+		11C5DAFE2058FC29005F09CD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DB002058FD70005F09CD /* Home */,
+				11C5DAFF2058FD45005F09CD /* Login&Register */,
+				11C5DA062058F4E9005F09CD /* BaseVC */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		11C5DAFF2058FD45005F09CD /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Login&Register";
+			sourceTree = "<group>";
+		};
+		11C5DB002058FD70005F09CD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DB012058FDD8005F09CD /* HomeViewController.h */,
+				11C5DB022058FDD8005F09CD /* HomeViewController.m */,
+				11C5DB032058FDD8005F09CD /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1A4287E42058C54500139197 = {
 			isa = PBXGroup;
 			children = (
@@ -65,15 +373,9 @@
 		1A4287EF2058C54500139197 /* YL_Healthy */ = {
 			isa = PBXGroup;
 			children = (
-				1A4287F02058C54500139197 /* AppDelegate.h */,
-				1A4287F12058C54500139197 /* AppDelegate.m */,
-				1A4287F32058C54500139197 /* ViewController.h */,
-				1A4287F42058C54500139197 /* ViewController.m */,
-				1A4287F62058C54500139197 /* Main.storyboard */,
-				1A4287F92058C54500139197 /* Assets.xcassets */,
-				1A4287FB2058C54500139197 /* LaunchScreen.storyboard */,
-				1A4287FE2058C54500139197 /* Info.plist */,
-				1A4287FF2058C54500139197 /* main.m */,
+				11C5DAFE2058FC29005F09CD /* Classes */,
+				11C5DA072058F564005F09CD /* Tools */,
+				11C5DA052058F4BE005F09CD /* SupportFiles */,
 			);
 			path = YL_Healthy;
 			sourceTree = "<group>";
@@ -157,8 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */,
+				11C5DAEA2058F565005F09CD /* ZLPhotoCell.xib in Resources */,
 				1A4287FA2058C54500139197 /* Assets.xcassets in Resources */,
-				1A4287F82058C54500139197 /* Main.storyboard in Resources */,
+				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
+				11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +496,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -224,23 +529,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A4287F52058C54500139197 /* ViewController.m in Sources */,
+				11C5DAE72058F565005F09CD /* YHArcSlider.m in Sources */,
+				11C5DAEE2058F565005F09CD /* MBProgressHUD+KR.m in Sources */,
+				11C5DAC72058F565005F09CD /* CCDatePickerView.m in Sources */,
+				11C5DAE52058F565005F09CD /* TYTabPagerController.m in Sources */,
+				11C5DAE62058F565005F09CD /* TYTabTitleViewCell.m in Sources */,
+				11C5DAE02058F565005F09CD /* SDBrowserImageView.m in Sources */,
+				11C5DAE22058F565005F09CD /* SDWaitingView.m in Sources */,
+				11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */,
+				11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
+				11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */,
+				11C5DAE42058F565005F09CD /* TYTabButtonPagerController.m in Sources */,
+				11C5DAF22058F565005F09CD /* NSString+CZNSStringExt.m in Sources */,
+				11C5DAE82058F565005F09CD /* YHMath.m in Sources */,
+				11C5DAE12058F565005F09CD /* SDPhotoBrowser.m in Sources */,
+				11C5DAF62058F565005F09CD /* PGIndexBannerSubiew.m in Sources */,
+				11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */,
+				11C5DAC82058F565005F09CD /* CodeView.m in Sources */,
+				11C5DAF02058F565005F09CD /* NSDictionary+deletNull.m in Sources */,
+				11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */,
+				11C5DAC92058F565005F09CD /* NSString+Category.m in Sources */,
 				1A4287F22058C54500139197 /* AppDelegate.m in Sources */,
+				11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */,
+				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
+				11C5DAEC2058F565005F09CD /* ZLPickPhotoViewController.m in Sources */,
+				11C5DAD22058F565005F09CD /* NSString+LocaString.m in Sources */,
+				11C5DACE2058F565005F09CD /* KRMySegmentView.m in Sources */,
+				11C5DB042058FDD8005F09CD /* HomeViewController.m in Sources */,
+				11C5DAE32058F565005F09CD /* TYPagerController.m in Sources */,
+				11C5DAD12058F565005F09CD /* LDXScore.m in Sources */,
+				11C5DAE92058F565005F09CD /* ZLPhotoCell.m in Sources */,
+				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
+				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
+				11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */,
+				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,
+				11C5DACD2058F565005F09CD /* KRMainNetTool.m in Sources */,
+				11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */,
+				11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */,
+				11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */,
+				11C5DACB2058F565005F09CD /* ImageCenterButton.m in Sources */,
+				11C5DAD02058F565005F09CD /* KRUserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1A4287F62058C54500139197 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A4287F72058C54500139197 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1A4287FB2058C54500139197 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,9 +697,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SAHL399V;
-				INFOPLIST_FILE = YL_Healthy/Info.plist;
+				DEVELOPMENT_TEAM = XZN34NH8JQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
+				);
+				GCC_PREFIX_HEADER = YL_Healthy/SupportFiles/PrefixHeader.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/YL_Healthy/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "text.YL-Healthy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,9 +722,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SAHL399V;
-				INFOPLIST_FILE = YL_Healthy/Info.plist;
+				DEVELOPMENT_TEAM = XZN34NH8JQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
+				);
+				GCC_PREFIX_HEADER = YL_Healthy/SupportFiles/PrefixHeader.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/YL_Healthy/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "text.YL-Healthy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
