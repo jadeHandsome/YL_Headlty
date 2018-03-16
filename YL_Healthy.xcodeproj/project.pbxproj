@@ -55,6 +55,13 @@
 		11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB0D20591038005F09CD /* CompleteInfoController.xib */; };
 		11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB11205919E9005F09CD /* KRDatePicker.m */; };
 		11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB13205919FA005F09CD /* KRDatePicker.xib */; };
+		11C5DB19205924FC005F09CD /* CommitItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB17205924FC005F09CD /* CommitItemController.m */; };
+		11C5DB1A205924FC005F09CD /* CommitItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB18205924FC005F09CD /* CommitItemController.xib */; };
+		11C5DB35205A17C6005F09CD /* CommitDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB33205A17C6005F09CD /* CommitDeviceController.m */; };
+		11C5DB36205A17C6005F09CD /* CommitDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB34205A17C6005F09CD /* CommitDeviceController.xib */; };
+		11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB39205A1AF5005F09CD /* DeviceInfoView.m */; };
+		11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */; };
+		11C5DB3F205A50AC005F09CD /* CommitSuccessController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */; };
 		1A4287F22058C54500139197 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287F12058C54500139197 /* AppDelegate.m */; };
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
@@ -158,6 +165,17 @@
 		11C5DB10205919E9005F09CD /* KRDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRDatePicker.h; sourceTree = "<group>"; };
 		11C5DB11205919E9005F09CD /* KRDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRDatePicker.m; sourceTree = "<group>"; };
 		11C5DB13205919FA005F09CD /* KRDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KRDatePicker.xib; sourceTree = "<group>"; };
+		11C5DB16205924FC005F09CD /* CommitItemController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitItemController.h; sourceTree = "<group>"; };
+		11C5DB17205924FC005F09CD /* CommitItemController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitItemController.m; sourceTree = "<group>"; };
+		11C5DB18205924FC005F09CD /* CommitItemController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitItemController.xib; sourceTree = "<group>"; };
+		11C5DB32205A17C6005F09CD /* CommitDeviceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitDeviceController.h; sourceTree = "<group>"; };
+		11C5DB33205A17C6005F09CD /* CommitDeviceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitDeviceController.m; sourceTree = "<group>"; };
+		11C5DB34205A17C6005F09CD /* CommitDeviceController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitDeviceController.xib; sourceTree = "<group>"; };
+		11C5DB38205A1AF5005F09CD /* DeviceInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoView.h; sourceTree = "<group>"; };
+		11C5DB39205A1AF5005F09CD /* DeviceInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoView.m; sourceTree = "<group>"; };
+		11C5DB3B205A50AC005F09CD /* CommitSuccessController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitSuccessController.h; sourceTree = "<group>"; };
+		11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitSuccessController.m; sourceTree = "<group>"; };
+		11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitSuccessController.xib; sourceTree = "<group>"; };
 		1A4287ED2058C54500139197 /* YL_Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YL_Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4287F02058C54500139197 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A4287F12058C54500139197 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -346,6 +364,7 @@
 		11C5DAFE2058FC29005F09CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11C5DB15205924A7005F09CD /* Commit */,
 				11C5DB002058FD70005F09CD /* Home */,
 				11C5DAFF2058FD45005F09CD /* Login&Register */,
 				11C5DA062058F4E9005F09CD /* BaseVC */,
@@ -374,6 +393,32 @@
 				11C5DB032058FDD8005F09CD /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		11C5DB15205924A7005F09CD /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DB37205A1AC7005F09CD /* views */,
+				11C5DB16205924FC005F09CD /* CommitItemController.h */,
+				11C5DB17205924FC005F09CD /* CommitItemController.m */,
+				11C5DB18205924FC005F09CD /* CommitItemController.xib */,
+				11C5DB32205A17C6005F09CD /* CommitDeviceController.h */,
+				11C5DB33205A17C6005F09CD /* CommitDeviceController.m */,
+				11C5DB34205A17C6005F09CD /* CommitDeviceController.xib */,
+				11C5DB3B205A50AC005F09CD /* CommitSuccessController.h */,
+				11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */,
+				11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		11C5DB37205A1AC7005F09CD /* views */ = {
+			isa = PBXGroup;
+			children = (
+				11C5DB38205A1AF5005F09CD /* DeviceInfoView.h */,
+				11C5DB39205A1AF5005F09CD /* DeviceInfoView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		1A4287E42058C54500139197 = {
@@ -484,8 +529,11 @@
 			files = (
 				1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */,
 				11C5DAEA2058F565005F09CD /* ZLPhotoCell.xib in Resources */,
+				11C5DB36205A17C6005F09CD /* CommitDeviceController.xib in Resources */,
+				11C5DB3F205A50AC005F09CD /* CommitSuccessController.xib in Resources */,
 				11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */,
 				11C5DB0A2059017E005F09CD /* LoginViewController.xib in Resources */,
+				11C5DB1A205924FC005F09CD /* CommitItemController.xib in Resources */,
 				1A4287FA2058C54500139197 /* Assets.xcassets in Resources */,
 				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
 				11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */,
@@ -578,9 +626,11 @@
 				11C5DAF02058F565005F09CD /* NSDictionary+deletNull.m in Sources */,
 				11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */,
 				11C5DAC92058F565005F09CD /* NSString+Category.m in Sources */,
+				11C5DB19205924FC005F09CD /* CommitItemController.m in Sources */,
 				1A4287F22058C54500139197 /* AppDelegate.m in Sources */,
 				11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */,
 				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
+				11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */,
 				11C5DAEC2058F565005F09CD /* ZLPickPhotoViewController.m in Sources */,
 				11C5DAD22058F565005F09CD /* NSString+LocaString.m in Sources */,
 				11C5DACE2058F565005F09CD /* KRMySegmentView.m in Sources */,
@@ -591,10 +641,12 @@
 				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
 				11C5DB092059017E005F09CD /* LoginViewController.m in Sources */,
 				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
+				11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */,
 				11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */,
 				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,
 				11C5DACD2058F565005F09CD /* KRMainNetTool.m in Sources */,
 				11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */,
+				11C5DB35205A17C6005F09CD /* CommitDeviceController.m in Sources */,
 				11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */,
 				11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */,
 				11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */,
