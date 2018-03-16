@@ -1,33 +1,29 @@
 //
-//  HomeViewController.m
+//  CommitSuccessController.m
 //  YL_Healthy
 //
-//  Created by 周春仕 on 2018/3/14.
+//  Created by 周春仕 on 2018/3/15.
 //  Copyright © 2018年 曾洪磊. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "CommitItemController.h"
-@interface HomeViewController ()
+#import "CommitSuccessController.h"
+
+@interface CommitSuccessController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
 
 @end
 
-@implementation HomeViewController
+@implementation CommitSuccessController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"优量健康";
+    [self popOut];
+    self.navigationItem.title = @"提交成功";
+    LRViewBorderRadius(self.backBtn, 22.5, 0, ThemeColor);
     // Do any additional setup after loading the view from its nib.
 }
-- (IBAction)commitInfo:(UIButton *)sender {
-    CommitItemController *commitVC = [CommitItemController new];
-    [self.navigationController pushViewController:commitVC animated:YES];
-}
-- (IBAction)itemSearch:(UIButton *)sender {
-}
-- (IBAction)userInfo:(UIButton *)sender {
-}
-- (IBAction)setting:(UIButton *)sender {
+- (IBAction)back:(UIButton *)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
