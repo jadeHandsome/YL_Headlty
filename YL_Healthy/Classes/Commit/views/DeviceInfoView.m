@@ -177,7 +177,7 @@
         }
         [container addSubview:unitLabel];
         [unitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(container);
+            make.right.equalTo(container).offset(-2);
             make.centerY.equalTo(container.mas_centerY);
             make.width.mas_equalTo(30);
         }];
