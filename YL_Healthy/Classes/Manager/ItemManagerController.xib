@@ -30,6 +30,9 @@
                     <state key="normal" title="添加项目">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="addItem:" destination="-1" eventType="touchUpInside" id="FrO-TO-CUk"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-FB-uBe">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>

@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "CommitItemController.h"
 #import "SettingController.h"
+#import "ItemSearchController.h"
 @interface HomeViewController ()
 
 @end
@@ -26,6 +27,8 @@
     [self.navigationController pushViewController:commitVC animated:YES];
 }
 - (IBAction)itemSearch:(UIButton *)sender {
+    ItemSearchController *searchVC = [ItemSearchController new];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 - (IBAction)userInfo:(UIButton *)sender {
 }

@@ -1,21 +1,22 @@
 //
-//  ItemManagerController.m
+//  ItemSearchController.m
 //  YL_Healthy
 //
-//  Created by 周春仕 on 2018/3/27.
+//  Created by 周春仕 on 2018/3/28.
 //  Copyright © 2018年 曾洪磊. All rights reserved.
 //
 
-#import "ItemManagerController.h"
+#import "ItemSearchController.h"
 #import "ItemCell.h"
-@interface ItemManagerController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ItemSearchController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @end
 
-@implementation ItemManagerController
+@implementation ItemSearchController
+
 - (NSMutableArray *)dataArr{
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
@@ -23,12 +24,27 @@
     return _dataArr;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.searchBar becomeFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self popOut];
-    self.navigationItem.title = @"项目管理";
-    [self popOut];
-    [self search];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStyleDone target:self action:@selector(search)];
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SIZEWIDTH - 100, 35)];
+    searchBar.delegate = self;
+    searchBar.placeholder = @"请输入项目名";
+    searchBar.barTintColor = COLOR(245, 245, 245, 1);
+    searchBar.tintColor = [UIColor blackColor];
+    LRViewBorderRadius(searchBar, 17.5, 0, COLOR(245, 245, 245, 1));
+    self.searchBar = searchBar;
+    UIView *titleView = [[UIView alloc] init];
+    titleView.backgroundColor = [UIColor clearColor];
+    [titleView addSubview:searchBar];
+    self.navigationItem.titleView = titleView;
+    self.navigationItem.titleView.frame = CGRectMake(0, 0, SIZEWIDTH - 100, 35);
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemCell"];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
@@ -40,14 +56,18 @@
     [self searchAction];
 }
 
+
 - (void)search {
+    if ([self cheakIsNull:self.searchBar.text]) {
+        return;
+    }
     self.page = 1;
     [self searchAction];
 }
 
 
 - (void)searchAction {
-    NSDictionary *params = @{@"project_name":@"",@"page":@(self.page),@"rows":@20};
+    NSDictionary *params = @{@"project_name":self.searchBar.text,@"page":@(self.page),@"rows":@20};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             if (self.page == 1) {
@@ -94,8 +114,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-- (IBAction)addItem:(UIButton *)sender {
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

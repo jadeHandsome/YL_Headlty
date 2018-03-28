@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-#define baseURL @"http://api.feiyangshop.com/"
+#define baseURL @"http://39.107.92.147:8080/health/"
 @implementation KRMainNetTool
 singleton_implementation(KRMainNetTool)
 //不需要上传文件的接口方法

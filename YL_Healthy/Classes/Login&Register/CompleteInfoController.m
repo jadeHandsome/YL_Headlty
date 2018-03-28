@@ -23,6 +23,10 @@
 
 @implementation CompleteInfoController
 
+- (void)dealloc{
+    NSLog(@"0000000000销毁");
+}
+
 - (NSDateFormatter *)formatter{
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc] init];
@@ -52,9 +56,11 @@
     [[UIApplication sharedApplication].keyWindow addSubview:picker];
 }
 - (IBAction)sureAction:(UIButton *)sender {
-    HomeViewController *homeVC = [HomeViewController new];
-    BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:homeVC];
-    [UIApplication sharedApplication].keyWindow.rootViewController = navi;
+    [self dismissViewControllerAnimated:NO completion:^{
+        HomeViewController *homeVC = [HomeViewController new];
+        BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:homeVC];
+        [UIApplication sharedApplication].keyWindow.rootViewController = navi;
+    }];
 //    if ([self cheakIsNull:self.nameField.text]) {
 //        [self showHUDWithText:@"请输入姓名"];
 //        return;

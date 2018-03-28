@@ -31,6 +31,8 @@
     AboutController *aboutVC = [AboutController new];
     [self.navigationController pushViewController:aboutVC animated:YES];
 }
+- (IBAction)logout:(UIButton *)sender {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
