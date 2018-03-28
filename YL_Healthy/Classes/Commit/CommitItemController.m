@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *daysLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+@property (weak, nonatomic) IBOutlet UITextField *projectCodeField;
 
 @end
 
@@ -29,7 +30,25 @@
 - (IBAction)chooseDay:(id)sender {
 }
 - (IBAction)nextAction:(UIButton *)sender {
+//    if ([self cheakIsNull:self.itemNameField.text]) {
+//        [self showHUDWithText:@"请输入项目名称"];
+//        return;
+//    }
+//    if ([self cheakIsNull:self.projectCodeField.text]) {
+//        [self showHUDWithText:@"请输入项目编号"];
+//        return;
+//    }
+//    if ([self cheakIsNull:self.comNameField.text]) {
+//        [self showHUDWithText:@"请输入公司名称"];
+//        return;
+//    }
+//    if ([self.daysLabel.text isEqualToString:@"请选择"]) {
+//        [self showHUDWithText:@"请选择完成天数"];
+//        return;
+//    }
+//    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysLabel.text.integerValue),@"finish_state":self.completeSwitch.state ? @"1" : @"0"};
     CommitDeviceController *deviceVC = [CommitDeviceController new];
+//    deviceVC.preParams = params;
     [self.navigationController pushViewController:deviceVC animated:YES];
 }
 

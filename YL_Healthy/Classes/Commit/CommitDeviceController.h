@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface CommitDeviceController : BaseViewController
-
+@property (nonatomic, strong) NSDictionary *preParams;
 @end

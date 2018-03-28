@@ -9,8 +9,8 @@
 #import "KRMainNetTool.h"
 #import "AFNetworking.h"
 #import <UIKit/UIKit.h>
-
-#define baseURL @"http://api.feiyangshop.com/"
+#import "LoginViewController.h"
+#define baseURL @"http://39.107.92.147:8080/health/"
 @implementation KRMainNetTool
 singleton_implementation(KRMainNetTool)
 //不需要上传文件的接口方法
@@ -65,48 +65,25 @@ singleton_implementation(KRMainNetTool)
         } else {
             response = responseObject;
         }
-        NSNumber *num = response[@"status"];
+        NSString *code = response[@"code"];
         //判断返回的状态，200即为服务器查询成功，500服务器查询失败
-        if ([num longValue] == 200) {
+        if ([code isEqualToString:@"S"]) {
             if (model == nil) {
-                if (response) {
-                    complet(response[@"data"],nil);
-                } else {
-                    [MBProgressHUD showError:response[@"msg"] toView:waitView];
-                    complet(nil,response[@"msg"]);
-                }
-                
+                complet(response[@"bizContent"],nil);
             } else {
-                complet([self getModelArrayWith:response[@"data"] andModel:model],nil);
+                complet([self getModelArrayWith:response[@"bizContent"] andModel:model],nil);
             }
-        } else {
-            
-            if ([response[@"msg"] isEqualToString:@"用户登陆已过期"]) {
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userInfo"];
-                [KRUserInfo sharedKRUserInfo].ID = nil;
-                [KRUserInfo sharedKRUserInfo].token = nil;
-                [MBProgressHUD showError:response[@"msg"] toView:waitView];
-                complet(nil,response[@"msg"]);
-//                QuickLoginViewController *log = [QuickLoginViewController new];
-//                UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:log];
-//                log.isAfficacy = YES;
-//                [UIApplication sharedApplication].keyWindow.rootViewController = navi ;
-            } else {
-                if (waitView.tag == 1000) {
-//                    [MBProgressHUD showError:response[@"msg"] toView:waitView];
-                    complet(nil,response[@"msg"]);
-                } else if (waitView.tag == 1001) {
-                    complet(@[],response[@"msg"]);
-                } else if (waitView.tag == 1002) {
-                    complet(response[@"data"],response[@"msg"]);
-                } else {
-                    [MBProgressHUD showError:response[@"msg"] toView:waitView];
-                    complet(nil,response[@"msg"]);
-                }
-                
-                
+        } else if ([code isEqualToString:@"F"]){
+            if (waitView.tag != 10001) {
+                [MBProgressHUD showError:@"网络错误" toView:waitView];
             }
-            
+            complet(nil,response[@"message"]);
+        }
+        else {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userInfo"];
+            SharedKRUserInfo.token = nil;
+            LoginViewController *loginVC = [LoginViewController new];
+            [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         self.isGet = NO;

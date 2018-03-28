@@ -8,6 +8,10 @@
 
 #import "HomeViewController.h"
 #import "CommitItemController.h"
+#import "SettingController.h"
+#import "ItemSearchController.h"
+#import "UserInfoController.h"
+#import "ItemManagerController.h"
 @interface HomeViewController ()
 
 @end
@@ -17,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"优量健康";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)commitInfo:(UIButton *)sender {
@@ -24,10 +29,20 @@
     [self.navigationController pushViewController:commitVC animated:YES];
 }
 - (IBAction)itemSearch:(UIButton *)sender {
+    ItemSearchController *searchVC = [ItemSearchController new];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 - (IBAction)userInfo:(UIButton *)sender {
+    UserInfoController *userInfoVC = [UserInfoController new];
+    [self.navigationController pushViewController:userInfoVC animated:YES];
 }
-- (IBAction)setting:(UIButton *)sender {
+- (IBAction)itemManager:(UIButton *)sender {
+    ItemManagerController *managerVC = [ItemManagerController new];
+    [self.navigationController pushViewController:managerVC animated:YES];
+}
+- (void)setting{
+    SettingController *settingVC = [SettingController new];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

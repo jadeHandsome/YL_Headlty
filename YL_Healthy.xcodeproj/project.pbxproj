@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110ED600206A222600EEA83C /* ItemManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED5FE206A222600EEA83C /* ItemManagerController.m */; };
+		110ED601206A222600EEA83C /* ItemManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED5FF206A222600EEA83C /* ItemManagerController.xib */; };
+		110ED606206B283700EEA83C /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED604206B283700EEA83C /* SettingController.m */; };
+		110ED607206B283700EEA83C /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED605206B283700EEA83C /* SettingController.xib */; };
+		110ED60B206B2A2400EEA83C /* ChangePwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED609206B2A2400EEA83C /* ChangePwdController.m */; };
+		110ED60C206B2A2400EEA83C /* ChangePwdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED60A206B2A2400EEA83C /* ChangePwdController.xib */; };
+		110ED610206B2CBA00EEA83C /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED60E206B2CBA00EEA83C /* AboutController.m */; };
+		110ED611206B2CBA00EEA83C /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED60F206B2CBA00EEA83C /* AboutController.xib */; };
+		110ED615206B2F9600EEA83C /* UserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED613206B2F9600EEA83C /* UserInfoController.m */; };
+		110ED616206B2F9600EEA83C /* UserInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED614206B2F9600EEA83C /* UserInfoController.xib */; };
+		110ED61B206B492E00EEA83C /* ItemSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED619206B492E00EEA83C /* ItemSearchController.m */; };
+		110ED61C206B492E00EEA83C /* ItemSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED61A206B492E00EEA83C /* ItemSearchController.xib */; };
+		110ED621206B795A00EEA83C /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED61F206B795A00EEA83C /* ItemCell.m */; };
+		110ED622206B795A00EEA83C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED620206B795A00EEA83C /* ItemCell.xib */; };
 		11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */; };
 		11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0C2058F564005F09CD /* UIImage+Color.m */; };
 		11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0E2058F564005F09CD /* UIView+EX.m */; };
@@ -70,6 +84,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110ED5FD206A222600EEA83C /* ItemManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemManagerController.h; sourceTree = "<group>"; };
+		110ED5FE206A222600EEA83C /* ItemManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemManagerController.m; sourceTree = "<group>"; };
+		110ED5FF206A222600EEA83C /* ItemManagerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemManagerController.xib; sourceTree = "<group>"; };
+		110ED603206B283700EEA83C /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		110ED604206B283700EEA83C /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		110ED605206B283700EEA83C /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingController.xib; sourceTree = "<group>"; };
+		110ED608206B2A2300EEA83C /* ChangePwdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePwdController.h; sourceTree = "<group>"; };
+		110ED609206B2A2400EEA83C /* ChangePwdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePwdController.m; sourceTree = "<group>"; };
+		110ED60A206B2A2400EEA83C /* ChangePwdController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePwdController.xib; sourceTree = "<group>"; };
+		110ED60D206B2CBA00EEA83C /* AboutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		110ED60E206B2CBA00EEA83C /* AboutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		110ED60F206B2CBA00EEA83C /* AboutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutController.xib; sourceTree = "<group>"; };
+		110ED612206B2F9600EEA83C /* UserInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoController.h; sourceTree = "<group>"; };
+		110ED613206B2F9600EEA83C /* UserInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoController.m; sourceTree = "<group>"; };
+		110ED614206B2F9600EEA83C /* UserInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoController.xib; sourceTree = "<group>"; };
+		110ED618206B492E00EEA83C /* ItemSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemSearchController.h; sourceTree = "<group>"; };
+		110ED619206B492E00EEA83C /* ItemSearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemSearchController.m; sourceTree = "<group>"; };
+		110ED61A206B492E00EEA83C /* ItemSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSearchController.xib; sourceTree = "<group>"; };
+		110ED61E206B795A00EEA83C /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		110ED61F206B795A00EEA83C /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		110ED620206B795A00EEA83C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		11C5DA092058F564005F09CD /* CALayer+CircleBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CircleBoard.h"; sourceTree = "<group>"; };
 		11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CircleBoard.m"; sourceTree = "<group>"; };
 		11C5DA0B2058F564005F09CD /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -200,6 +235,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110ED5FC206A220C00EEA83C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				110ED61D206B787200EEA83C /* views */,
+				110ED5FD206A222600EEA83C /* ItemManagerController.h */,
+				110ED5FE206A222600EEA83C /* ItemManagerController.m */,
+				110ED5FF206A222600EEA83C /* ItemManagerController.xib */,
+				110ED618206B492E00EEA83C /* ItemSearchController.h */,
+				110ED619206B492E00EEA83C /* ItemSearchController.m */,
+				110ED61A206B492E00EEA83C /* ItemSearchController.xib */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		110ED602206B27EB00EEA83C /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				110ED603206B283700EEA83C /* SettingController.h */,
+				110ED604206B283700EEA83C /* SettingController.m */,
+				110ED605206B283700EEA83C /* SettingController.xib */,
+				110ED608206B2A2300EEA83C /* ChangePwdController.h */,
+				110ED609206B2A2400EEA83C /* ChangePwdController.m */,
+				110ED60A206B2A2400EEA83C /* ChangePwdController.xib */,
+				110ED60D206B2CBA00EEA83C /* AboutController.h */,
+				110ED60E206B2CBA00EEA83C /* AboutController.m */,
+				110ED60F206B2CBA00EEA83C /* AboutController.xib */,
+				110ED612206B2F9600EEA83C /* UserInfoController.h */,
+				110ED613206B2F9600EEA83C /* UserInfoController.m */,
+				110ED614206B2F9600EEA83C /* UserInfoController.xib */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		110ED61D206B787200EEA83C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				110ED61E206B795A00EEA83C /* ItemCell.h */,
+				110ED61F206B795A00EEA83C /* ItemCell.m */,
+				110ED620206B795A00EEA83C /* ItemCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		11C5DA052058F4BE005F09CD /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +442,8 @@
 		11C5DAFE2058FC29005F09CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				110ED602206B27EB00EEA83C /* Center */,
+				110ED5FC206A220C00EEA83C /* Manager */,
 				11C5DB15205924A7005F09CD /* Commit */,
 				11C5DB002058FD70005F09CD /* Home */,
 				11C5DAFF2058FD45005F09CD /* Login&Register */,
@@ -527,12 +607,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110ED601206A222600EEA83C /* ItemManagerController.xib in Resources */,
 				1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */,
 				11C5DAEA2058F565005F09CD /* ZLPhotoCell.xib in Resources */,
+				110ED60C206B2A2400EEA83C /* ChangePwdController.xib in Resources */,
 				11C5DB36205A17C6005F09CD /* CommitDeviceController.xib in Resources */,
 				11C5DB3F205A50AC005F09CD /* CommitSuccessController.xib in Resources */,
+				110ED616206B2F9600EEA83C /* UserInfoController.xib in Resources */,
 				11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */,
+				110ED622206B795A00EEA83C /* ItemCell.xib in Resources */,
+				110ED611206B2CBA00EEA83C /* AboutController.xib in Resources */,
 				11C5DB0A2059017E005F09CD /* LoginViewController.xib in Resources */,
+				110ED607206B283700EEA83C /* SettingController.xib in Resources */,
+				110ED61C206B492E00EEA83C /* ItemSearchController.xib in Resources */,
 				11C5DB1A205924FC005F09CD /* CommitItemController.xib in Resources */,
 				1A4287FA2058C54500139197 /* Assets.xcassets in Resources */,
 				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
@@ -604,8 +691,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110ED615206B2F9600EEA83C /* UserInfoController.m in Sources */,
+				110ED600206A222600EEA83C /* ItemManagerController.m in Sources */,
 				11C5DAE72058F565005F09CD /* YHArcSlider.m in Sources */,
+				110ED606206B283700EEA83C /* SettingController.m in Sources */,
 				11C5DAEE2058F565005F09CD /* MBProgressHUD+KR.m in Sources */,
+				110ED621206B795A00EEA83C /* ItemCell.m in Sources */,
 				11C5DAC72058F565005F09CD /* CCDatePickerView.m in Sources */,
 				11C5DAE52058F565005F09CD /* TYTabPagerController.m in Sources */,
 				11C5DAE62058F565005F09CD /* TYTabTitleViewCell.m in Sources */,
@@ -613,7 +704,9 @@
 				11C5DAE22058F565005F09CD /* SDWaitingView.m in Sources */,
 				11C5DB0E20591038005F09CD /* CompleteInfoController.m in Sources */,
 				11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */,
+				110ED610206B2CBA00EEA83C /* AboutController.m in Sources */,
 				11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */,
+				110ED61B206B492E00EEA83C /* ItemSearchController.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
 				11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */,
 				11C5DAE42058F565005F09CD /* TYTabButtonPagerController.m in Sources */,
@@ -632,6 +725,7 @@
 				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
 				11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */,
 				11C5DAEC2058F565005F09CD /* ZLPickPhotoViewController.m in Sources */,
+				110ED60B206B2A2400EEA83C /* ChangePwdController.m in Sources */,
 				11C5DAD22058F565005F09CD /* NSString+LocaString.m in Sources */,
 				11C5DACE2058F565005F09CD /* KRMySegmentView.m in Sources */,
 				11C5DB042058FDD8005F09CD /* HomeViewController.m in Sources */,

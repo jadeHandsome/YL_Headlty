@@ -15,5 +15,7 @@ typedef NS_ENUM(NSUInteger, DeviceType) {
 };
 @interface DeviceInfoView : UIView
 @property (nonatomic, weak) UIViewController *vc;
+@property (nonatomic, strong) NSMutableDictionary *dic;
 - (instancetype)initWith:(DeviceType)type;
+- (BOOL)cheakIsReady;
 @end
