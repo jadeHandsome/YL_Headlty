@@ -55,6 +55,39 @@
     HomeViewController *homeVC = [HomeViewController new];
     BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:homeVC];
     [UIApplication sharedApplication].keyWindow.rootViewController = navi;
+//    if ([self cheakIsNull:self.nameField.text]) {
+//        [self showHUDWithText:@"请输入姓名"];
+//        return;
+//    }
+//    if ([self cheakIsNull:self.nickField.text]) {
+//        [self showHUDWithText:@"请输入昵称"];
+//        return;
+//    }
+//    if ([self.dateLabel.text isEqualToString:@"请选择"]) {
+//        [self showHUDWithText:@"请选择生日"];
+//        return;
+//    }
+//    if (!self.preBtn) {
+//        [self showHUDWithText:@"请选择性别"];
+//        return;
+//    }
+//    NSString *sex = self.preBtn == self.nanBtn ? @"2" : @"1";
+//    NSDictionary *params = @{@"real_name":self.nameField.text,@"nick_name":self.nickField.text,@"birthday":self.dateLabel.text,@"sex":sex};
+//    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"user/infoupdate" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+//        if (showdata) {
+//            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:params];
+//            dic[@"token"] = SharedKRUserInfo.token;
+//            [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"userInfo"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//            [SharedKRUserInfo setValuesForKeysWithDictionary:dic];
+//            HomeViewController *homeVC = [HomeViewController new];
+//            BaseNaviViewController *navi = [[BaseNaviViewController alloc] initWithRootViewController:homeVC];
+//            [UIApplication sharedApplication].keyWindow.rootViewController = navi;
+//        }
+//    }];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

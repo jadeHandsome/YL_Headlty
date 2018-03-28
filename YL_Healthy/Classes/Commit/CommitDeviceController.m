@@ -15,9 +15,17 @@
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, strong) UIView *temp;
 @property (nonatomic, strong) UIButton *addBtn;
+@property (nonatomic, strong) NSMutableArray *viewsArr;
 @end
 
 @implementation CommitDeviceController
+
+- (NSMutableArray *)viewsArr{
+    if (!_viewsArr) {
+        _viewsArr = [NSMutableArray array];
+    }
+    return _viewsArr;
+}
 
 - (UIButton *)addBtn{
     if (!_addBtn) {
@@ -100,6 +108,7 @@
         make.left.right.equalTo(self.container);
         make.top.equalTo(self.temp.mas_bottom);
     }];
+    [self.viewsArr addObject:infoView];
     self.temp = infoView;
     [self.addBtn removeFromSuperview];
     self.addBtn = nil;
@@ -109,8 +118,31 @@
 
 
 - (IBAction)sureAction:(UIButton *)sender {
-    CommitSuccessController *successVC = [CommitSuccessController new];
-    [self.navigationController pushViewController:successVC animated:YES];
+    NSMutableArray *list = [NSMutableArray array];
+    if (self.viewsArr.count == 0) {
+        [self showHUDWithText:@"请添加设备"];
+        return;
+    }
+    else{
+        for (DeviceInfoView *view in self.viewsArr) {
+            if (![view cheakIsReady]) {
+                [self showHUDWithText:@"请把信息填写完整"];
+                return;
+            }
+            else{
+                [list addObject:view.dic];
+            }
+        }
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:self.preParams];
+    params[@"device_list"] = list;
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/saveinfo" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        if (showdata) {
+            CommitSuccessController *successVC = [CommitSuccessController new];
+            [self.navigationController pushViewController:successVC animated:YES];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

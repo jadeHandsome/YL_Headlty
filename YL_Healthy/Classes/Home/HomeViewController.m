@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "CommitItemController.h"
+#import "SettingController.h"
 @interface HomeViewController ()
 
 @end
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"优量健康";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)commitInfo:(UIButton *)sender {
@@ -27,7 +29,11 @@
 }
 - (IBAction)userInfo:(UIButton *)sender {
 }
-- (IBAction)setting:(UIButton *)sender {
+- (IBAction)itemManager:(UIButton *)sender {
+}
+- (void)setting{
+    SettingController *settingVC = [SettingController new];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

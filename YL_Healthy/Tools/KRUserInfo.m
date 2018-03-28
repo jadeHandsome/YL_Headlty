@@ -11,8 +11,6 @@
 @implementation KRUserInfo
 singleton_implementation(KRUserInfo)
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    if ([key isEqualToString:@"id"]) {
-        self.ID = value;
-    }
+    
 }
 @end

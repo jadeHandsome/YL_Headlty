@@ -24,6 +24,13 @@
 
 @implementation DeviceInfoView
 
+- (NSMutableDictionary *)dic{
+    if (!_dic) {
+        _dic = [NSMutableDictionary dictionary];
+    }
+    return _dic;
+}
+
 
 - (NSArray *)outDevices{
     if (!_outDevices) {
@@ -70,6 +77,7 @@
 - (instancetype)initWith:(DeviceType)type{
     if (self = [super init]) {
         self.type = type;
+        self.dic[@"device_type"] = self.type == OutDevice ? @"0" : self.type == ChemicalDevice ? @"2" : @"1";
         [self setUp];
     }
     return self;
@@ -85,7 +93,7 @@
     }];
     UILabel *deviceTitle = [[UILabel alloc] init];
     deviceTitle.font = [UIFont systemFontOfSize:14];
-    deviceTitle.text = @"外出设备";
+    deviceTitle.text = self.type == OutDevice ? @"外出设备" : self.type == ChemicalDevice ? @"化学试剂" : @"实验设备";
     [deviceContainer addSubview:deviceTitle];
     [deviceTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(deviceContainer).offset(15);
@@ -95,6 +103,8 @@
     deviceField.placeholder = @"请输入";
     deviceField.textAlignment = NSTextAlignmentRight;
     deviceField.font = [UIFont systemFontOfSize:14];
+    deviceField.tag = -2;
+    [deviceField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
     [deviceContainer addSubview:deviceField];
     [deviceField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(deviceContainer);
@@ -109,7 +119,42 @@
         make.bottom.right.equalTo(deviceContainer);
         make.height.mas_equalTo(1);
     }];
-    UIView *temp = deviceContainer;
+    UIView *deviceCodeContainer = [[UIView alloc] init];
+    [self addSubview:deviceCodeContainer];
+    [deviceCodeContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.top.equalTo(deviceContainer.mas_bottom);
+        make.height.mas_equalTo(45);
+    }];
+    UILabel *deviceCodeTitle = [[UILabel alloc] init];
+    deviceCodeTitle.font = [UIFont systemFontOfSize:14];
+    deviceCodeTitle.text = @"设备编号";
+    [deviceCodeContainer addSubview:deviceCodeTitle];
+    [deviceCodeTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(deviceCodeContainer).offset(15);
+        make.centerY.equalTo(deviceCodeContainer.mas_centerY);
+    }];
+    UITextField *deviceCodeField = [[UITextField alloc] init];
+    deviceCodeField.placeholder = @"请输入";
+    deviceCodeField.textAlignment = NSTextAlignmentRight;
+    deviceCodeField.font = [UIFont systemFontOfSize:14];
+    deviceCodeField.tag = -1;
+    [deviceCodeField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
+    [deviceCodeContainer addSubview:deviceCodeField];
+    [deviceCodeField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(deviceCodeContainer);
+        make.right.equalTo(deviceCodeContainer).offset(-15);
+        make.left.equalTo(deviceCodeTitle.mas_right).offset(15);
+    }];
+    UIView *deviceCodeLineView = [[UIView alloc] init];
+    deviceCodeLineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [deviceCodeContainer addSubview:deviceCodeLineView];
+    [deviceCodeLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(deviceCodeContainer).offset(15);
+        make.bottom.right.equalTo(deviceCodeContainer);
+        make.height.mas_equalTo(1);
+    }];
+    UIView *temp = deviceCodeContainer;
     NSArray *arr;
     switch (self.type) {
         case OutDevice:
@@ -171,8 +216,9 @@
         unitLabel.text = dic[@"unit"];
         unitLabel.textAlignment = NSTextAlignmentRight;
         if (self.type == ChemicalDevice) {
+            self.selectUnitLabel = unitLabel;
             unitLabel.userInteractionEnabled = YES;
-            UITapGestureRecognizer *unitTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(unitChoose:)];
+            UITapGestureRecognizer *unitTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(unitChoose)];
             [unitLabel addGestureRecognizer:unitTap];
         }
         [container addSubview:unitLabel];
@@ -183,6 +229,8 @@
         }];
         UITextField *field = [[UITextField alloc] init];
         field.font = [UIFont systemFontOfSize:14];
+        field.tag = i;
+        [field addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
         [container addSubview:field];
         [field mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(container).offset(5);
@@ -239,6 +287,7 @@
         nameField.placeholder = @"请输入";
         nameField.textAlignment = NSTextAlignmentRight;
         nameField.font = [UIFont systemFontOfSize:14];
+        nameField.tag = i + 4;
         [nameContainer addSubview:nameField];
         [nameField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.equalTo(nameContainer);
@@ -283,9 +332,7 @@
 }
 
 
-- (void)unitChoose:(UITapGestureRecognizer *)sender{
-    UILabel *unitLabel = (UILabel *)sender.view;
-    self.selectUnitLabel = unitLabel;
+- (void)unitChoose{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"单位" message:@"请选择" preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSString *unit in self.experimentUnits) {
         [alert addAction:[self creatAction:unit]];
@@ -298,6 +345,99 @@
         self.selectUnitLabel.text = title;
     }];
     return action;
+}
+
+- (void)fieldChange:(UITextField *)sender{
+    NSInteger tag = sender.tag;
+    if (tag == -2) {
+        self.dic[@"device_name"] = sender.text;
+    }
+    else if (tag == -1) {
+        self.dic[@"device_code"] = sender.text;
+    }
+    else if (tag >= 0 && tag <= 3) {
+        if (self.type == OutDevice) {
+            if (tag == 0) {
+                self.dic[@"use_temperature"] = sender.text;
+            }
+            else if (tag == 1) {
+                self.dic[@"use_pressure"] = sender.text;
+            }
+            else if (tag == 2) {
+                self.dic[@"use_humidity"] = sender.text;
+            }
+            else {
+                self.dic[@"use_wind_speed"] = sender.text;
+            }
+        }
+        else if (self.type == ChemicalDevice) {
+            if ([self.selectUnitLabel.text isEqualToString:@"单位"]) {
+                [self unitChoose];
+                return;
+            }
+            else{
+                self.dic[@"use_amount"] = [NSString stringWithFormat:@"%@%@",sender.text,self.selectUnitLabel.text];
+            }
+        }
+        else {
+            if (tag == 0) {
+                self.dic[@"use_temperature"] = sender.text;
+            }
+            else {
+                self.dic[@"use_humidity"] = sender.text;
+            }
+        }
+    }
+    else {
+        [self.persons replaceObjectAtIndex:sender.tag - 4 withObject:sender.text];
+        NSMutableString *str = [NSMutableString string];
+        for (NSString *name in self.persons) {
+            [str appendFormat:@"%@,",name];
+        }
+        self.dic[@"use_name"] = str;
+    }
+}
+
+- (BOOL)cheakIsReady {
+    BOOL isReady = YES;
+    NSArray *keys = [self.dic allKeys];
+    if (![keys containsObject:@"device_name"]) {
+        isReady = NO;
+    }
+    if (![keys containsObject:@"device_code"]) {
+        isReady = NO;
+    }
+    if (![keys containsObject:@"use_name"]) {
+        isReady = NO;
+    }
+    if (self.type == OutDevice) {
+        if (![keys containsObject:@"use_temperature"]) {
+            isReady = NO;
+        }
+        if (![keys containsObject:@"use_humidity"]) {
+            isReady = NO;
+        }
+        if (![keys containsObject:@"use_pressure"]) {
+            isReady = NO;
+        }
+        if (![keys containsObject:@"use_wind_speed"]) {
+            isReady = NO;
+        }
+    }
+    else if (self.type == ChemicalDevice) {
+        if (![keys containsObject:@"use_amount"]) {
+            isReady = NO;
+        }
+    }
+    else {
+        if (![keys containsObject:@"use_temperature"]) {
+            isReady = NO;
+        }
+        if (![keys containsObject:@"use_humidity"]) {
+            isReady = NO;
+        }
+    }
+    return isReady;
 }
 
 

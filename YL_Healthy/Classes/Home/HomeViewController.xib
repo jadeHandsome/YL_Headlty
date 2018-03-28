@@ -40,9 +40,9 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-pY-YaF">
                     <rect key="frame" x="45" y="402" width="125" height="125"/>
-                    <state key="normal" backgroundImage="个人信息"/>
+                    <state key="normal" backgroundImage="设置"/>
                     <connections>
-                        <action selector="userInfo:" destination="-1" eventType="touchUpInside" id="PZc-le-zP6"/>
+                        <action selector="itemManager:" destination="-1" eventType="touchUpInside" id="W8L-4q-1ul"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-W9-ZQU">
@@ -50,9 +50,9 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="c8n-W9-ZQU" secondAttribute="height" multiplier="1:1" id="pRH-o9-tDF"/>
                     </constraints>
-                    <state key="normal" backgroundImage="设置"/>
+                    <state key="normal" backgroundImage="个人信息"/>
                     <connections>
-                        <action selector="setting:" destination="-1" eventType="touchUpInside" id="LF0-0P-3ZU"/>
+                        <action selector="userInfo:" destination="-1" eventType="touchUpInside" id="k1j-Fo-jzj"/>
                     </connections>
                 </button>
             </subviews>
