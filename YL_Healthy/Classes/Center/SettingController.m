@@ -9,6 +9,7 @@
 #import "SettingController.h"
 #import "ChangePwdController.h"
 #import "AboutController.h"
+#import "LoginViewController.h"
 @interface SettingController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 
@@ -32,6 +33,14 @@
     [self.navigationController pushViewController:aboutVC animated:YES];
 }
 - (IBAction)logout:(UIButton *)sender {
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"user/logout" params:nil withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        if (showdata) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userInfo"];
+            SharedKRUserInfo.token = nil;
+            LoginViewController *loginVC = [LoginViewController new];
+            [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
