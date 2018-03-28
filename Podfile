@@ -9,6 +9,6 @@ target ‘YL_Healthy’ do
   pod ‘Masonry’
   pod 'HYBLoopScrollView'
   pod 'UICollectionViewLeftAlignedLayout'
- 
+  pod 'YYKit'
 
 end

@@ -8,14 +8,19 @@
 
 #import "ItemManagerController.h"
 #import "ItemCell.h"
-@interface ItemManagerController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ItemManagerController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+
 @end
 
 @implementation ItemManagerController
+{
+    NSString *tempProjectName;
+    NSString *tempProjectNumber;
+}
 - (NSMutableArray *)dataArr{
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
@@ -32,9 +37,52 @@
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemCell"];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)addProject {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"添加项目" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionDone = [UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (self.recordName && ![self.recordName isEqualToString:@""]) {
+//            self.saveType = TypeMP3;
+//            NSDate *localDate = [NSDate date]; //获取当前时间
+//            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[localDate timeIntervalSince1970]];
+//            self.recordName = [AudioTool getFilePathWithDirectoryName:@"Result" FileName:[NSString stringWithFormat:@"%@%@.m4a",timeSp,self.recordName]];
+//            [self save];
+//        }
+//        else{
+//            [self saveAction:nil];
+//        }
+        NSLog(@"\n项目名字:%@\n项目编号:%@",tempProjectName,tempProjectNumber);
+    }];
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        tempProjectName = nil;
+        tempProjectNumber = nil;
+    }];
+    
+    [alert addAction:actionDone];
+    [alert addAction:actionCancel];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入项目名字";
+        textField.delegate = self;
+        textField.tag = 100;
+        [textField addTarget:self action:@selector(textChange:)forControlEvents:UIControlEventEditingChanged];
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入项目编号";
+        textField.delegate = self;
+        textField.tag = 101;
+        [textField addTarget:self action:@selector(textChange:)forControlEvents:UIControlEventEditingChanged];
+    }];
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
+}
+- (void)textChange:(UITextField *)input {
+    if (input.tag == 101) {
+        tempProjectNumber = input.text;
+    } else if (input.tag == 100) {
+        tempProjectName = input.text;
+    }
+}
 - (void)getMore{
     self.page ++;
     [self searchAction];

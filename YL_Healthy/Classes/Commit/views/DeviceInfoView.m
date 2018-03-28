@@ -289,6 +289,7 @@
         nameField.font = [UIFont systemFontOfSize:14];
         nameField.tag = i + 4;
         [nameContainer addSubview:nameField];
+        [nameField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
         [nameField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.equalTo(nameContainer);
             make.right.equalTo(nameContainer).offset(-15);

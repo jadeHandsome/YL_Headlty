@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="comNameField" destination="kej-8m-5VW" id="ZOm-5H-EXo"/>
                 <outlet property="completeSwitch" destination="unJ-yE-JZ7" id="i9m-1O-T78"/>
-                <outlet property="daysLabel" destination="tIA-g8-2qE" id="4A5-RQ-Rrq"/>
                 <outlet property="itemNameField" destination="G3b-Ep-y42" id="Dr6-WI-vf8"/>
                 <outlet property="nextBtn" destination="YWZ-dq-psF" id="RpZ-qN-mI7"/>
                 <outlet property="projectCodeField" destination="Cza-FM-JPb" id="Wbq-lF-CIl"/>
@@ -286,28 +285,23 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right_black" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-4s-Uxw">
-                            <rect key="frame" x="345" y="12" width="15" height="25"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入完成天数" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feX-bE-1WY">
+                            <rect key="frame" x="160" y="10" width="200" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="15" id="f3q-VD-ne4"/>
-                                <constraint firstAttribute="height" constant="25" id="x4J-F0-lbw"/>
+                                <constraint firstAttribute="width" constant="200" id="Jki-dc-QWs"/>
                             </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIA-g8-2qE">
-                            <rect key="frame" x="292" y="17" width="43" height="17"/>
+                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="7MJ-rd-Udf"/>
-                        <constraint firstAttribute="trailing" secondItem="3ba-4s-Uxw" secondAttribute="trailing" constant="15" id="Pfj-Lc-Uz7"/>
-                        <constraint firstItem="3ba-4s-Uxw" firstAttribute="centerY" secondItem="G60-Ma-mRw" secondAttribute="centerY" id="eMg-Xx-Gh4"/>
-                        <constraint firstItem="3ba-4s-Uxw" firstAttribute="leading" secondItem="tIA-g8-2qE" secondAttribute="trailing" constant="10" id="efz-rd-5wP"/>
-                        <constraint firstItem="tIA-g8-2qE" firstAttribute="centerY" secondItem="G60-Ma-mRw" secondAttribute="centerY" id="ndr-Oi-AUZ"/>
+                        <constraint firstAttribute="bottom" secondItem="feX-bE-1WY" secondAttribute="bottom" constant="10" id="M15-wX-H7q"/>
+                        <constraint firstItem="feX-bE-1WY" firstAttribute="top" secondItem="G60-Ma-mRw" secondAttribute="top" constant="10" id="dF6-WV-562"/>
+                        <constraint firstAttribute="trailing" secondItem="feX-bE-1WY" secondAttribute="trailing" constant="15" id="gl7-3Y-20H"/>
                         <constraint firstItem="IR1-ig-Jku" firstAttribute="centerY" secondItem="G60-Ma-mRw" secondAttribute="centerY" id="rkq-VN-r9C"/>
                         <constraint firstItem="IR1-ig-Jku" firstAttribute="leading" secondItem="G60-Ma-mRw" secondAttribute="leading" constant="15" id="vtQ-nU-aOE"/>
                     </constraints>
@@ -389,7 +383,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="ic_right_black" width="48" height="48"/>
         <image name="提示" width="12" height="12"/>
         <image name="进度圆" width="16" height="16"/>
         <image name="进度圆灰" width="16" height="16"/>

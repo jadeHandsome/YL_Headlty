@@ -89,6 +89,6 @@
 #import "KRUserInfo.h"
 #import "HYBLoopScrollView.h"
 #import "UIImage+Color.h"
-
+#import "YYKit.h"
 
 #endif /* PrefixHeader_pch */

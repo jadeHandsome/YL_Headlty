@@ -49,12 +49,20 @@ singleton_implementation(KRMainNetTool)
     manager.requestSerializer.timeoutInterval = 10.f;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params addEntriesFromDictionary:dic];
-    if (self.isGet) {
+//    [params addEntriesFromDictionary:dic];
+    if (dic) {
+        params[@"bizContent"] = dic;
+    }
+    if (SharedKRUserInfo.token) {
+        params[@"token"] = SharedKRUserInfo.token;
+    }
+//    NSDictionary *p = @{@"bizContent":dic ? dic : @"",@"token":SharedKRUserInfo.token ? SharedKRUserInfo.token : @""};
+//    if (self.isGet) {
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         manager.responseSerializer =  [AFJSONResponseSerializer serializer];
         [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    }
+//    }
+    ((AFJSONResponseSerializer *)manager.responseSerializer).removesKeysWithNullValues = YES;
     [manager POST:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         //请求成功，隐藏HUD并销毁
         self.isGet = NO;
@@ -74,9 +82,9 @@ singleton_implementation(KRMainNetTool)
                 complet([self getModelArrayWith:response[@"bizContent"] andModel:model],nil);
             }
         } else if ([code isEqualToString:@"F"]){
-            if (waitView.tag != 10001) {
-                [MBProgressHUD showError:@"网络错误" toView:waitView];
-            }
+//            if (waitView.tag != 10001) {
+//                [MBProgressHUD showError:@"网络错误" toView:waitView];
+//            }
             complet(nil,response[@"message"]);
         }
         else {

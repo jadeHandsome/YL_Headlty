@@ -80,6 +80,10 @@
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
 		1A4288002058C54500139197 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287FF2058C54500139197 /* main.m */; };
+		1ABBBDED206BB35600EF5E73 /* ProjectDeatilModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */; };
+		1ABBBDF0206BB36500EF5E73 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEF206BB36500EF5E73 /* ProjectDetailViewController.m */; };
+		1ABBBDF3206BB57600EF5E73 /* ProjectDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */; };
+		1ABBBDF6206BB59100EF5E73 /* ProjectIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDF5206BB59100EF5E73 /* ProjectIncidentModel.m */; };
 		6324FB7CEEFAF30C176AB039 /* libPods-YL_Healthy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EDB572B3120CF164D4E70C /* libPods-YL_Healthy.a */; };
 /* End PBXBuildFile section */
 
@@ -218,6 +222,14 @@
 		1A4287FC2058C54500139197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4287FE2058C54500139197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4287FF2058C54500139197 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1ABBBDEB206BB35600EF5E73 /* ProjectDeatilModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDeatilModel.h; sourceTree = "<group>"; };
+		1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDeatilModel.m; sourceTree = "<group>"; };
+		1ABBBDEE206BB36500EF5E73 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
+		1ABBBDEF206BB36500EF5E73 /* ProjectDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailViewController.m; sourceTree = "<group>"; };
+		1ABBBDF1206BB57600EF5E73 /* ProjectDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDeviceModel.h; sourceTree = "<group>"; };
+		1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDeviceModel.m; sourceTree = "<group>"; };
+		1ABBBDF4206BB59100EF5E73 /* ProjectIncidentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectIncidentModel.h; sourceTree = "<group>"; };
+		1ABBBDF5206BB59100EF5E73 /* ProjectIncidentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectIncidentModel.m; sourceTree = "<group>"; };
 		27EDB572B3120CF164D4E70C /* libPods-YL_Healthy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YL_Healthy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC3652D4894BB62CF151A8 /* Pods-YL_Healthy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YL_Healthy.release.xcconfig"; path = "Pods/Target Support Files/Pods-YL_Healthy/Pods-YL_Healthy.release.xcconfig"; sourceTree = "<group>"; };
 		57D4E47B6CE5821AD8822308 /* Pods-YL_Healthy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YL_Healthy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YL_Healthy/Pods-YL_Healthy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -442,6 +454,7 @@
 		11C5DAFE2058FC29005F09CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1ABBBDEA206BB34200EF5E73 /* ProjectDetail */,
 				110ED602206B27EB00EEA83C /* Center */,
 				110ED5FC206A220C00EEA83C /* Manager */,
 				11C5DB15205924A7005F09CD /* Commit */,
@@ -527,6 +540,21 @@
 				11C5DA052058F4BE005F09CD /* SupportFiles */,
 			);
 			path = YL_Healthy;
+			sourceTree = "<group>";
+		};
+		1ABBBDEA206BB34200EF5E73 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1ABBBDEB206BB35600EF5E73 /* ProjectDeatilModel.h */,
+				1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */,
+				1ABBBDEE206BB36500EF5E73 /* ProjectDetailViewController.h */,
+				1ABBBDEF206BB36500EF5E73 /* ProjectDetailViewController.m */,
+				1ABBBDF1206BB57600EF5E73 /* ProjectDeviceModel.h */,
+				1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */,
+				1ABBBDF4206BB59100EF5E73 /* ProjectIncidentModel.h */,
+				1ABBBDF5206BB59100EF5E73 /* ProjectIncidentModel.m */,
+			);
+			path = ProjectDetail;
 			sourceTree = "<group>";
 		};
 		7E9972EF409E47509A778DE4 /* Frameworks */ = {
@@ -658,8 +686,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -702,10 +729,12 @@
 				11C5DAE62058F565005F09CD /* TYTabTitleViewCell.m in Sources */,
 				11C5DAE02058F565005F09CD /* SDBrowserImageView.m in Sources */,
 				11C5DAE22058F565005F09CD /* SDWaitingView.m in Sources */,
+				1ABBBDF3206BB57600EF5E73 /* ProjectDeviceModel.m in Sources */,
 				11C5DB0E20591038005F09CD /* CompleteInfoController.m in Sources */,
 				11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */,
 				110ED610206B2CBA00EEA83C /* AboutController.m in Sources */,
 				11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */,
+				1ABBBDF6206BB59100EF5E73 /* ProjectIncidentModel.m in Sources */,
 				110ED61B206B492E00EEA83C /* ItemSearchController.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
 				11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */,
@@ -714,9 +743,11 @@
 				11C5DAE82058F565005F09CD /* YHMath.m in Sources */,
 				11C5DAE12058F565005F09CD /* SDPhotoBrowser.m in Sources */,
 				11C5DAF62058F565005F09CD /* PGIndexBannerSubiew.m in Sources */,
+				1ABBBDF0206BB36500EF5E73 /* ProjectDetailViewController.m in Sources */,
 				11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */,
 				11C5DAC82058F565005F09CD /* CodeView.m in Sources */,
 				11C5DAF02058F565005F09CD /* NSDictionary+deletNull.m in Sources */,
+				1ABBBDED206BB35600EF5E73 /* ProjectDeatilModel.m in Sources */,
 				11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */,
 				11C5DAC92058F565005F09CD /* NSString+Category.m in Sources */,
 				11C5DB19205924FC005F09CD /* CommitItemController.m in Sources */,
