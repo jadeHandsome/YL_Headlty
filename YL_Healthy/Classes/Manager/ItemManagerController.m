@@ -8,6 +8,7 @@
 
 #import "ItemManagerController.h"
 #import "ItemCell.h"
+#import "ProjectDetailViewController.h"
 @interface ItemManagerController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
@@ -141,6 +142,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ProjectDetailViewController *detailVC = [ProjectDetailViewController new];
+    detailVC.projectCode = self.dataArr[indexPath.row][@"project_code"];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 - (IBAction)addItem:(UIButton *)sender {
 }

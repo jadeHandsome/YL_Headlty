@@ -8,6 +8,7 @@
 
 #import "ItemSearchController.h"
 #import "ItemCell.h"
+#import "ProjectDetailViewController.h"
 @interface ItemSearchController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -113,6 +114,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ProjectDetailViewController *detailVC = [ProjectDetailViewController new];
+    detailVC.projectCode = self.dataArr[indexPath.row][@"project_code"];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 
