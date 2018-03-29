@@ -40,7 +40,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-pY-YaF">
                     <rect key="frame" x="45" y="402" width="125" height="125"/>
-                    <state key="normal" backgroundImage="设置"/>
+                    <state key="normal" backgroundImage="项目管理"/>
                     <connections>
                         <action selector="itemManager:" destination="-1" eventType="touchUpInside" id="W8L-4q-1ul"/>
                     </connections>
@@ -84,8 +84,8 @@
     <resources>
         <image name="个人信息" width="129" height="129"/>
         <image name="提交信息" width="129" height="129"/>
-        <image name="设置" width="129" height="129"/>
         <image name="项目查询" width="129" height="129"/>
+        <image name="项目管理" width="150" height="150"/>
         <image name="首页" width="360" height="640"/>
     </resources>
 </document>
