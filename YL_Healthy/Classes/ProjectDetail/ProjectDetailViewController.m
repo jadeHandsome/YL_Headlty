@@ -329,6 +329,8 @@
 }
 //获取项目详情
 - (void)getData {
+    
+    
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/getdetail" params:@{@"project_code":self.projectCode?self.projectCode:@""} withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata == nil) {
             return ;
