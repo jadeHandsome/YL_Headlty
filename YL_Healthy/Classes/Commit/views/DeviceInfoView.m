@@ -7,7 +7,7 @@
 //
 
 #import "DeviceInfoView.h"
-
+#import "DeviceChooseController.h"
 @interface DeviceInfoView()
 @property (nonatomic, strong) NSArray *outDevices;
 @property (nonatomic, strong) NSArray *chemicalDevices;
@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIView *personView;
 @property (nonatomic, assign) DeviceType type;
 @property (nonatomic, strong) UILabel *selectUnitLabel;
+@property (nonatomic, strong) UILabel *deviceLabel;
+@property (nonatomic, strong) UILabel *deviceCodeLabel;
 @end
 
 
@@ -86,6 +88,8 @@
 - (void)setUp{
     self.backgroundColor = [UIColor whiteColor];
     UIView *deviceContainer = [[UIView alloc] init];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseDevice)];
+    [deviceContainer addGestureRecognizer:tapGR];
     [self addSubview:deviceContainer];
     [deviceContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
@@ -99,14 +103,13 @@
         make.left.equalTo(deviceContainer).offset(15);
         make.centerY.equalTo(deviceContainer.mas_centerY);
     }];
-    UITextField *deviceField = [[UITextField alloc] init];
-    deviceField.placeholder = @"请输入";
-    deviceField.textAlignment = NSTextAlignmentRight;
-    deviceField.font = [UIFont systemFontOfSize:14];
-    deviceField.tag = -2;
-    [deviceField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
-    [deviceContainer addSubview:deviceField];
-    [deviceField mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel *deviceLabel = [[UILabel alloc] init];
+    deviceLabel.text = @"请选择";
+    deviceLabel.textAlignment = NSTextAlignmentRight;
+    deviceLabel.font = [UIFont systemFontOfSize:14];
+    self.deviceLabel = deviceLabel;
+    [deviceContainer addSubview:deviceLabel];
+    [deviceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(deviceContainer);
         make.right.equalTo(deviceContainer).offset(-15);
         make.left.equalTo(deviceTitle.mas_right).offset(15);
@@ -120,6 +123,8 @@
         make.height.mas_equalTo(1);
     }];
     UIView *deviceCodeContainer = [[UIView alloc] init];
+    UITapGestureRecognizer *tapGR1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseDevice)];
+    [deviceCodeContainer addGestureRecognizer:tapGR1];
     [self addSubview:deviceCodeContainer];
     [deviceCodeContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -134,14 +139,13 @@
         make.left.equalTo(deviceCodeContainer).offset(15);
         make.centerY.equalTo(deviceCodeContainer.mas_centerY);
     }];
-    UITextField *deviceCodeField = [[UITextField alloc] init];
-    deviceCodeField.placeholder = @"请输入";
-    deviceCodeField.textAlignment = NSTextAlignmentRight;
-    deviceCodeField.font = [UIFont systemFontOfSize:14];
-    deviceCodeField.tag = -1;
-    [deviceCodeField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
-    [deviceCodeContainer addSubview:deviceCodeField];
-    [deviceCodeField mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel *deviceCodeLabel = [[UILabel alloc] init];
+    deviceCodeLabel.text = @"请选择";
+    deviceCodeLabel.textAlignment = NSTextAlignmentRight;
+    deviceCodeLabel.font = [UIFont systemFontOfSize:14];
+    self.deviceCodeLabel = deviceCodeLabel;
+    [deviceCodeContainer addSubview:deviceCodeLabel];
+    [deviceCodeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(deviceCodeContainer);
         make.right.equalTo(deviceCodeContainer).offset(-15);
         make.left.equalTo(deviceCodeTitle.mas_right).offset(15);
@@ -348,15 +352,21 @@
     return action;
 }
 
+- (void)chooseDevice {
+    DeviceChooseController *chooseVC = [DeviceChooseController new];
+    chooseVC.deviceType =  self.type == OutDevice ? @"0" : self.type == ChemicalDevice ? @"2" : @"1";
+    chooseVC.block = ^(NSDictionary *dic) {
+        self.deviceLabel.text = dic[@"device_name"];
+        self.deviceCodeLabel.text = dic[@"device_code"];
+        self.dic[@"device_name"] = dic[@"device_name"];
+        self.dic[@"device_code"] = dic[@"device_code"];
+    };
+    [self.vc.navigationController pushViewController:chooseVC animated:YES];
+}
+
 - (void)fieldChange:(UITextField *)sender{
     NSInteger tag = sender.tag;
-    if (tag == -2) {
-        self.dic[@"device_name"] = sender.text;
-    }
-    else if (tag == -1) {
-        self.dic[@"device_code"] = sender.text;
-    }
-    else if (tag >= 0 && tag <= 3) {
+    if (tag >= 0 && tag <= 3) {
         if (self.type == OutDevice) {
             if (tag == 0) {
                 self.dic[@"use_temperature"] = sender.text;

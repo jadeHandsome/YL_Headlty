@@ -21,6 +21,8 @@
 		110ED61C206B492E00EEA83C /* ItemSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED61A206B492E00EEA83C /* ItemSearchController.xib */; };
 		110ED621206B795A00EEA83C /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED61F206B795A00EEA83C /* ItemCell.m */; };
 		110ED622206B795A00EEA83C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED620206B795A00EEA83C /* ItemCell.xib */; };
+		113EE402206C903C00332DAE /* DeviceChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113EE400206C903C00332DAE /* DeviceChooseController.m */; };
+		113EE403206C903C00332DAE /* DeviceChooseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113EE401206C903C00332DAE /* DeviceChooseController.xib */; };
 		11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */; };
 		11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0C2058F564005F09CD /* UIImage+Color.m */; };
 		11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DA0E2058F564005F09CD /* UIView+EX.m */; };
@@ -109,6 +111,9 @@
 		110ED61E206B795A00EEA83C /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		110ED61F206B795A00EEA83C /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		110ED620206B795A00EEA83C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		113EE3FF206C903C00332DAE /* DeviceChooseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceChooseController.h; sourceTree = "<group>"; };
+		113EE400206C903C00332DAE /* DeviceChooseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceChooseController.m; sourceTree = "<group>"; };
+		113EE401206C903C00332DAE /* DeviceChooseController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceChooseController.xib; sourceTree = "<group>"; };
 		11C5DA092058F564005F09CD /* CALayer+CircleBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CircleBoard.h"; sourceTree = "<group>"; };
 		11C5DA0A2058F564005F09CD /* CALayer+CircleBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CircleBoard.m"; sourceTree = "<group>"; };
 		11C5DA0B2058F564005F09CD /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -501,6 +506,9 @@
 				11C5DB3B205A50AC005F09CD /* CommitSuccessController.h */,
 				11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */,
 				11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */,
+				113EE3FF206C903C00332DAE /* DeviceChooseController.h */,
+				113EE400206C903C00332DAE /* DeviceChooseController.m */,
+				113EE401206C903C00332DAE /* DeviceChooseController.xib */,
 			);
 			path = Commit;
 			sourceTree = "<group>";
@@ -650,6 +658,7 @@
 				110ED61C206B492E00EEA83C /* ItemSearchController.xib in Resources */,
 				11C5DB1A205924FC005F09CD /* CommitItemController.xib in Resources */,
 				1A4287FA2058C54500139197 /* Assets.xcassets in Resources */,
+				113EE403206C903C00332DAE /* DeviceChooseController.xib in Resources */,
 				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
 				11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */,
 				11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */,
@@ -738,6 +747,7 @@
 				110ED61B206B492E00EEA83C /* ItemSearchController.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
 				11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */,
+				113EE402206C903C00332DAE /* DeviceChooseController.m in Sources */,
 				11C5DAE42058F565005F09CD /* TYTabButtonPagerController.m in Sources */,
 				11C5DAF22058F565005F09CD /* NSString+CZNSStringExt.m in Sources */,
 				11C5DAE82058F565005F09CD /* YHMath.m in Sources */,

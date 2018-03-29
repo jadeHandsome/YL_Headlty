@@ -9,6 +9,7 @@
 #import "CommitDeviceController.h"
 #import "DeviceInfoView.h"
 #import "CommitSuccessController.h"
+
 @interface CommitDeviceController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
