@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-#define baseURL @"http://39.107.92.147:8080/health/"
+#define baseURL @"http://192.168.0.105:8080/health/"
 @implementation KRMainNetTool
 singleton_implementation(KRMainNetTool)
 //不需要上传文件的接口方法
@@ -85,6 +85,7 @@ singleton_implementation(KRMainNetTool)
 //            if (waitView.tag != 10001) {
 //                [MBProgressHUD showError:@"网络错误" toView:waitView];
 //            }
+            [MBProgressHUD showError:response[@"message"] toView:waitView];
             complet(nil,response[@"message"]);
         }
         else {

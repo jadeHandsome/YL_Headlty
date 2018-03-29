@@ -28,7 +28,9 @@
     [self popOut];
     self.page = 1;
     self.navigationItem.title = @"设备选择";
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"deviceCell"];
+    [self requestData];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
     // Do any additional setup after loading the view from its nib.
 }
@@ -43,7 +45,7 @@
     NSDictionary *params = @{@"device_type":self.deviceType,@"page":@(self.page),@"rows":@100};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"device/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
-            [self.dataArr addObjectsFromArray:showdata];
+            [self.dataArr addObjectsFromArray:showdata[@"device_list"]];
             [self.tableView reloadData];
         }
     }];

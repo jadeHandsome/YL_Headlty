@@ -138,6 +138,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:self.preParams];
     params[@"device_list"] = list;
     params[@"project_type"] = @"0";
+    
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/saveinfo" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             CommitSuccessController *successVC = [CommitSuccessController new];

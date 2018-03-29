@@ -7,7 +7,7 @@
 //
 
 #import "ProjectDetailViewController.h"
-#import "ProjectDeatilModel.m"
+#import "ProjectDeatilModel.h"
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [self getData];
     self.view.backgroundColor = LRRGBColor(245, 245, 245);
+    self.navigationItem.title = @"项目详情";
 }
 - (void)setUp {
     if (!self.currentModel) {
@@ -45,6 +46,7 @@
             make.height.equalTo(@(45 * 4));
         }
     }];
+    topView.backgroundColor = [UIColor whiteColor];
     [self addHeader:topView];
     UIView *bottomView = [[UIView alloc]init];
     [contans addSubview:bottomView];
@@ -110,6 +112,7 @@
             make.height.equalTo(@1);
         }];
         line.backgroundColor = COLOR(220, 220, 220, 1);
+        temp = sub;
     }
     
 }
@@ -137,7 +140,15 @@
         make.right.equalTo(switchView.mas_right).with.offset(-15);
         make.centerY.equalTo(switchView.mas_centerY);
     }];
+    switchView.backgroundColor = [UIColor whiteColor];
     switchBtn.on = self.currentModel.finish_state.integerValue;
+    UIView *line = [[UIView alloc]init];
+    [switchView addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(switchView);
+        make.height.equalTo(@1);
+    }];
+    line.backgroundColor = LRRGBColor(222, 222, 222);
     NSInteger deviceCount = self.currentModel.device_list.count;
     UIView *temp = switchView;
     for (int i = 0; i < deviceCount; i ++) {
@@ -186,11 +197,12 @@
     UIView *bottomView = [[UIView alloc]init];
     [deviceView addSubview:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@((proArray.count / 2 + 1) * 120));
+        make.height.equalTo(@((proArray.count + 1) / 2 * 45 + 45));
         make.left.right.equalTo(deviceView);
         make.top.equalTo(topView.mas_bottom);
         make.bottom.equalTo(deviceView);
     }];
+    UIView *temp = nil;
     for (int i = 0; i < proArray.count; i ++) {
         NSDictionary *dic = proArray[i];
         UIView *proView = [self propertyViewWith:dic[@"title"] image:dic[@"image"] unit:dic[@"uniT"] detail:dic[@"detail"]];
@@ -199,21 +211,37 @@
             if (i == 0) {
                 make.top.equalTo(bottomView.mas_top);
                 make.left.equalTo(bottomView.mas_left).with.offset(15);
-                
             } else if (i == 1) {
                 make.top.equalTo(bottomView.mas_top);
                 make.left.equalTo(bottomView.mas_left).with.offset(SCREEN_WIDTH * 0.5);
             } else if (i == 2) {
-                make.top.equalTo(bottomView.mas_top).with.offset(120);
+                make.top.equalTo(bottomView.mas_top).with.offset(45);
                 make.left.equalTo(bottomView.mas_left).with.offset(15);
             } else {
-                make.top.equalTo(bottomView.mas_top).with.offset(120);
+                make.top.equalTo(bottomView.mas_top).with.offset(45);
                 make.left.equalTo(bottomView.mas_left).with.offset(SCREEN_WIDTH * 0.5);
             }
             make.width.equalTo(@((SCREEN_WIDTH - 30) * 0.5));
-            make.height.equalTo(@120);
+            make.height.equalTo(@45);
         }];
+        temp = proView;
+        
     }
+    
+    UIView *nameView = [self addCellStylewithtitleText:@"设备使用人" detailText:deviceModel.use_name];
+    [bottomView addSubview:nameView];
+    UIView *line1 = [[UIView alloc]init];
+    [nameView addSubview:line1];
+    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(nameView);
+        make.height.equalTo(@1);
+    }];
+    line1.backgroundColor = LRRGBColor(222, 222, 222);
+    [nameView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(temp.mas_bottom);
+        make.height.equalTo(@45);
+        make.left.right.equalTo(bottomView);
+    }];
     
 }
 - (UIView *)propertyViewWith:(NSString *)title image:(NSString *)imageName unit:(NSString *)uniT detail:(NSString *)detail {

@@ -96,7 +96,7 @@
 
 
 - (void)searchAction {
-    NSDictionary *params = @{@"project_name":@"",@"page":@(self.page),@"rows":@20};
+    NSDictionary *params = @{@"page":@(self.page),@"rows":@20,@"project_type":@"1"};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             if (self.page == 1) {
@@ -154,14 +154,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

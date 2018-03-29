@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (weak, nonatomic) IBOutlet UITextField *projectCodeField;
+@property (weak, nonatomic) IBOutlet UITextField *daysTextField;
 
 @end
 
@@ -42,11 +43,11 @@
         [self showHUDWithText:@"请输入公司名称"];
         return;
     }
-    if ([self.daysLabel.text isEqualToString:@"请选择"]) {
-        [self showHUDWithText:@"请选择完成天数"];
+    if ([self cheakIsNull:self.daysTextField.text]) {
+        [self showHUDWithText:@"请输入完成天数"];
         return;
     }
-    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysLabel.text.integerValue),@"finish_state":self.completeSwitch.state ? @"1" : @"0"};
+    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":self.completeSwitch.state ? @"1" : @"0"};
     CommitDeviceController *deviceVC = [CommitDeviceController new];
     deviceVC.preParams = params;
     [self.navigationController pushViewController:deviceVC animated:YES];

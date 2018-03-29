@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="comNameField" destination="kej-8m-5VW" id="ZOm-5H-EXo"/>
                 <outlet property="completeSwitch" destination="unJ-yE-JZ7" id="i9m-1O-T78"/>
+                <outlet property="daysTextField" destination="feX-bE-1WY" id="JdV-u4-1cL"/>
                 <outlet property="itemNameField" destination="G3b-Ep-y42" id="Dr6-WI-vf8"/>
                 <outlet property="nextBtn" destination="YWZ-dq-psF" id="RpZ-qN-mI7"/>
                 <outlet property="projectCodeField" destination="Cza-FM-JPb" id="Wbq-lF-CIl"/>
