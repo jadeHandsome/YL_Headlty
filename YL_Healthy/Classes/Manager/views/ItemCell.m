@@ -12,8 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    LRViewBorderRadius(self.container, 10, 1, [UIColor groupTableViewBackgroundColor]);
+    LRViewBorderRadius(self.container, 10, 1, [UIColor lightGrayColor]);
     // Initialization code
+}
+- (IBAction)switchChange:(UISwitch *)sender {
+    self.block(sender.on);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

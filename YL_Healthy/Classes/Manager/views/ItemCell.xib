@@ -38,7 +38,10 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-0n-vGi">
                                         <rect key="frame" x="241" y="5" width="51" height="31"/>
-                                        <color key="tintColor" red="0.31372549020000001" green="0.64313725489999995" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.31372549020000001" green="0.64313725489999995" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="switchChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="AbE-uD-QAM"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -40,7 +40,7 @@
     }
     NSDictionary *params = @{@"old_psw":self.oldPwdField.text,@"new_psw":self.NewPwdField.text};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"user/updatepsw" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
-        if (showdata) {
+        if (!error) {
             [self showHUDWithText:@"修改成功"];
             [self performSelector:@selector(popOutAction) withObject:nil afterDelay:1.0];
         }

@@ -33,7 +33,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zly-Ej-Qmg">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zly-Ej-Qmg">
                             <rect key="frame" x="300" y="15" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="GjO-F6-jaW"/>
@@ -125,27 +125,32 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qza-2q-qfs">
-                            <rect key="frame" x="304" y="10" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qza-2q-qfs">
+                            <rect key="frame" x="304.5" y="10" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Gq4-tJ-QIL"/>
                                 <constraint firstAttribute="width" constant="30" id="IaT-oR-M5i"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" image="女"/>
+                            <state key="selected" image="女_S"/>
+                            <connections>
+                                <action selector="sex:" destination="-1" eventType="touchUpInside" id="t4y-RB-aKr"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-cq-TsZ">
-                            <rect key="frame" x="268.5" y="16" width="15.5" height="18"/>
+                            <rect key="frame" x="269" y="16" width="15.5" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tid-I5-lCQ">
-                            <rect key="frame" x="228.5" y="10" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tid-I5-lCQ">
+                            <rect key="frame" x="229" y="10" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Ir5-H2-fIs"/>
                                 <constraint firstAttribute="width" constant="30" id="N5j-kw-cfS"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" image="男"/>
+                            <state key="selected" image="男_S"/>
                             <connections>
                                 <action selector="sex:" destination="-1" eventType="touchUpInside" id="Nf6-4Y-ZZS"/>
                             </connections>
@@ -234,5 +239,10 @@
     </objects>
     <resources>
         <image name="ic_right_black" width="48" height="48"/>
+        <image name="logo" width="96" height="125"/>
+        <image name="女" width="22" height="22"/>
+        <image name="女_S" width="22" height="22"/>
+        <image name="男" width="22" height="22"/>
+        <image name="男_S" width="22" height="22"/>
     </resources>
 </document>

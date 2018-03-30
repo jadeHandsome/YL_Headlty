@@ -52,6 +52,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self search];
+}
+
 - (void)getMore{
     self.page ++;
     [self searchAction];
@@ -67,7 +71,10 @@
 }
 
 
+
+
 - (void)searchAction {
+    [self.view endEditing:YES];
     NSDictionary *params = @{@"project_name":self.searchBar.text,@"page":@(self.page),@"rows":@20};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
@@ -75,9 +82,14 @@
                 self.dataArr = [showdata[@"project_list"] mutableCopy];
             }
             else{
-                [self.dataArr addObjectsFromArray:showdata];
+                if ([showdata[@"project_list"] count]) {
+                    [self.dataArr addObjectsFromArray:showdata[@"project_list"]];
+                }
             }
             [self.tableView reloadData];
+            if (self.page >= [showdata[@"page_total"] integerValue]) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
         }
     }];
 }
@@ -108,6 +120,14 @@
         cell.completeSwitch.hidden = YES;
         cell.daysText.hidden = YES;
     }
+    cell.block = ^(BOOL state) {
+        NSDictionary *params = @{@"project_code":dic[@"project_code"],@"finish_state":state?@"1":@"0"};
+        [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
+            if (!error) {
+                [self showHUDWithText:@"更改状态成功"];
+            }
+        }];
+    };
     return cell;
 }
 

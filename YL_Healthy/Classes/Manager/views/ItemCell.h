@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^switchBlock) (BOOL);
 @interface ItemCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *container;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *days;
 @property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *daysText;
-
+@property (nonatomic, strong) switchBlock block;
 @end
