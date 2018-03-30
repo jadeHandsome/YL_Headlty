@@ -292,6 +292,7 @@
         nameField.textAlignment = NSTextAlignmentRight;
         nameField.font = [UIFont systemFontOfSize:14];
         nameField.tag = i + 4;
+        nameField.text = self.persons[i];
         [nameContainer addSubview:nameField];
         [nameField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
         [nameField mas_makeConstraints:^(MASConstraintMaker *make) {
