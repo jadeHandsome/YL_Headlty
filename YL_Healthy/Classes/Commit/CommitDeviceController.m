@@ -141,7 +141,7 @@
     params[@"project_type"] = @"0";
     
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/saveinfo" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
-        if (showdata) {
+        if (!error) {
             CommitSuccessController *successVC = [CommitSuccessController new];
             [self.navigationController pushViewController:successVC animated:YES];
         }

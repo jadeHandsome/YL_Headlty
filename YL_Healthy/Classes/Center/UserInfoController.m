@@ -62,7 +62,12 @@
     NSString *sex = self.preBtn == self.nanBtn ? @"2" : @"1";
     NSDictionary *params = @{@"real_name":self.nameField.text,@"nick_name":self.nickField.text,@"birthday":self.dateLabel.text,@"sex":sex};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"user/infoupdate" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
-        if (showdata) {
+        if (!error) {
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:params];
+            dic[@"token"] = SharedKRUserInfo.token;
+            [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"userInfo"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [SharedKRUserInfo setValuesForKeysWithDictionary:dic];
             [self showHUDWithText:@"保存成功"];
         }
     }];

@@ -34,14 +34,17 @@
     [super viewDidLoad];
     [self popOut];
     self.navigationItem.title = @"项目管理";
-    [self popOut];
     [self search];
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemCell"];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)add {
+    AddManagerProViewController *add = [AddManagerProViewController new];
+    [self.navigationController pushViewController:add animated:YES];
+}
 - (void)getMore{
     self.page ++;
     [self searchAction];
@@ -54,16 +57,21 @@
 
 
 - (void)searchAction {
-    NSDictionary *params = @{@"page":@(self.page),@"rows":@20,@"project_type":@"1"};
+    NSDictionary *params = @{@"page":@(self.page),@"rows":@20,@"project_name":@""};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             if (self.page == 1) {
                 self.dataArr = [showdata[@"project_list"] mutableCopy];
             }
             else{
-                [self.dataArr addObjectsFromArray:showdata];
+                if ([showdata[@"project_list"] count]) {
+                    [self.dataArr addObjectsFromArray:showdata[@"project_list"]];
+                }
             }
             [self.tableView reloadData];
+            if (self.page >= [showdata[@"page_total"] integerValue]) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
         }
     }];
 }
@@ -94,6 +102,14 @@
         cell.completeSwitch.hidden = YES;
         cell.daysText.hidden = YES;
     }
+    cell.block = ^(BOOL state) {
+        NSDictionary *params = @{@"project_code":dic[@"project_code"],@"finish_state":state?@"1":@"0"};
+        [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
+            if (!error) {
+                [self showHUDWithText:@"更改状态成功"];
+            }
+        }];
+    };
     return cell;
 }
 
@@ -104,10 +120,8 @@
     detailVC.projectCode = self.dataArr[indexPath.row][@"project_code"];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
-- (IBAction)addItem:(UIButton *)sender {
-    AddManagerProViewController *add = [AddManagerProViewController new];
-    [self.navigationController pushViewController:add animated:YES];
-}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

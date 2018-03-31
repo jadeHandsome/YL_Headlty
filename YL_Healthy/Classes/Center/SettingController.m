@@ -34,7 +34,7 @@
 }
 - (IBAction)logout:(UIButton *)sender {
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"user/logout" params:nil withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
-        if (showdata) {
+        if (!error) {
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userInfo"];
             SharedKRUserInfo.token = nil;
             LoginViewController *loginVC = [LoginViewController new];
