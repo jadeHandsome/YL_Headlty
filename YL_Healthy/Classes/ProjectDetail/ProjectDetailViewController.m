@@ -48,9 +48,9 @@
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(contans);
         if ([self.currentModel.project_type isEqualToString:@"0"]) {
-            make.height.equalTo(@(45 * 3));
-        } else {
             make.height.equalTo(@(45 * 4));
+        } else {
+            make.height.equalTo(@(45 * 5));
         }
     }];
     topView.backgroundColor = [UIColor whiteColor];
@@ -82,13 +82,13 @@
     NSArray *titleArray = nil;
     NSArray *detailArray = nil;
     if ([self.currentModel.project_type isEqualToString:@"0"]) {
-        titleArray = @[@"项目名称",@"公司名称",@"完成天数"];
-        detailArray = @[self.currentModel.project_name,self.currentModel.company_name,self.currentModel.finish_days];
-        count = 3;
-    } else {
-        titleArray = @[@"项目名称",@"项目编号",@"开始时间",@"结束时间"];
-        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.start_time,self.currentModel.finish_time];
+        titleArray = @[@"项目名称",@"项目编号",@"公司名称",@"完成天数"];
+        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.company_name,self.currentModel.finish_days];
         count = 4;
+    } else {
+        titleArray = @[@"项目名称",@"项目编号",@"项目类型",@"开始时间",@"结束时间"];
+        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.project_type,self.currentModel.start_time,self.currentModel.finish_time];
+        count = 5;
     }
     UIView *temp =  superView;
     
@@ -202,7 +202,7 @@
     } else {
         //化学试剂
         topView = [self addCellStylewithtitleText:@"化学试剂" detailText:deviceModel.device_name];
-        NSDictionary *liang = @{@"title":@"使用量：",@"uniT":@"°C",@"detail":deviceModel.use_amount,@"image":@"温度计"};
+        NSDictionary *liang = @{@"title":@"使用量：",@"uniT":@"",@"detail":deviceModel.use_amount,@"image":@"温度计"};
         proArray = @[liang];
     }
     [deviceView addSubview:topView];
