@@ -78,6 +78,10 @@
 		11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB39205A1AF5005F09CD /* DeviceInfoView.m */; };
 		11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */; };
 		11C5DB3F205A50AC005F09CD /* CommitSuccessController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */; };
+		1A154517206F84B000260AB3 /* AddManagerProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A154515206F84B000260AB3 /* AddManagerProViewController.m */; };
+		1A154518206F84B000260AB3 /* AddManagerProViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A154516206F84B000260AB3 /* AddManagerProViewController.xib */; };
+		1A15451C206F8CA200260AB3 /* AddWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A15451A206F8CA200260AB3 /* AddWorkViewController.m */; };
+		1A15451D206F8CA200260AB3 /* AddWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15451B206F8CA200260AB3 /* AddWorkViewController.xib */; };
 		1A4287F22058C54500139197 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287F12058C54500139197 /* AppDelegate.m */; };
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
@@ -220,6 +224,12 @@
 		11C5DB3B205A50AC005F09CD /* CommitSuccessController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitSuccessController.h; sourceTree = "<group>"; };
 		11C5DB3C205A50AC005F09CD /* CommitSuccessController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitSuccessController.m; sourceTree = "<group>"; };
 		11C5DB3D205A50AC005F09CD /* CommitSuccessController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitSuccessController.xib; sourceTree = "<group>"; };
+		1A154514206F84B000260AB3 /* AddManagerProViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddManagerProViewController.h; sourceTree = "<group>"; };
+		1A154515206F84B000260AB3 /* AddManagerProViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddManagerProViewController.m; sourceTree = "<group>"; };
+		1A154516206F84B000260AB3 /* AddManagerProViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddManagerProViewController.xib; sourceTree = "<group>"; };
+		1A154519206F8CA200260AB3 /* AddWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddWorkViewController.h; sourceTree = "<group>"; };
+		1A15451A206F8CA200260AB3 /* AddWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddWorkViewController.m; sourceTree = "<group>"; };
+		1A15451B206F8CA200260AB3 /* AddWorkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkViewController.xib; sourceTree = "<group>"; };
 		1A4287ED2058C54500139197 /* YL_Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YL_Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4287F02058C54500139197 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A4287F12058C54500139197 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -262,6 +272,9 @@
 				110ED618206B492E00EEA83C /* ItemSearchController.h */,
 				110ED619206B492E00EEA83C /* ItemSearchController.m */,
 				110ED61A206B492E00EEA83C /* ItemSearchController.xib */,
+				1A154514206F84B000260AB3 /* AddManagerProViewController.h */,
+				1A154515206F84B000260AB3 /* AddManagerProViewController.m */,
+				1A154516206F84B000260AB3 /* AddManagerProViewController.xib */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -561,6 +574,9 @@
 				1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */,
 				1ABBBDF4206BB59100EF5E73 /* ProjectIncidentModel.h */,
 				1ABBBDF5206BB59100EF5E73 /* ProjectIncidentModel.m */,
+				1A154519206F8CA200260AB3 /* AddWorkViewController.h */,
+				1A15451A206F8CA200260AB3 /* AddWorkViewController.m */,
+				1A15451B206F8CA200260AB3 /* AddWorkViewController.xib */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -651,6 +667,7 @@
 				11C5DB3F205A50AC005F09CD /* CommitSuccessController.xib in Resources */,
 				110ED616206B2F9600EEA83C /* UserInfoController.xib in Resources */,
 				11C5DB14205919FA005F09CD /* KRDatePicker.xib in Resources */,
+				1A154518206F84B000260AB3 /* AddManagerProViewController.xib in Resources */,
 				110ED622206B795A00EEA83C /* ItemCell.xib in Resources */,
 				110ED611206B2CBA00EEA83C /* AboutController.xib in Resources */,
 				11C5DB0A2059017E005F09CD /* LoginViewController.xib in Resources */,
@@ -661,6 +678,7 @@
 				113EE403206C903C00332DAE /* DeviceChooseController.xib in Resources */,
 				11C5DAEF2058F565005F09CD /* MBProgressHUD.bundle in Resources */,
 				11C5DB0F20591038005F09CD /* CompleteInfoController.xib in Resources */,
+				1A15451D206F8CA200260AB3 /* AddWorkViewController.xib in Resources */,
 				11C5DB052058FDD8005F09CD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,6 +780,7 @@
 				11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */,
 				11C5DAC92058F565005F09CD /* NSString+Category.m in Sources */,
 				11C5DB19205924FC005F09CD /* CommitItemController.m in Sources */,
+				1A154517206F84B000260AB3 /* AddManagerProViewController.m in Sources */,
 				1A4287F22058C54500139197 /* AppDelegate.m in Sources */,
 				11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */,
 				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
@@ -782,6 +801,7 @@
 				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,
 				11C5DACD2058F565005F09CD /* KRMainNetTool.m in Sources */,
 				11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */,
+				1A15451C206F8CA200260AB3 /* AddWorkViewController.m in Sources */,
 				11C5DB35205A17C6005F09CD /* CommitDeviceController.m in Sources */,
 				11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */,
 				11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */,
@@ -915,7 +935,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XZN34NH8JQ;
+				DEVELOPMENT_TEAM = 96SAHL399V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
@@ -928,7 +948,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "text.YL-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = health.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -940,7 +960,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XZN34NH8JQ;
+				DEVELOPMENT_TEAM = 96SAHL399V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
@@ -953,7 +973,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "text.YL-Healthy";
+				PRODUCT_BUNDLE_IDENTIFIER = health.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

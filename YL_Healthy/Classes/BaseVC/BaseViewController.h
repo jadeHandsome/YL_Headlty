@@ -11,6 +11,7 @@
 @interface BaseViewController : UIViewController
 //pop退出
 - (void)popOut;
+- (void)popOutAction;
 //NSUserDefaults存
 - (void)saveToUserDefaultsWithKey:(NSString *)key Value:(id)value;
 //NSUserDefaults取

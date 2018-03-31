@@ -23,6 +23,7 @@
 #pragma  mark ----- pop退出
 - (void)popOut{
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(popOutAction)];
+//    [self popOutAction];
 }
 
 - (void)popOutAction{

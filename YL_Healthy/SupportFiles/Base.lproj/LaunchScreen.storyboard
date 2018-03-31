@@ -20,7 +20,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qidong" translatesAutoresizingMaskIntoConstraints="NO" id="ork-8g-Znd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4M-Xr-A2N">
+                                <rect key="frame" x="101.5" y="608" width="171.5" height="39"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Copyright@2018 ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="重庆优量健康管理有限公司">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w4M-Xr-A2N" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1wy-xj-jG7"/>
+                            <constraint firstAttribute="trailing" secondItem="ork-8g-Znd" secondAttribute="trailing" id="Pg3-Vg-Lnd"/>
+                            <constraint firstItem="ork-8g-Znd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="RAr-zq-0k1"/>
+                            <constraint firstItem="NBp-J7-Lll" firstAttribute="top" secondItem="ork-8g-Znd" secondAttribute="bottom" id="gFH-tP-PaG"/>
+                            <constraint firstItem="NBp-J7-Lll" firstAttribute="top" secondItem="w4M-Xr-A2N" secondAttribute="bottom" constant="20" id="opX-D7-frb"/>
+                            <constraint firstItem="ork-8g-Znd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rpB-rT-tUx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,4 +59,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="qidong" width="1242" height="2208"/>
+    </resources>
 </document>

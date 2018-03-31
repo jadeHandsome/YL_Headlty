@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #define baseURL @"http://39.107.92.147:8080/health/"
+//#define baseURL @"http://192.168.0.106:8080/health/"
+
 @implementation KRMainNetTool
 singleton_implementation(KRMainNetTool)
 //不需要上传文件的接口方法
@@ -77,7 +79,7 @@ singleton_implementation(KRMainNetTool)
         //判断返回的状态，200即为服务器查询成功，500服务器查询失败
         if ([code isEqualToString:@"S"]) {
             if (model == nil) {
-                complet(response[@"bizContent"],nil);
+                complet(response[@"bizContent"] ? response[@"bizContent"]:response[@"message"],nil);
             } else {
                 complet([self getModelArrayWith:response[@"bizContent"] andModel:model],nil);
             }

@@ -8,6 +8,7 @@
 
 #import "ProjectDetailViewController.h"
 #import "ProjectDeatilModel.h"
+#import "AddWorkViewController.h"
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
@@ -17,13 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getData];
+    
     self.view.backgroundColor = LRRGBColor(245, 245, 245);
     self.navigationItem.title = @"项目详情";
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [self getData];
 }
 - (void)setUp {
     if (!self.currentModel) {
         return;
+    }
+    for (UIView *sub in self.view.subviews) {
+        [sub removeFromSuperview];
     }
     self.mainScoll = [[UIScrollView alloc]init];
     [self.view addSubview:self.mainScoll];
@@ -51,6 +58,7 @@
     UIView *bottomView = [[UIView alloc]init];
     [contans addSubview:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
         make.top.equalTo(topView.mas_bottom);
         make.left.right.bottom.equalTo(contans);
     }];
@@ -59,8 +67,15 @@
         [self setUpdeviceProject:bottomView];
     } else {
         //事件项目
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWork)];
         [self setUpWorkProject:bottomView];
     }
+}
+- (void)addWork {
+    //添加工作记录
+    AddWorkViewController *add = [[AddWorkViewController alloc]init];
+    add.proCode = self.projectCode;
+    [self.navigationController pushViewController:add animated:YES];
 }
 - (void)addHeader:(UIView *)superView {
     NSInteger count = 0;
@@ -71,8 +86,8 @@
         detailArray = @[self.currentModel.project_name,self.currentModel.company_name,self.currentModel.finish_days];
         count = 3;
     } else {
-        titleArray = @[@"项目名称",@"公司名称",@"开始时间",@"结束时间"];
-        detailArray = @[self.currentModel.project_name,self.currentModel.company_name,self.currentModel.start_time,self.currentModel.finish_time];
+        titleArray = @[@"项目名称",@"项目编号",@"开始时间",@"结束时间"];
+        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.start_time,self.currentModel.finish_time];
         count = 4;
     }
     UIView *temp =  superView;
@@ -118,8 +133,9 @@
 }
 #pragma -- mark 布局设备项目
 - (void)setUpdeviceProject:(UIView *)superView {
-    superView.backgroundColor = [UIColor whiteColor];
+//    superView.backgroundColor = [UIColor whiteColor];
     UIView *switchView = [[UIView alloc]init];
+    switchView.backgroundColor = [UIColor whiteColor];
     [superView addSubview:switchView];
     [switchView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(superView.mas_top).with.offset(10);
@@ -194,6 +210,7 @@
         make.top.left.right.equalTo(deviceView);
         make.height.equalTo(@45);
     }];
+    deviceView.backgroundColor = [UIColor whiteColor];
     UIView *bottomView = [[UIView alloc]init];
     [deviceView addSubview:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -202,6 +219,7 @@
         make.top.equalTo(topView.mas_bottom);
         make.bottom.equalTo(deviceView);
     }];
+    bottomView.backgroundColor = [UIColor whiteColor];
     UIView *temp = nil;
     for (int i = 0; i < proArray.count; i ++) {
         NSDictionary *dic = proArray[i];
@@ -294,8 +312,9 @@
 }
 #pragma -- mark 布局事件项目
 - (void)setUpWorkProject:(UIView *)superView {
-    superView.backgroundColor = [UIColor whiteColor];
-    UIView *topView = [self addCellStylewithtitleText:@"事件列表" detailText:nil];
+//    superView.backgroundColor = [UIColor whiteColor];
+    UIView *topView = [self addCellStylewithtitleText:@"工作记录：" detailText:nil];
+    topView.backgroundColor = [UIColor whiteColor];
     [superView addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(superView.mas_top).with.offset(10);
@@ -319,6 +338,7 @@
 }
 - (UIView *)workView:(NSString *)time content:(NSString *)content {
     UIView *workView = [[UIView alloc]init];
+    workView.backgroundColor = [UIColor whiteColor];
     UILabel *timeLabel = [[UILabel alloc]init];
     [workView addSubview:timeLabel];
     [timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -337,7 +357,7 @@
         make.right.equalTo(workView.mas_right);
         make.height.equalTo(@1);
     }];
-    line.backgroundColor = LRRGBColor(222, 222, 222);
+//    line.backgroundColor = LRRGBColor(222, 222, 222);
     UILabel *contentLabel = [[UILabel alloc]init];
     [workView addSubview:contentLabel];
     [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -349,6 +369,13 @@
     contentLabel.font = [UIFont systemFontOfSize:14];
     contentLabel.numberOfLines = 0;
     contentLabel.text = content;
+    UIView *line1 = [[UIView alloc]init];
+    [workView addSubview:line1];
+    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(workView);
+        make.height.equalTo(@1);
+    }];
+    line1.backgroundColor = LRRGBColor(222, 222, 222);
     return workView;
 }
 - (void)didReceiveMemoryWarning {

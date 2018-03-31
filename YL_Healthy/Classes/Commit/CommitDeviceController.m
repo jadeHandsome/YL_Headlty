@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIView *temp;
 @property (nonatomic, strong) UIButton *addBtn;
 @property (nonatomic, strong) NSMutableArray *viewsArr;
+
 @end
 
 @implementation CommitDeviceController
