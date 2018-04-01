@@ -28,11 +28,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.searchBar becomeFirstResponder];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self popOut];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStyleDone target:self action:@selector(search)];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SIZEWIDTH - 100, 35)];
     searchBar.delegate = self;

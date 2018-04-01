@@ -34,12 +34,15 @@
     [super viewDidLoad];
     [self popOut];
     self.navigationItem.title = @"项目管理";
-    [self search];
+    
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemCell"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [self search];
 }
 - (void)add {
     AddManagerProViewController *add = [AddManagerProViewController new];
