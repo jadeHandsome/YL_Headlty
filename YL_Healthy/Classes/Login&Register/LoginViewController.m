@@ -31,7 +31,28 @@
     LRViewBorderRadius(self.accountContainer, 22.5, 1, ThemeColor);
     LRViewBorderRadius(self.pwdContainer, 22.5, 1, ThemeColor);
     LRViewBorderRadius(self.loginBtn, 22.5, 1, ThemeColor);
+    NSString *isLog = [[NSUserDefaults standardUserDefaults]objectForKey:@"login"];
+    if (isLog) {
+        if (isLog.integerValue) {
+            self.remenberPwdBtn.selected = YES;
+        }
+    }
+    
+    
     // Do any additional setup after loading the view from its nib.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+- (void)viewDidAppear:(BOOL)animated {
+    NSString *isLog = [[NSUserDefaults standardUserDefaults]objectForKey:@"login"];
+    if (isLog) {
+        if (isLog.integerValue) {
+            self.accountField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"userName"];
+            self.pwdField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"pwd"];
+            [self loginAction:nil];
+        }
+    }
 }
 - (IBAction)remenberPwd:(UIButton *)sender {
     sender.selected = !sender.selected;
@@ -56,6 +77,13 @@
                 return ;
             }
             else{
+                if (self.remenberPwdBtn.selected) {
+                    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"login"];
+                    [[NSUserDefaults standardUserDefaults] setObject:self.accountField.text forKey:@"userName"];
+                    [[NSUserDefaults standardUserDefaults] setObject:self.pwdField.text forKey:@"pwd"];
+                } else {
+                    [[NSUserDefaults standardUserDefaults]setObject:@"0" forKey:@"login"];
+                }
                 SharedKRUserInfo.token = showdata[@"token"];
                 if ([showdata[@"user_init_flag"] isEqualToString:@"0"]) {
                     //去完善信息

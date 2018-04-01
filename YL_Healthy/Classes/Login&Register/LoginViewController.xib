@@ -88,20 +88,20 @@
                         <constraint firstAttribute="trailing" secondItem="EsF-Ca-2ST" secondAttribute="trailing" constant="15" id="ykB-pd-Jfz"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCL-lV-K7g">
-                    <rect key="frame" x="65.5" y="375" width="15" height="15"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCL-lV-K7g">
+                    <rect key="frame" x="65" y="375" width="15" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="15" id="Aj2-38-GQZ"/>
                         <constraint firstAttribute="height" constant="15" id="NXm-Tv-G0R"/>
                     </constraints>
-                    <state key="normal" backgroundImage="打勾拷贝"/>
-                    <state key="selected" backgroundImage="打勾"/>
+                    <state key="normal" image="打勾拷贝"/>
+                    <state key="selected" image="打勾"/>
                     <connections>
                         <action selector="remenberPwd:" destination="-1" eventType="touchUpInside" id="1Kl-g8-XeQ"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-qs-x21">
-                    <rect key="frame" x="90.5" y="375.5" width="45" height="13.5"/>
+                    <rect key="frame" x="90" y="375" width="45" height="13.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>

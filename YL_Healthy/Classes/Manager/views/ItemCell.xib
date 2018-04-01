@@ -43,13 +43,41 @@
                                             <action selector="switchChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="AbE-uD-QAM"/>
                                         </connections>
                                     </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-5D-4bc">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目编号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zC7-oc-c73">
+                                                <rect key="frame" x="10" y="12.5" width="66.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目类型：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-D7-fIl">
+                                                <rect key="frame" x="223.5" y="12.5" width="66.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="9Z5-D7-fIl" firstAttribute="centerY" secondItem="uW7-5D-4bc" secondAttribute="centerY" id="7Og-p3-Vpi"/>
+                                            <constraint firstItem="zC7-oc-c73" firstAttribute="centerY" secondItem="uW7-5D-4bc" secondAttribute="centerY" id="DX8-tn-ssm"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Z5-D7-fIl" secondAttribute="trailing" constant="10" id="YJL-yK-IYV"/>
+                                            <constraint firstItem="zC7-oc-c73" firstAttribute="leading" secondItem="uW7-5D-4bc" secondAttribute="leading" constant="10" id="hEn-GT-EjU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uW7-5D-4bc" secondAttribute="bottom" id="0mf-b6-Mmn"/>
                                     <constraint firstItem="LAn-0n-vGi" firstAttribute="centerY" secondItem="Xr8-05-h7H" secondAttribute="centerY" id="4WR-II-tJB"/>
                                     <constraint firstItem="NCC-Nz-gsk" firstAttribute="centerY" secondItem="Xr8-05-h7H" secondAttribute="centerY" id="8Ou-Jg-PD8"/>
                                     <constraint firstItem="NCC-Nz-gsk" firstAttribute="leading" secondItem="Xr8-05-h7H" secondAttribute="leading" constant="10" id="Soh-UO-CzL"/>
+                                    <constraint firstItem="uW7-5D-4bc" firstAttribute="leading" secondItem="Xr8-05-h7H" secondAttribute="leading" id="W3H-6r-TXp"/>
+                                    <constraint firstItem="uW7-5D-4bc" firstAttribute="top" secondItem="Xr8-05-h7H" secondAttribute="top" id="WHY-9h-fKT"/>
                                     <constraint firstItem="Mej-df-oef" firstAttribute="leading" secondItem="NCC-Nz-gsk" secondAttribute="trailing" id="WKK-7W-6kt"/>
+                                    <constraint firstAttribute="trailing" secondItem="uW7-5D-4bc" secondAttribute="trailing" id="Y6G-Rg-YwE"/>
                                     <constraint firstItem="Mej-df-oef" firstAttribute="centerY" secondItem="Xr8-05-h7H" secondAttribute="centerY" id="ngd-8w-kbb"/>
                                     <constraint firstAttribute="height" constant="40" id="vLn-L6-rw8"/>
                                     <constraint firstAttribute="trailing" secondItem="LAn-0n-vGi" secondAttribute="trailing" constant="10" id="yWM-nM-aa7"/>
@@ -117,6 +145,9 @@
                 <outlet property="daysText" destination="NCC-Nz-gsk" id="5ni-x2-d2L"/>
                 <outlet property="itemName" destination="rtJ-Ks-Ncd" id="cFp-PV-3za"/>
                 <outlet property="itemTime" destination="sTo-Te-qmo" id="dFj-Ul-476"/>
+                <outlet property="proCodeLabel" destination="zC7-oc-c73" id="d6z-FM-A5E"/>
+                <outlet property="proTypeLabel" destination="9Z5-D7-fIl" id="8n2-OF-jir"/>
+                <outlet property="typeView" destination="uW7-5D-4bc" id="eLp-Yd-Y8K"/>
             </connections>
         </tableViewCell>
     </objects>

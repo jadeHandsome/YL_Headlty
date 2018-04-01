@@ -15,5 +15,8 @@ typedef void (^switchBlock) (BOOL);
 @property (weak, nonatomic) IBOutlet UILabel *days;
 @property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *daysText;
+@property (weak, nonatomic) IBOutlet UIView *typeView;
+@property (weak, nonatomic) IBOutlet UILabel *proCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *proTypeLabel;
 @property (nonatomic, strong) switchBlock block;
 @end

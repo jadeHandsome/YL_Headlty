@@ -156,6 +156,7 @@
         make.right.equalTo(switchView.mas_right).with.offset(-15);
         make.centerY.equalTo(switchView.mas_centerY);
     }];
+    [switchBtn addTarget:self action:@selector(statusChange:) forControlEvents:UIControlEventValueChanged];
     switchView.backgroundColor = [UIColor whiteColor];
     switchBtn.on = self.currentModel.finish_state.integerValue;
     UIView *line = [[UIView alloc]init];
@@ -381,6 +382,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)statusChange:(UISwitch *)sender {
+    NSDictionary *params = @{@"project_code":self.projectCode,@"finish_state":sender.on?@"1":@"0"};
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
+        if (!error) {
+            [self showHUDWithText:@"更改状态成功"];
+        }
+    }];
 }
 //获取项目详情
 - (void)getData {

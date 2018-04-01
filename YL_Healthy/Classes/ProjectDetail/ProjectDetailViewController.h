@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ProjectDetailViewController : UIViewController
+#import "BaseViewController.h"
+@interface ProjectDetailViewController : BaseViewController
 @property (nonatomic, strong) NSString *projectCode;
 @end

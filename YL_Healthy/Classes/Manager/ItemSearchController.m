@@ -100,7 +100,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    [self.tableView tableViewDisplayWitMsg:@"暂无项目" ifNecessaryForRowCount:self.dataArr.count];
     return self.dataArr.count;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.searchBar resignFirstResponder];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -114,11 +118,17 @@
         cell.daysText.hidden = NO;
         cell.days.text = [NSString stringWithFormat:@"%ld",[dic[@"finish_days"] integerValue]];
         cell.completeSwitch.on = [dic[@"finish_state"] isEqualToString:@"1"] ? YES : NO;
+        cell.typeView.hidden = YES;
     }
     else{
         cell.days.hidden = YES;
         cell.completeSwitch.hidden = YES;
         cell.daysText.hidden = YES;
+        cell.typeView.hidden = NO;
+        cell.itemTime.text = [NSString stringWithFormat:@"%@-%@",dic[@"start_time"],dic[@"finish_time"]];
+        cell.proCodeLabel.text = [NSString stringWithFormat:@"项目编号：%@",dic[@"project_code"]];
+        cell.proTypeLabel.text = [NSString stringWithFormat:@"项目类型：%@",dic[@"project_type"]];
+        cell.typeView.hidden = YES;
     }
     cell.block = ^(BOOL state) {
         NSDictionary *params = @{@"project_code":dic[@"project_code"],@"finish_state":state?@"1":@"0"};

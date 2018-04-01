@@ -29,7 +29,7 @@
     self.page = 1;
     self.navigationItem.title = @"设备选择";
     self.tableView.tableFooterView = [UIView new];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"deviceCell"];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"deviceCell"];
     [self requestData];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
     // Do any additional setup after loading the view from its nib.
@@ -53,21 +53,53 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    [self.tableView tableViewDisplayWitMsg:@"暂无设备" ifNecessaryForRowCount:self.dataArr.count];
     return self.dataArr.count;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 1;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.0001;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deviceCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArr[indexPath.row][@"device_name"];
-    cell.detailTextLabel.text = self.dataArr[indexPath.row][@"device_code"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deviceCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"deviceCell"];
+    }
+    cell.textLabel.text = self.dataArr[indexPath.section][@"device_name"];
+    cell.detailTextLabel.text = self.dataArr[indexPath.section][@"device_code"];
+    for (UIView *sub in cell.subviews) {
+        if (sub.tag == 100) {
+            [sub removeFromSuperview];
+            
+        }
+        
+    }
+    UIView *line = [[UIView alloc]init];
+    [cell addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.right.equalTo(cell);
+        make.left.equalTo(cell.mas_left).with.offset(15);
+        make.height.equalTo(@1);
+    }];
+    line.backgroundColor = LRRGBColor(222, 222, 222);
     return cell;
 }
-
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.block(self.dataArr[indexPath.row]);
