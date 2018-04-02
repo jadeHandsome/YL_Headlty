@@ -235,6 +235,9 @@
         field.font = [UIFont systemFontOfSize:14];
         field.tag = i;
         [field addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
+        if (self.type == ChemicalDevice) {
+            [field addTarget:self action:@selector(fieldBegin:) forControlEvents:UIControlEventEditingDidBegin];
+        }
         [container addSubview:field];
         [field mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(container).offset(5);
@@ -339,6 +342,7 @@
 
 
 - (void)unitChoose{
+    [self endEditing:YES];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"单位" message:@"请选择" preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSString *unit in self.experimentUnits) {
         [alert addAction:[self creatAction:unit]];
@@ -365,6 +369,14 @@
     [self.vc.navigationController pushViewController:chooseVC animated:YES];
 }
 
+- (void)fieldBegin:(UITextField *)sender{
+    if ([self.selectUnitLabel.text isEqualToString:@"单位"]) {
+        [self unitChoose];
+        return;
+    }
+}
+
+
 - (void)fieldChange:(UITextField *)sender{
     NSInteger tag = sender.tag;
     if (tag >= 0 && tag <= 3) {
@@ -383,13 +395,7 @@
             }
         }
         else if (self.type == ChemicalDevice) {
-            if ([self.selectUnitLabel.text isEqualToString:@"单位"]) {
-                [self unitChoose];
-                return;
-            }
-            else{
-                self.dic[@"use_amount"] = [NSString stringWithFormat:@"%@%@",sender.text,self.selectUnitLabel.text];
-            }
+            self.dic[@"use_amount"] = [NSString stringWithFormat:@"%@%@",sender.text,self.selectUnitLabel.text];
         }
         else {
             if (tag == 0) {
