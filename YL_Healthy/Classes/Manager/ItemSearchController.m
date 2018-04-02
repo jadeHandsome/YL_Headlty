@@ -27,7 +27,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.searchBar becomeFirstResponder];
+//    [self.searchBar becomeFirstResponder];
     
 }
 
@@ -51,10 +51,12 @@
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ItemCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ItemCell"];
     [KRBaseTool tableViewAddRefreshFooter:self.tableView withTarget:self refreshingAction:@selector(getMore)];
+    [self search];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
     [self search];
 }
 
@@ -65,9 +67,9 @@
 
 
 - (void)search {
-    if ([self cheakIsNull:self.searchBar.text]) {
-        return;
-    }
+//    if ([self cheakIsNull:self.searchBar.text]) {
+//        return;
+//    }
     self.page = 1;
     [self searchAction];
 }
@@ -77,7 +79,10 @@
 
 - (void)searchAction {
     [self.view endEditing:YES];
-    NSDictionary *params = @{@"project_name":self.searchBar.text,@"page":@(self.page),@"rows":@20};
+    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20} mutableCopy];
+    if (self.searchBar.text.length > 0) {
+        params[@"project_name"] = self.searchBar.text;
+    }
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             if (self.page == 1) {
@@ -127,10 +132,9 @@
         cell.completeSwitch.hidden = YES;
         cell.daysText.hidden = YES;
         cell.typeView.hidden = NO;
-        cell.itemTime.text = [NSString stringWithFormat:@"%@-%@",dic[@"start_time"],dic[@"finish_time"]];
+        cell.itemTime.text = [NSString stringWithFormat:@"%@ => %@",dic[@"start_time"],dic[@"finish_time"]];
         cell.proCodeLabel.text = [NSString stringWithFormat:@"项目编号：%@",dic[@"project_code"]];
         cell.proTypeLabel.text = [NSString stringWithFormat:@"项目类型：%@",dic[@"project_type"]];
-        cell.typeView.hidden = YES;
     }
     cell.block = ^(BOOL state) {
         NSDictionary *params = @{@"project_code":dic[@"project_code"],@"finish_state":state?@"1":@"0"};

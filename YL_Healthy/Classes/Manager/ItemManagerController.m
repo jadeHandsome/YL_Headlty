@@ -107,7 +107,7 @@
         cell.completeSwitch.hidden = YES;
         cell.daysText.hidden = YES;
         cell.typeView.hidden = NO;
-        cell.itemTime.text = [NSString stringWithFormat:@"%@-%@",dic[@"start_time"],dic[@"finish_time"]];
+        cell.itemTime.text = [NSString stringWithFormat:@"%@ => %@",dic[@"start_time"],dic[@"finish_time"]];
         cell.proCodeLabel.text = [NSString stringWithFormat:@"项目编号：%@",dic[@"project_code"]];
         cell.proTypeLabel.text = [NSString stringWithFormat:@"项目类型：%@",dic[@"project_type"]];
     }
