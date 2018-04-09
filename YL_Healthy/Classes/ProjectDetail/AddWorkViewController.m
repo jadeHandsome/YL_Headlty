@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self popOut];
     self.navigationItem.title = @"添加工作记录";
     self.textView.myPlaceholder = @"点击输入工作内容";
     [self setDateView];

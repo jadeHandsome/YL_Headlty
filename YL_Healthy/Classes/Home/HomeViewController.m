@@ -10,8 +10,8 @@
 #import "CommitItemController.h"
 #import "SettingController.h"
 #import "ItemSearchController.h"
-#import "UserInfoController.h"
 #import "ItemManagerController.h"
+#import "AddManagerProViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -32,10 +32,11 @@
     ItemSearchController *searchVC = [ItemSearchController new];
     [self.navigationController pushViewController:searchVC animated:YES];
 }
-- (IBAction)userInfo:(UIButton *)sender {
-    UserInfoController *userInfoVC = [UserInfoController new];
-    [self.navigationController pushViewController:userInfoVC animated:YES];
+- (IBAction)commitItem:(UIButton *)sender {
+    AddManagerProViewController *addManager = [AddManagerProViewController new];
+    [self.navigationController pushViewController:addManager animated:YES];
 }
+
 - (IBAction)itemManager:(UIButton *)sender {
     ItemManagerController *managerVC = [ItemManagerController new];
     [self.navigationController pushViewController:managerVC animated:YES];
