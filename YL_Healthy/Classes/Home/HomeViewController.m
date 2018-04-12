@@ -30,6 +30,7 @@
 }
 - (IBAction)itemSearch:(UIButton *)sender {
     ItemSearchController *searchVC = [ItemSearchController new];
+    searchVC.type = @"";
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 - (IBAction)commitItem:(UIButton *)sender {
@@ -39,6 +40,7 @@
 
 - (IBAction)itemManager:(UIButton *)sender {
     ItemManagerController *managerVC = [ItemManagerController new];
+    
     [self.navigationController pushViewController:managerVC animated:YES];
 }
 - (void)setting{

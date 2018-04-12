@@ -18,5 +18,6 @@ typedef void (^switchBlock) (BOOL);
 @property (weak, nonatomic) IBOutlet UIView *typeView;
 @property (weak, nonatomic) IBOutlet UILabel *proCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *proTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statuLabel;
 @property (nonatomic, strong) switchBlock block;
 @end

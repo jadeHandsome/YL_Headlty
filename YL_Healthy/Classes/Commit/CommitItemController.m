@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (weak, nonatomic) IBOutlet UITextField *projectCodeField;
 @property (weak, nonatomic) IBOutlet UITextField *daysTextField;
+@property (weak, nonatomic) IBOutlet UITextField *statuInput;
 
 @end
 
@@ -47,7 +48,11 @@
         [self showHUDWithText:@"请输入完成天数"];
         return;
     }
-    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":self.completeSwitch.state ? @"1" : @"0"};
+    if ([self cheakIsNull:self.statuInput.text]) {
+        [self showHUDWithText:@"请输入完成状态"];
+        return;
+    }
+    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":self.statuInput.text};
     CommitDeviceController *deviceVC = [CommitDeviceController new];
     deviceVC.preParams = params;
     [self.navigationController pushViewController:deviceVC animated:YES];

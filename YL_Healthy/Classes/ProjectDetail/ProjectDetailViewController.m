@@ -150,15 +150,16 @@
     }];
     titleLabel.font = [UIFont systemFontOfSize:14];
     titleLabel.text = @"完成状态";
-    UISwitch *switchBtn = [[UISwitch alloc]init];
+    UILabel *switchBtn = [[UILabel alloc]init];
     [switchView addSubview:switchBtn];
     [switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(switchView.mas_right).with.offset(-15);
         make.centerY.equalTo(switchView.mas_centerY);
     }];
-    [switchBtn addTarget:self action:@selector(statusChange:) forControlEvents:UIControlEventValueChanged];
+//    [switchBtn addTarget:self action:@selector(statusChange:) forControlEvents:UIControlEventValueChanged];
     switchView.backgroundColor = [UIColor whiteColor];
-    switchBtn.on = self.currentModel.finish_state.integerValue;
+//    switchBtn.on = self.currentModel.finish_state.integerValue;
+    switchBtn.text = self.currentModel.finish_state;
     UIView *line = [[UIView alloc]init];
     [switchView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {

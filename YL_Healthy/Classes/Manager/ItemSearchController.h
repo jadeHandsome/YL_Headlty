@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ItemSearchController : BaseViewController
-
+@property (nonatomic, strong) NSString *type;
 @end
