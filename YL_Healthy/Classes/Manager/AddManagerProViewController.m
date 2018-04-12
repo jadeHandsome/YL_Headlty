@@ -128,6 +128,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self popOut];
     self.navigationItem.title = @"添加项目";
     [self setDateView];
     // Do any additional setup after loading the view from its nib.

@@ -24,35 +24,35 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页" translatesAutoresizingMaskIntoConstraints="NO" id="dMC-EL-6iv">
                     <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-KV-dQS">
-                    <rect key="frame" x="45" y="246.5" width="125" height="125.5"/>
-                    <state key="normal" backgroundImage="提交信息"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-KV-dQS">
+                    <rect key="frame" x="45" y="247" width="125" height="125"/>
+                    <state key="normal" image="home1"/>
                     <connections>
                         <action selector="commitInfo:" destination="-1" eventType="touchUpInside" id="Nk1-pJ-FOZ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaT-Qi-EgX">
-                    <rect key="frame" x="205" y="246.5" width="125" height="125.5"/>
-                    <state key="normal" backgroundImage="项目查询"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaT-Qi-EgX">
+                    <rect key="frame" x="205" y="247" width="125" height="125"/>
+                    <state key="normal" image="home2"/>
                     <connections>
                         <action selector="itemSearch:" destination="-1" eventType="touchUpInside" id="yD2-8L-yZb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-pY-YaF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-pY-YaF">
                     <rect key="frame" x="45" y="402" width="125" height="125"/>
-                    <state key="normal" backgroundImage="项目管理"/>
+                    <state key="normal" image="home3"/>
                     <connections>
-                        <action selector="itemManager:" destination="-1" eventType="touchUpInside" id="W8L-4q-1ul"/>
+                        <action selector="commitItem:" destination="-1" eventType="touchUpInside" id="tHY-D2-nBi"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-W9-ZQU">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-W9-ZQU">
                     <rect key="frame" x="205" y="402" width="125" height="125"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="c8n-W9-ZQU" secondAttribute="height" multiplier="1:1" id="pRH-o9-tDF"/>
                     </constraints>
-                    <state key="normal" backgroundImage="个人信息"/>
+                    <state key="normal" image="home4"/>
                     <connections>
-                        <action selector="userInfo:" destination="-1" eventType="touchUpInside" id="k1j-Fo-jzj"/>
+                        <action selector="itemManager:" destination="-1" eventType="touchUpInside" id="D4e-93-4YE"/>
                     </connections>
                 </button>
             </subviews>
@@ -82,10 +82,10 @@
         </view>
     </objects>
     <resources>
-        <image name="个人信息" width="129" height="129"/>
-        <image name="提交信息" width="129" height="129"/>
-        <image name="项目查询" width="129" height="129"/>
-        <image name="项目管理" width="150" height="150"/>
+        <image name="home1" width="129" height="129"/>
+        <image name="home2" width="129" height="129"/>
+        <image name="home3" width="129" height="129"/>
+        <image name="home4" width="129" height="129"/>
         <image name="首页" width="360" height="640"/>
     </resources>
 </document>

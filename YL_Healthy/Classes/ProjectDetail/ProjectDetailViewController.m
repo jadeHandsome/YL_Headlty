@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self popOut];
     self.view.backgroundColor = LRRGBColor(245, 245, 245);
     self.navigationItem.title = @"项目详情";
 }

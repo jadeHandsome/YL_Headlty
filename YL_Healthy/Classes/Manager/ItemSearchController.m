@@ -79,7 +79,7 @@
 
 - (void)searchAction {
     [self.view endEditing:YES];
-    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20} mutableCopy];
+    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20,@"project_type":@"0"} mutableCopy];
     if (self.searchBar.text.length > 0) {
         params[@"project_name"] = self.searchBar.text;
     }
