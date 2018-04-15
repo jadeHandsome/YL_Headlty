@@ -21,5 +21,7 @@
 @property (nonatomic, strong) NSArray<ProjectDeviceModel *> *device_list;//设备列表
 @property (nonatomic, strong) NSArray<ProjectIncidentModel *> *work_list;//事件列表
 
-
+@property (nonatomic, strong) NSString *project_area;
+@property (nonatomic, strong) NSString *project_leader;
+@property (nonatomic, strong) NSString *market_user;
 @end

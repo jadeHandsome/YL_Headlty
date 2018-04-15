@@ -60,7 +60,7 @@
 
 
 - (void)searchAction {
-    NSDictionary *params = @{@"page":@(self.page),@"rows":@20,@"project_name":@"",@"project_type":@"0"};
+    NSDictionary *params = @{@"page":@(self.page),@"rows":@20,@"project_name":@"",@"project_type":@"1"};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             if (self.page == 1) {

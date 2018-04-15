@@ -16,12 +16,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (weak, nonatomic) IBOutlet UITextField *projectCodeField;
 @property (weak, nonatomic) IBOutlet UITextField *daysTextField;
-@property (weak, nonatomic) IBOutlet UITextField *statuInput;
+
+@property (weak, nonatomic) IBOutlet UILabel *statuLabel;
 
 @end
 
 @implementation CommitItemController
-
+{
+    NSInteger statu;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self popOut];
@@ -48,14 +51,22 @@
         [self showHUDWithText:@"请输入完成天数"];
         return;
     }
-    if ([self cheakIsNull:self.statuInput.text]) {
-        [self showHUDWithText:@"请输入完成状态"];
+    if ([self.statuLabel.text isEqualToString:@"请选择"]) {
+        [self showHUDWithText:@"请选择完成状态"];
         return;
     }
-    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":self.statuInput.text};
+    NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":@(statu)};
     CommitDeviceController *deviceVC = [CommitDeviceController new];
     deviceVC.preParams = params;
     [self.navigationController pushViewController:deviceVC animated:YES];
+}
+- (IBAction)chooseStatus:(id)sender {
+    NSArray *titleArray = @[@"已采样",@"已完成实验",@"已完成报告",@"已存档"];
+    [KRBaseTool showAlert:@"请选择完成状态" with_Controller:self with_titleArr:titleArray withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        self.statuLabel.text = titleArray[index];
+        self.statuLabel.textColor = [UIColor blackColor];
+        statu = index;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

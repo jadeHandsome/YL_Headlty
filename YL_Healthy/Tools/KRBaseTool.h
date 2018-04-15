@@ -109,4 +109,6 @@ typedef void (^touchIndex)(int index);
 + (void)pushToWeb:(NSString *)url andVc:(UIViewController *)vc;
 + (void)callCellPhone:(NSString *)phoneNumber;
 + (BOOL)checkLogin:(UIViewController *)vc;
++ (NSString *)intToStau:(NSInteger)statusInt;
++ (NSInteger)statuToInt:(NSString *)statusStr;
 @end

@@ -758,6 +758,24 @@ singleton_implementation(KRBaseTool)
     [controller presentViewController:alert animated:true completion:nil];
     
 }
++ (NSInteger)statuToInt:(NSString *)statusStr {
+    NSInteger i = 0;
+    if (statusStr) {
+        
+    }
+    return i;
+}
++ (NSString *)intToStau:(NSInteger)statusInt {
+    if (statusInt == 0) {
+        return @"已采样";
+    } else if (statusInt == 1) {
+        return @"已完成实验";
+    } else if (statusInt == 2) {
+        return @"已完成报告";
+    } else {
+        return @"已存档";
+    }
+}
 //+ (void)pushToWeb:(NSString *)url andVc:(UIViewController *)vc {
 //    BaseWebViewController *web = [[BaseWebViewController alloc]init];
 //    web.urlStr = url;

@@ -17,6 +17,9 @@
 @property (nonatomic, strong) UIView *dateView;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) NSString *selectMonth;
+@property (weak, nonatomic) IBOutlet UITextField *areaTetxtInput;
+@property (weak, nonatomic) IBOutlet UITextField *fuzerenTextField;
+@property (weak, nonatomic) IBOutlet UITextField *shichangTextField;
 @property (nonatomic, strong) UILabel *titlesLabel;
 @end
 
@@ -154,12 +157,27 @@
         [self showHUDWithText:@"请选择结束时间"];
         return;
     }
+    if (self.areaTetxtInput.text.length == 0) {
+        [self showHUDWithText:@"请输入项目区域"];
+        return;
+    }
+    if (self.fuzerenTextField.text.length == 0) {
+        [self showHUDWithText:@"请输入项目负责人"];
+        return;
+    }
+    if (self.shichangTextField.text.length == 0) {
+        [self showHUDWithText:@"请输入市场人员"];
+        return;
+    }
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"project_name"] = self.proNameTextField.text;
     param[@"project_code"] = self.proCodeTextField.text;
     param[@"project_type"] = self.proTypeTextField.text;
     param[@"start_time"] = [self.startTimeLabel.text stringByAppendingString:@" 00:00:00"];
     param[@"finish_time"] = [self.endTimeLabel.text stringByAppendingString:@" 00:00:00"];
+    param[@"project_area"] = self.areaTetxtInput.text;
+    param[@"project_leader"] = self.fuzerenTextField.text;
+    param[@"market_user"] = self.shichangTextField.text;
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/saveinfo" params:param withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata) {
             [self showHUDWithText:@"添加成功"];

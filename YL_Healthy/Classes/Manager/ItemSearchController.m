@@ -79,7 +79,7 @@
 
 - (void)searchAction {
     [self.view endEditing:YES];
-    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20,@"project_type":@"1"} mutableCopy];
+    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20,@"project_type":@"0"} mutableCopy];
     if (self.searchBar.text.length > 0) {
         params[@"project_name"] = self.searchBar.text;
     }
@@ -125,7 +125,7 @@
         cell.daysText.hidden = NO;
         cell.days.text = [NSString stringWithFormat:@"%ld",[dic[@"finish_days"] integerValue]];
 //        cell.completeSwitch.on = [dic[@"finish_state"] isEqualToString:@"1"] ? YES : NO;
-        cell.statuLabel.text = dic[@"finish_state"];
+        cell.statuLabel.text = [KRBaseTool intToStau:[dic[@"finish_state"] integerValue]];
         cell.typeView.hidden = YES;
     }
     else{
