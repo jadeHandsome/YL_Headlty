@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommitItemController">
             <connections>
                 <outlet property="comNameField" destination="kej-8m-5VW" id="ZOm-5H-EXo"/>
-                <outlet property="completeSwitch" destination="unJ-yE-JZ7" id="i9m-1O-T78"/>
+                <outlet property="cpmpleteLabel" destination="NOe-Fb-a06" id="y2d-7x-mez"/>
                 <outlet property="daysTextField" destination="feX-bE-1WY" id="JdV-u4-1cL"/>
                 <outlet property="itemNameField" destination="G3b-Ep-y42" id="Dr6-WI-vf8"/>
                 <outlet property="nextBtn" destination="YWZ-dq-psF" id="RpZ-qN-mI7"/>
@@ -250,19 +250,25 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="unJ-yE-JZ7">
-                            <rect key="frame" x="311" y="9.5" width="51" height="31"/>
-                            <color key="onTintColor" red="0.31372549020000001" green="0.64313725489999995" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-Fb-a06">
+                            <rect key="frame" x="317" y="17" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="DuU-Wd-OqZ" firstAttribute="leading" secondItem="LxT-JG-40S" secondAttribute="leading" constant="15" id="8b5-fl-aSk"/>
+                        <constraint firstAttribute="trailing" secondItem="NOe-Fb-a06" secondAttribute="trailing" constant="15" id="9xb-9t-Fqd"/>
                         <constraint firstAttribute="height" constant="50" id="B3t-F8-NRa"/>
+                        <constraint firstItem="NOe-Fb-a06" firstAttribute="centerY" secondItem="LxT-JG-40S" secondAttribute="centerY" id="dMO-2E-g6t"/>
                         <constraint firstItem="DuU-Wd-OqZ" firstAttribute="centerY" secondItem="LxT-JG-40S" secondAttribute="centerY" id="h8U-77-iSN"/>
-                        <constraint firstAttribute="trailing" secondItem="unJ-yE-JZ7" secondAttribute="trailing" constant="15" id="svW-ty-eah"/>
-                        <constraint firstItem="unJ-yE-JZ7" firstAttribute="centerY" secondItem="LxT-JG-40S" secondAttribute="centerY" id="ufS-R9-JAF"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="oLc-XF-Atq" appends="YES" id="U4a-GB-St8"/>
+                    </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-dq-psF">
                     <rect key="frame" x="15" y="602" width="345" height="45"/>
@@ -380,6 +386,11 @@
         <tapGestureRecognizer id="mte-ZV-cYb">
             <connections>
                 <action selector="chooseDay:" destination="-1" id="ObC-aD-urb"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="oLc-XF-Atq">
+            <connections>
+                <action selector="completeState:" destination="-1" id="3Ms-yy-90B"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

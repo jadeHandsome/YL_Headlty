@@ -78,8 +78,17 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"deviceCell"];
     }
-    cell.textLabel.text = self.dataArr[indexPath.section][@"device_name"];
-    cell.detailTextLabel.text = self.dataArr[indexPath.section][@"device_code"];
+    NSDictionary *dic = self.dataArr[indexPath.section];
+    cell.textLabel.text = dic[@"device_name"];
+    cell.detailTextLabel.text = dic[@"device_code"];
+    if ([dic[@"device_state"] isEqualToString:@"1"]) {//1未使用
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+    }
+    else{
+        cell.textLabel.textColor = [UIColor lightGrayColor];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    }
     for (UIView *sub in cell.subviews) {
         if (sub.tag == 100) {
             [sub removeFromSuperview];
@@ -102,8 +111,10 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.block(self.dataArr[indexPath.row]);
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.dataArr[indexPath.section][@"device_state"] isEqualToString:@"1"]) {
+        self.block(self.dataArr[indexPath.section]);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

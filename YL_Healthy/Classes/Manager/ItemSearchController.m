@@ -79,7 +79,7 @@
 
 - (void)searchAction {
     [self.view endEditing:YES];
-    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20,@"project_type":@"0"} mutableCopy];
+    NSMutableDictionary *params = [@{@"page":@(self.page),@"rows":@20,@"project_type":self.project_type} mutableCopy];
     if (self.searchBar.text.length > 0) {
         params[@"project_name"] = self.searchBar.text;
     }
@@ -121,30 +121,51 @@
     cell.itemTime.text = dic[@"start_time"];
     if ([dic[@"project_type"] isEqualToString:@"0"]) {
         cell.days.hidden = NO;
-        cell.completeSwitch.hidden = NO;
+        cell.stateBtn.hidden = NO;
+        NSString *stateTitle;
+        NSInteger state = [dic[@"finish_state"] integerValue];
+        switch (state) {
+            case 1:
+                stateTitle = @"已采样";
+                break;
+            case 2:
+                stateTitle = @"已完成实验";
+                break;
+            case 3:
+                stateTitle = @"已完成报告";
+                break;
+            default:
+                stateTitle = @"已存档";
+                break;
+        }
+        [cell.stateBtn setTitle:stateTitle forState:UIControlStateNormal];
         cell.daysText.hidden = NO;
         cell.days.text = [NSString stringWithFormat:@"%ld",[dic[@"finish_days"] integerValue]];
-        cell.completeSwitch.on = [dic[@"finish_state"] isEqualToString:@"1"] ? YES : NO;
         cell.typeView.hidden = YES;
     }
     else{
         cell.days.hidden = YES;
-        cell.completeSwitch.hidden = YES;
+        cell.stateBtn.hidden = YES;
         cell.daysText.hidden = YES;
         cell.typeView.hidden = NO;
         cell.itemTime.text = [NSString stringWithFormat:@"%@ => %@",dic[@"start_time"],dic[@"finish_time"]];
         cell.proCodeLabel.text = [NSString stringWithFormat:@"项目编号：%@",dic[@"project_code"]];
         cell.proTypeLabel.text = [NSString stringWithFormat:@"项目类型：%@",dic[@"project_type"]];
     }
-    cell.block = ^(BOOL state) {
-        NSDictionary *params = @{@"project_code":dic[@"project_code"],@"finish_state":state?@"1":@"0"};
-        [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
-            if (!error) {
-                [self showHUDWithText:@"更改状态成功"];
-            }
-        }];
+    cell.block = ^(NSString *finish_state) {
+        [self changeState:dic[@"project_code"] finish_state:finish_state];
     };
     return cell;
+}
+
+
+- (void)changeState:(NSString *)project_code finish_state:(NSString *)finish_state{
+    NSDictionary *params = @{@"project_code":project_code,@"finish_state":finish_state};
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
+        if (!error) {
+            [self showHUDWithText:@"更改状态成功"];
+        }
+    }];
 }
 
 
