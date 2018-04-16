@@ -12,6 +12,7 @@
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
+@property (nonatomic, strong) UILabel *statuLabel;
 @end
 
 @implementation ProjectDetailViewController
@@ -50,7 +51,7 @@
         if ([self.currentModel.project_type isEqualToString:@"0"]) {
             make.height.equalTo(@(45 * 4));
         } else {
-            make.height.equalTo(@(45 * 5));
+            make.height.equalTo(@(45 * 8));
         }
     }];
     topView.backgroundColor = [UIColor whiteColor];
@@ -86,9 +87,9 @@
         detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.company_name,self.currentModel.finish_days];
         count = 4;
     } else {
-        titleArray = @[@"项目名称",@"项目编号",@"项目类型",@"开始时间",@"结束时间"];
-        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.project_type,self.currentModel.start_time,self.currentModel.finish_time];
-        count = 5;
+        titleArray = @[@"项目名称",@"项目编号",@"项目类型",@"开始时间",@"结束时间",@"项目区域",@"项目负责人",@"市场人员"];
+        detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.project_type,self.currentModel.start_time,self.currentModel.finish_time,self.currentModel.project_area ? self.currentModel.project_area : @"",self.currentModel.project_leader ? self.currentModel.project_leader : @"",self.currentModel.market_user ? self.currentModel.market_user : @""];
+        count = 8;
     }
     UIView *temp =  superView;
     
@@ -150,15 +151,20 @@
     }];
     titleLabel.font = [UIFont systemFontOfSize:14];
     titleLabel.text = @"完成状态";
-    UISwitch *switchBtn = [[UISwitch alloc]init];
+    UILabel *switchBtn = [[UILabel alloc]init];
     [switchView addSubview:switchBtn];
     [switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(switchView.mas_right).with.offset(-15);
         make.centerY.equalTo(switchView.mas_centerY);
     }];
-    [switchBtn addTarget:self action:@selector(statusChange:) forControlEvents:UIControlEventValueChanged];
+    _statuLabel = switchBtn;
+    switchBtn.font = [UIFont systemFontOfSize:14];
+    [switchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(statusChanged)]];
+//    [switchBtn addTarget:self action:@selector(statusChange:) forControlEvents:UIControlEventValueChanged];
     switchView.backgroundColor = [UIColor whiteColor];
-    switchBtn.on = self.currentModel.finish_state.integerValue;
+    
+//    switchBtn.on = self.currentModel.finish_state.integerValue;
+    switchBtn.text = [KRBaseTool intToStau:self.currentModel.finish_state.integerValue];
     UIView *line = [[UIView alloc]init];
     [switchView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -382,6 +388,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)statusChanged {
+    NSArray *titleArray = @[@"已采样",@"已完成实验",@"已完成报告",@"已存档"];
+    [KRBaseTool showAlert:@"请选择完成状态" with_Controller:self with_titleArr:titleArray withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        NSDictionary *params = @{@"project_code":self.projectCode,@"finish_state":@(index)};
+        [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/updatefinishstate" params:params withModel:nil complateHandle:^(id showdata, NSString *error) {
+            if (!error) {
+                _statuLabel.text = titleArray[index];
+                [self showHUDWithText:@"更改状态成功"];
+                
+            }
+        }];
+    }];
+    
 }
 - (void)statusChange:(UISwitch *)sender {
     NSDictionary *params = @{@"project_code":self.projectCode,@"finish_state":sender.on?@"1":@"0"};

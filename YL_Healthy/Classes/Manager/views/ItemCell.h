@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^stateBlock) (NSString *);
+typedef void (^switchBlock) (BOOL);
 @interface ItemCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *container;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *itemTime;
 @property (weak, nonatomic) IBOutlet UILabel *days;
-@property (weak, nonatomic) IBOutlet UIButton *stateBtn;
-
+@property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *daysText;
 @property (weak, nonatomic) IBOutlet UIView *typeView;
 @property (weak, nonatomic) IBOutlet UILabel *proCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *proTypeLabel;
-@property (nonatomic, strong) stateBlock block;
-@property (nonatomic, weak) UIViewController *vc;
+@property (weak, nonatomic) IBOutlet UILabel *statuLabel;
+@property (nonatomic, strong) switchBlock block;
 @end
