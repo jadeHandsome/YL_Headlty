@@ -114,8 +114,17 @@
         imaegView.tag = 1000;
         imaegView.image = [UIImage imageNamed:@"选中"];
     }
-    cell.textLabel.text = self.dataArr[indexPath.section][@"device_name"];
-    cell.detailTextLabel.text = self.dataArr[indexPath.section][@"device_code"];
+    NSDictionary *dic = self.dataArr[indexPath.section];
+    cell.textLabel.text = dic[@"device_name"];
+    cell.detailTextLabel.text = dic[@"device_code"];
+    if ([dic[@"device_state"] isEqualToString:@"1"]) {//1未使用
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+    }
+    else{
+        cell.textLabel.textColor = [UIColor lightGrayColor];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    }
     for (UIView *sub in cell.subviews) {
         if (sub.tag == 100) {
             [sub removeFromSuperview];

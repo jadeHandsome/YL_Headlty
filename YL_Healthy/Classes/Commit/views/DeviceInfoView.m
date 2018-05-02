@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UILabel *selectUnitLabel;
 @property (nonatomic, strong) UILabel *deviceLabel;
 @property (nonatomic, strong) UILabel *deviceCodeLabel;
+@property (nonatomic, strong) UITextField *canshuField;
 @end
 
 
@@ -159,6 +160,44 @@
         make.height.mas_equalTo(1);
     }];
     UIView *temp = deviceCodeContainer;
+    if (self.type == ExperimentDevice) {
+        UIView *canshuContainer = [[UIView alloc] init];
+        [self addSubview:canshuContainer];
+        [canshuContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.top.equalTo(deviceCodeContainer.mas_bottom);
+            make.height.mas_equalTo(45);
+        }];
+        UILabel *canshuTitle = [[UILabel alloc] init];
+        canshuTitle.font = [UIFont systemFontOfSize:14];
+        canshuTitle.text = @"检测参数";
+        [canshuContainer addSubview:canshuTitle];
+        [canshuTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(canshuContainer).offset(15);
+            make.centerY.equalTo(canshuContainer.mas_centerY);
+        }];
+        UITextField *canshuField = [[UITextField alloc] init];
+        canshuField.textAlignment = NSTextAlignmentRight;
+        canshuField.font = [UIFont systemFontOfSize:14];
+        canshuField.tag = -1;
+        [canshuField addTarget:self action:@selector(fieldChange:) forControlEvents:UIControlEventEditingChanged];
+        self.canshuField = canshuField;
+        [canshuContainer addSubview:canshuField];
+        [canshuField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(canshuContainer);
+            make.right.equalTo(canshuContainer).offset(-15);
+            make.left.equalTo(canshuTitle.mas_right).offset(15);
+        }];
+        UIView *canshuView = [[UIView alloc] init];
+        canshuView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [canshuContainer addSubview:canshuView];
+        [canshuView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(canshuContainer).offset(15);
+            make.bottom.right.equalTo(canshuContainer);
+            make.height.mas_equalTo(1);
+        }];
+        temp = canshuContainer;
+    }
     NSArray *arr;
     switch (self.type) {
         case OutDevice:
@@ -379,7 +418,10 @@
 
 - (void)fieldChange:(UITextField *)sender{
     NSInteger tag = sender.tag;
-    if (tag >= 0 && tag <= 3) {
+    if (tag == -1) {
+        self.dic[@"检测参数字段"] = sender.text;
+    }
+    else if (tag >= 0 && tag <= 3) {
         if (self.type == OutDevice) {
             if (tag == 0) {
                 self.dic[@"use_temperature"] = sender.text;
@@ -419,6 +461,9 @@
 - (BOOL)cheakIsReady {
     BOOL isReady = YES;
     NSArray *keys = [self.dic allKeys];
+    if (![keys containsObject:@"检测参数字段"]) {
+        isReady = NO;
+    }
     if (![keys containsObject:@"device_name"]) {
         isReady = NO;
     }
