@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
-typedef void(^SelectBlock)(NSDictionary *);
+typedef void(^SelectBlock)(NSArray *);
 @interface DeviceChooseController : BaseViewController
 @property (nonatomic, strong) NSString *deviceType;
 @property (nonatomic, strong) SelectBlock block;
+@property (nonatomic, strong) NSArray *oldArray;
 @end

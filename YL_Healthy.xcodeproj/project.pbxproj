@@ -86,6 +86,8 @@
 		1A4287FA2058C54500139197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287F92058C54500139197 /* Assets.xcassets */; };
 		1A4287FD2058C54500139197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4287FB2058C54500139197 /* LaunchScreen.storyboard */; };
 		1A4288002058C54500139197 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287FF2058C54500139197 /* main.m */; };
+		1A440DFD20987D8000C1490D /* ProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A440DFC20987D8000C1490D /* ProjectInfo.m */; };
+		1A440E002098AEEB00C1490D /* UseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A440DFF2098AEEB00C1490D /* UseDetailViewController.m */; };
 		1ABBBDED206BB35600EF5E73 /* ProjectDeatilModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */; };
 		1ABBBDF0206BB36500EF5E73 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEF206BB36500EF5E73 /* ProjectDetailViewController.m */; };
 		1ABBBDF3206BB57600EF5E73 /* ProjectDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */; };
@@ -237,6 +239,10 @@
 		1A4287FC2058C54500139197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4287FE2058C54500139197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4287FF2058C54500139197 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A440DFB20987D8000C1490D /* ProjectInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectInfo.h; sourceTree = "<group>"; };
+		1A440DFC20987D8000C1490D /* ProjectInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectInfo.m; sourceTree = "<group>"; };
+		1A440DFE2098AEEB00C1490D /* UseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseDetailViewController.h; sourceTree = "<group>"; };
+		1A440DFF2098AEEB00C1490D /* UseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseDetailViewController.m; sourceTree = "<group>"; };
 		1ABBBDEB206BB35600EF5E73 /* ProjectDeatilModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDeatilModel.h; sourceTree = "<group>"; };
 		1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDeatilModel.m; sourceTree = "<group>"; };
 		1ABBBDEE206BB36500EF5E73 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
@@ -577,6 +583,10 @@
 				1A154519206F8CA200260AB3 /* AddWorkViewController.h */,
 				1A15451A206F8CA200260AB3 /* AddWorkViewController.m */,
 				1A15451B206F8CA200260AB3 /* AddWorkViewController.xib */,
+				1A440DFB20987D8000C1490D /* ProjectInfo.h */,
+				1A440DFC20987D8000C1490D /* ProjectInfo.m */,
+				1A440DFE2098AEEB00C1490D /* UseDetailViewController.h */,
+				1A440DFF2098AEEB00C1490D /* UseDetailViewController.m */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -748,6 +758,7 @@
 			files = (
 				110ED615206B2F9600EEA83C /* UserInfoController.m in Sources */,
 				110ED600206A222600EEA83C /* ItemManagerController.m in Sources */,
+				1A440DFD20987D8000C1490D /* ProjectInfo.m in Sources */,
 				11C5DAE72058F565005F09CD /* YHArcSlider.m in Sources */,
 				110ED606206B283700EEA83C /* SettingController.m in Sources */,
 				11C5DAEE2058F565005F09CD /* MBProgressHUD+KR.m in Sources */,
@@ -796,6 +807,7 @@
 				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
 				11C5DB092059017E005F09CD /* LoginViewController.m in Sources */,
 				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
+				1A440E002098AEEB00C1490D /* UseDetailViewController.m in Sources */,
 				11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */,
 				11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */,
 				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,

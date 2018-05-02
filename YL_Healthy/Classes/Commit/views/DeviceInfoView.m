@@ -360,11 +360,11 @@
 - (void)chooseDevice {
     DeviceChooseController *chooseVC = [DeviceChooseController new];
     chooseVC.deviceType =  self.type == OutDevice ? @"0" : self.type == ChemicalDevice ? @"2" : @"1";
-    chooseVC.block = ^(NSDictionary *dic) {
-        self.deviceLabel.text = dic[@"device_name"];
-        self.deviceCodeLabel.text = dic[@"device_code"];
-        self.dic[@"device_name"] = dic[@"device_name"];
-        self.dic[@"device_code"] = dic[@"device_code"];
+    chooseVC.block = ^(NSArray *dic) {
+//        self.deviceLabel.text = dic[@"device_name"];
+//        self.deviceCodeLabel.text = dic[@"device_code"];
+//        self.dic[@"device_name"] = dic[@"device_name"];
+//        self.dic[@"device_code"] = dic[@"device_code"];
     };
     [self.vc.navigationController pushViewController:chooseVC animated:YES];
 }
