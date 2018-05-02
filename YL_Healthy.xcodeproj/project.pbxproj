@@ -88,6 +88,7 @@
 		1A4288002058C54500139197 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4287FF2058C54500139197 /* main.m */; };
 		1A440DFD20987D8000C1490D /* ProjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A440DFC20987D8000C1490D /* ProjectInfo.m */; };
 		1A440E002098AEEB00C1490D /* UseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A440DFF2098AEEB00C1490D /* UseDetailViewController.m */; };
+		1A440E06209986EB00C1490D /* AddDeviceProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A440E05209986EB00C1490D /* AddDeviceProjectListViewController.m */; };
 		1ABBBDED206BB35600EF5E73 /* ProjectDeatilModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */; };
 		1ABBBDF0206BB36500EF5E73 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDEF206BB36500EF5E73 /* ProjectDetailViewController.m */; };
 		1ABBBDF3206BB57600EF5E73 /* ProjectDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBBDF2206BB57600EF5E73 /* ProjectDeviceModel.m */; };
@@ -243,6 +244,8 @@
 		1A440DFC20987D8000C1490D /* ProjectInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectInfo.m; sourceTree = "<group>"; };
 		1A440DFE2098AEEB00C1490D /* UseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseDetailViewController.h; sourceTree = "<group>"; };
 		1A440DFF2098AEEB00C1490D /* UseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseDetailViewController.m; sourceTree = "<group>"; };
+		1A440E04209986EB00C1490D /* AddDeviceProjectListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceProjectListViewController.h; sourceTree = "<group>"; };
+		1A440E05209986EB00C1490D /* AddDeviceProjectListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceProjectListViewController.m; sourceTree = "<group>"; };
 		1ABBBDEB206BB35600EF5E73 /* ProjectDeatilModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDeatilModel.h; sourceTree = "<group>"; };
 		1ABBBDEC206BB35600EF5E73 /* ProjectDeatilModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDeatilModel.m; sourceTree = "<group>"; };
 		1ABBBDEE206BB36500EF5E73 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
@@ -281,6 +284,8 @@
 				1A154514206F84B000260AB3 /* AddManagerProViewController.h */,
 				1A154515206F84B000260AB3 /* AddManagerProViewController.m */,
 				1A154516206F84B000260AB3 /* AddManagerProViewController.xib */,
+				1A440E04209986EB00C1490D /* AddDeviceProjectListViewController.h */,
+				1A440E05209986EB00C1490D /* AddDeviceProjectListViewController.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -806,6 +811,7 @@
 				11C5DAE92058F565005F09CD /* ZLPhotoCell.m in Sources */,
 				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
 				11C5DB092059017E005F09CD /* LoginViewController.m in Sources */,
+				1A440E06209986EB00C1490D /* AddDeviceProjectListViewController.m in Sources */,
 				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
 				1A440E002098AEEB00C1490D /* UseDetailViewController.m in Sources */,
 				11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */,
