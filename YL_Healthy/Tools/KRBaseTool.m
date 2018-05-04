@@ -715,7 +715,7 @@ singleton_implementation(KRBaseTool)
     formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
     
     // 毫秒值转化为秒
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timeString doubleValue]/1000];

@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ProjectDeviceModel.h"
 @interface ProjectInfo : NSObject
-@property (nonatomic, strong) NSString *typeName;
-@property (nonatomic, strong) NSArray<ProjectDeviceModel *> *devicelist;
+@property (nonatomic, strong) NSString *deviceName;
+@property (nonatomic, strong) NSArray<ProjectDeviceModel *> *device_list;
+@property (nonatomic, strong) NSString *time;
 
 @end

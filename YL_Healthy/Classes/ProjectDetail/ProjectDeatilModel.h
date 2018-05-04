@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *finish_state;//完成状态
 @property (nonatomic, strong) NSString *finish_time;//完成时间
 @property (nonatomic, strong) NSString *start_time;//开始时间
-@property (nonatomic, strong) NSArray<ProjectInfo *> *device_user_list;//设备信息
+@property (nonatomic, strong) NSArray<ProjectInfo *> *device_use_list;//设备信息
 @property (nonatomic, strong) NSArray<ProjectIncidentModel *> *work_list;//事件列表
 
 @property (nonatomic, strong) NSString *project_area;

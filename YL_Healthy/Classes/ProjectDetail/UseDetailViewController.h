@@ -10,4 +10,5 @@
 
 @interface UseDetailViewController : UIViewController
 @property (nonatomic, strong) NSArray *deviceList;
+@property (nonatomic, strong) NSString *proCode;
 @end

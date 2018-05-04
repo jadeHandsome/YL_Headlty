@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSString *use_wind_speed;//使用风速
 @property (nonatomic, strong) NSString *use_amount;//使用量
 @property (nonatomic, strong) NSString *use_name;//使用人
-
+@property (nonatomic, strong) NSString *check_parameter;//检测参数
+@property (nonatomic, strong) NSString *ID;//id
 @end

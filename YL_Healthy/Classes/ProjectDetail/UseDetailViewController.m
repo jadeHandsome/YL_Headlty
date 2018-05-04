@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUp];
+//    [self setUp];
+    [self getDetail];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -195,8 +196,8 @@
     //    }];
     
     UIView *temp = deviceView;
-    for (int i = 0; i < infoModel.devicelist.count; i ++) {
-        UIView *proView = [self addCellStylewithtitleText:infoModel.devicelist[i].device_name detailText:infoModel.devicelist[i].device_code];
+    for (int i = 0; i < infoModel.device_list.count; i ++) {
+        UIView *proView = [self addCellStylewithtitleText:infoModel.device_list[i].device_name detailText:infoModel.device_list[i].device_code];
         [deviceView addSubview:proView];
         [proView mas_makeConstraints:^(MASConstraintMaker *make) {
             if (i == 0) {
@@ -206,7 +207,7 @@
             }
             make.left.right.equalTo(deviceView);
             make.height.equalTo(@45);
-            if (i == infoModel.devicelist.count - 1) {
+            if (i == infoModel.device_list.count - 1) {
                 make.bottom.equalTo(deviceView);
             }
         }];
@@ -263,5 +264,13 @@
     detailLabel.text = detailText;
     return titleView;
 }
-
+- (void)getDetail {
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/getdeviceuserecordlist" params:@{@"project_code":self.proCode?self.proCode:@""} withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        if (showdata == nil) {
+            return ;
+        }
+//        self.currentModel = [ProjectDeatilModel modelWithDictionary:showdata];
+        [self setUp];
+    }];
+}
 @end

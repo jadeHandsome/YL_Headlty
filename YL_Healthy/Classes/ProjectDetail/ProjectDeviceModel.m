@@ -9,5 +9,9 @@
 #import "ProjectDeviceModel.h"
 
 @implementation ProjectDeviceModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    
+    return@{@"ID" :@"id"};
+    
+}
 @end

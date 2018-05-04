@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ProjectDeatilModel.h"
 @interface AddDeviceProjectListViewController : BaseViewController
-@property (nonatomic, strong) NSArray *deviceArray;
+@property (nonatomic, strong) ProjectDeatilModel *oldModel;
+@property (nonatomic, strong) NSString *proCode;
+@property (nonatomic, strong) NSString *vcType;
 @end

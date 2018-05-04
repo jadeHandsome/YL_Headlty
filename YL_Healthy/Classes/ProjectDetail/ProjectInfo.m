@@ -9,5 +9,9 @@
 #import "ProjectInfo.h"
 
 @implementation ProjectInfo
-
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"device_list":[ProjectDeviceModel class],
+             
+             };
+}
 @end

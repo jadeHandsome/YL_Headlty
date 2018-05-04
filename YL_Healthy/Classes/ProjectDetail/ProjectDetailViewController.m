@@ -9,6 +9,8 @@
 #import "ProjectDetailViewController.h"
 #import "ProjectDeatilModel.h"
 #import "AddWorkViewController.h"
+#import "UseDetailViewController.h"
+#import "AddDeviceProjectListViewController.h"
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
@@ -186,7 +188,7 @@
         make.height.equalTo(@1);
     }];
     line.backgroundColor = LRRGBColor(222, 222, 222);
-    NSInteger deviceCount = self.currentModel.device_user_list.count;
+    NSInteger deviceCount = self.currentModel.device_use_list.count;
     UIView *temp = switchView;
     for (int i = 0; i < deviceCount; i ++) {
         UIView *deviceView = [[UIView alloc]init];
@@ -199,7 +201,7 @@
 //            }
         }];
         temp = deviceView;
-        [self setDevice:deviceView withData:self.currentModel.device_user_list[i]];
+        [self setDevice:deviceView withData:self.currentModel.device_use_list[i]];
         UILabel *typeLabel = [[UILabel alloc]init];
         [superView addSubview:typeLabel];
         [typeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -207,7 +209,7 @@
             make.height.equalTo(@45);
             make.bottom.equalTo(deviceView.mas_top);
         }];
-        typeLabel.text = self.currentModel.device_user_list[i].typeName;
+        typeLabel.text = self.currentModel.device_use_list[i].deviceName;
         typeLabel.textColor = [UIColor redColor];
         typeLabel.font = [UIFont systemFontOfSize:14];
     }
@@ -234,10 +236,12 @@
     }];
     [leftBtn setTitle:@"添加使用记录" forState:UIControlStateNormal];
     leftBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [leftBtn addTarget:self action:@selector(addWorks) forControlEvents:UIControlEventTouchUpInside];
     [leftBtn setTitleColor:ThemeColor forState:UIControlStateNormal];
     [rightBtn setTitle:@"查看使用记录" forState:UIControlStateNormal];
     rightBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [rightBtn setTitleColor:ThemeColor forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(gotoDetail) forControlEvents:UIControlEventTouchUpInside];
     UIView *lineC = [[UIView alloc]init];
     [subView addSubview:lineC];
     [lineC mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -247,6 +251,13 @@
     }];
     lineC.backgroundColor = LRRGBColor(233, 233, 233);
     subView.backgroundColor = [UIColor whiteColor];
+}
+- (void)addWorks {
+    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
+    add.oldModel = self.currentModel;
+    add.proCode = self.projectCode;
+    add.vcType = @"1";
+    [self.navigationController pushViewController:add animated:YES];
 }
 - (void)setDevice:(UIView *)deviceView withData:(ProjectInfo *)infoModel {
 //    UIView *topView = nil;
@@ -330,8 +341,9 @@
 //    }];
     
     UIView *temp = deviceView;
-    for (int i = 0; i < infoModel.devicelist.count; i ++) {
-        UIView *proView = [self addCellStylewithtitleText:infoModel.devicelist[i].device_name detailText:infoModel.devicelist[i].device_code];
+    for (int i = 0; i < infoModel.device_list.count; i ++) {
+        UIView *proView = [self addCellStylewithtitleText:infoModel.device_list[i].device_name detailText:infoModel.device_list[i].device_code];
+        proView.backgroundColor = [UIColor whiteColor];
         [deviceView addSubview:proView];
         [proView mas_makeConstraints:^(MASConstraintMaker *make) {
             if (i == 0) {
@@ -341,7 +353,7 @@
             }
             make.left.right.equalTo(deviceView);
             make.height.equalTo(@45);
-            if (i == infoModel.devicelist.count - 1) {
+            if (i == infoModel.device_list.count - 1) {
                 make.bottom.equalTo(deviceView);
             }
         }];
@@ -465,6 +477,13 @@
     }];
     line1.backgroundColor = LRRGBColor(222, 222, 222);
     return workView;
+}
+- (void)gotoDetail {
+    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
+//    add.oldModel = self.currentModel;
+    add.proCode = self.projectCode;
+    add.vcType = @"2";
+    [self.navigationController pushViewController:add animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

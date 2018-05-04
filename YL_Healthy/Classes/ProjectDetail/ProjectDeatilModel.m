@@ -11,7 +11,8 @@
 @implementation ProjectDeatilModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"device_list":[ProjectDeviceModel class],
-             @"work_list":[ProjectIncidentModel class]
+             @"work_list":[ProjectIncidentModel class],
+             @"device_use_list":[ProjectInfo class]
              };
 }
 @end
