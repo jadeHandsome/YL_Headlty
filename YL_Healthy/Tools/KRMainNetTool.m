@@ -10,8 +10,8 @@
 #import "AFNetworking.h"
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-//#define baseURL @"http://39.107.92.147:8080/health/"
-#define baseURL @"http://192.168.1.3:8080/health/"
+#define baseURL @"http://39.107.92.147:8080/health/"
+//#define baseURL @"http://192.168.1.3:8080/health/"
 
 @implementation KRMainNetTool
 singleton_implementation(KRMainNetTool)
