@@ -11,6 +11,7 @@
 #import "AddWorkViewController.h"
 #import "UseDetailViewController.h"
 #import "AddDeviceProjectListViewController.h"
+#import "EditProViewController.h"
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
@@ -67,12 +68,19 @@
     }];
     if ([self.currentModel.project_type isEqualToString:@"0"]) {
         //设备项目
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(Edit)];
         [self setUpdeviceProject:bottomView];
     } else {
         //事件项目
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWork)];
         [self setUpWorkProject:bottomView];
     }
+}
+//编辑项目
+- (void)Edit {
+    EditProViewController *edit = [EditProViewController new];
+    edit.oldModel = self.currentModel;
+    [self.navigationController pushViewController:edit animated:YES];
 }
 - (void)addWork {
     //添加工作记录
@@ -89,7 +97,7 @@
         detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.company_name,self.currentModel.finish_days];
         count = 4;
     } else {
-        titleArray = @[@"项目名称",@"项目编号",@"项目类型",@"开始时间",@"结束时间",@"项目区域",@"项目负责人",@"市场人员"];
+        titleArray = @[@"项目名称",@"项目编号",@"项目类型",@"任务下达时间",@"要求完成时间",@"项目区域",@"项目负责人",@"市场人员"];
         detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.project_type,self.currentModel.start_time,self.currentModel.finish_time,self.currentModel.project_area ? self.currentModel.project_area : @"",self.currentModel.project_leader ? self.currentModel.project_leader : @"",self.currentModel.market_user ? self.currentModel.market_user : @""];
         count = 8;
     }

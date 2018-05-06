@@ -170,6 +170,10 @@
     
 }
 - (void)resetData:(NSInteger)index {
+    outArray = nil;
+    self.dic = [NSMutableDictionary dictionary];
+    shijiArray = nil;
+    shiyanArray = nil;
     NSDictionary *dic = self.detailModel[index];
     for (NSDictionary *info in dic[@"date_list"]) {
         if ([info[@"device_type"] integerValue] == 0) {
@@ -180,11 +184,11 @@
             self.dic[@"out_use_wind_speed"] = info[@"use_wind_speed"];
             self.dic[@"out_use_person"] = info[@"use_name"];
         } else if ([info[@"device_type"] integerValue] == 2) {
-            shiyanArray = info[@"device_list"];
+            shijiArray = info[@"device_list"];
             self.dic[@"shiji_use_amount"] = info[@"use_amount"];
             self.dic[@"shiji_use_person"] = info[@"use_name"];
         } else if ([info[@"device_type"] integerValue] == 1) {
-            shijiArray = info[@"device_list"];
+            shiyanArray = info[@"device_list"];
             self.dic[@"shiYan_use_temperature"] = info[@"use_temperature"];
             self.dic[@"shiYan_use_humidity"] = info[@"use_humidity"];
             self.dic[@"shiyan_use_person"] = info[@"use_name"];
@@ -265,7 +269,7 @@
     param[@"project_code"] = self.proCode;
     param[@"create_time"] = [self.timeBtn titleForState:UIControlStateNormal];
     param[@"date_list"] = [result copy];
-    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/adddeviceuserecord" params:param withModel:nil complateHandle:^(id showdata, NSString *error) {
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/adddeviceuserecord" params:param withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
         if (showdata == nil) {
             return;
         }

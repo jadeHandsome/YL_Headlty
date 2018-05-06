@@ -38,7 +38,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStyleDone target:self action:@selector(search)];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SIZEWIDTH - 100, 35)];
     searchBar.delegate = self;
-    searchBar.placeholder = @"请输入项目名";
+    searchBar.placeholder = @"请输入项目名或编号";
     searchBar.barTintColor = COLOR(245, 245, 245, 1);
     searchBar.tintColor = [UIColor blackColor];
     LRViewBorderRadius(searchBar, 17.5, 0, COLOR(245, 245, 245, 1));
@@ -123,7 +123,8 @@
         cell.days.hidden = NO;
         cell.completeSwitch.hidden = NO;
         cell.daysText.hidden = NO;
-        cell.days.text = [NSString stringWithFormat:@"%ld",[dic[@"finish_days"] integerValue]];
+        cell.daysText.text = @"项目编号：";
+        cell.days.text = [NSString stringWithFormat:@"%@",dic[@"project_code"]];
 //        cell.completeSwitch.on = [dic[@"finish_state"] isEqualToString:@"1"] ? YES : NO;
         cell.statuLabel.text = [KRBaseTool intToStau:[dic[@"finish_state"] integerValue]];
         cell.typeView.hidden = YES;

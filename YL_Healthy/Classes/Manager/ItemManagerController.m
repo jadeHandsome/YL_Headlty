@@ -37,7 +37,7 @@
     [self search];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SIZEWIDTH - 100, 35)];
     searchBar.delegate = self;
-    searchBar.placeholder = @"请输入项目名";
+    searchBar.placeholder = @"请输入项目名或编号";
     searchBar.barTintColor = COLOR(245, 245, 245, 1);
     searchBar.tintColor = [UIColor blackColor];
     LRViewBorderRadius(searchBar, 17.5, 0, COLOR(245, 245, 245, 1));
