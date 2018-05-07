@@ -37,14 +37,11 @@
             self.remenberPwdBtn.selected = YES;
         }
     }
-    
+    [self performSelector:@selector(logIn) withObject:nil afterDelay:0.5];
     
     // Do any additional setup after loading the view from its nib.
 }
-- (void)viewWillAppear:(BOOL)animated {
-    
-}
-- (void)viewDidAppear:(BOOL)animated {
+- (void)logIn {
     NSString *isLog = [[NSUserDefaults standardUserDefaults]objectForKey:@"login"];
     if (isLog) {
         if (isLog.integerValue) {
@@ -53,6 +50,12 @@
             [self loginAction:nil];
         }
     }
+}
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+- (void)viewDidAppear:(BOOL)animated {
+    
 }
 - (IBAction)remenberPwd:(UIButton *)sender {
     sender.selected = !sender.selected;
