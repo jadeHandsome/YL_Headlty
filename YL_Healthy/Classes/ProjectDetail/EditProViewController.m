@@ -37,7 +37,7 @@
         return;
     }
     if (self.compantName.text.length == 0) {
-        [self showHUDWithText:@"请输入公司名称"];
+        [self showHUDWithText:@"请输入检测类型"];
         return;
     }
     if (self.daysInput.text.length == 0) {

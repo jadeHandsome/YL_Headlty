@@ -44,7 +44,7 @@
         return;
     }
     if ([self cheakIsNull:self.comNameField.text]) {
-        [self showHUDWithText:@"请输入公司名称"];
+        [self showHUDWithText:@"请输入检测类型"];
         return;
     }
     if ([self cheakIsNull:self.daysTextField.text]) {

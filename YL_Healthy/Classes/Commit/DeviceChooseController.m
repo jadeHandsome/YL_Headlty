@@ -56,6 +56,7 @@
 - (void)requestData {
     NSDictionary *params = @{@"device_type":self.deviceType,@"page":@(self.page),@"rows":@100};
     [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"device/query" params:params withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        [self.tableView.mj_footer endRefreshing];
         if (showdata) {
             
             [self.dataArr addObjectsFromArray:showdata[@"device_list"]];

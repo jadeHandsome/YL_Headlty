@@ -93,7 +93,7 @@
     NSArray *titleArray = nil;
     NSArray *detailArray = nil;
     if ([self.currentModel.project_type isEqualToString:@"0"]) {
-        titleArray = @[@"项目名称",@"项目编号",@"公司名称",@"完成天数"];
+        titleArray = @[@"项目名称",@"项目编号",@"检测类型",@"完成天数"];
         detailArray = @[self.currentModel.project_name,self.currentModel.project_code,self.currentModel.company_name,self.currentModel.finish_days];
         count = 4;
     } else {
