@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013DB80420D1F37500AA69FA /* NewAddWorkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DB80320D1F37500AA69FA /* NewAddWorkDetailViewController.m */; };
 		110ED600206A222600EEA83C /* ItemManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED5FE206A222600EEA83C /* ItemManagerController.m */; };
 		110ED601206A222600EEA83C /* ItemManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED5FF206A222600EEA83C /* ItemManagerController.xib */; };
 		110ED606206B283700EEA83C /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED604206B283700EEA83C /* SettingController.m */; };
@@ -99,6 +100,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013DB80220D1F37500AA69FA /* NewAddWorkDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAddWorkDetailViewController.h; sourceTree = "<group>"; };
+		013DB80320D1F37500AA69FA /* NewAddWorkDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAddWorkDetailViewController.m; sourceTree = "<group>"; };
 		110ED5FD206A222600EEA83C /* ItemManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemManagerController.h; sourceTree = "<group>"; };
 		110ED5FE206A222600EEA83C /* ItemManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemManagerController.m; sourceTree = "<group>"; };
 		110ED5FF206A222600EEA83C /* ItemManagerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemManagerController.xib; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				1A154516206F84B000260AB3 /* AddManagerProViewController.xib */,
 				1A440E04209986EB00C1490D /* AddDeviceProjectListViewController.h */,
 				1A440E05209986EB00C1490D /* AddDeviceProjectListViewController.m */,
+				013DB80220D1F37500AA69FA /* NewAddWorkDetailViewController.h */,
+				013DB80320D1F37500AA69FA /* NewAddWorkDetailViewController.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -632,7 +637,6 @@
 				1A4287E92058C54500139197 /* Sources */,
 				1A4287EA2058C54500139197 /* Frameworks */,
 				1A4287EB2058C54500139197 /* Resources */,
-				5EAD0B542828AD747A56B007 /* [CP] Embed Pods Frameworks */,
 				997531BC000DD73730466E0E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -710,21 +714,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5EAD0B542828AD747A56B007 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YL_Healthy/Pods-YL_Healthy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		997531BC000DD73730466E0E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -807,6 +796,7 @@
 				11C5DB19205924FC005F09CD /* CommitItemController.m in Sources */,
 				1A154517206F84B000260AB3 /* AddManagerProViewController.m in Sources */,
 				1A4287F22058C54500139197 /* AppDelegate.m in Sources */,
+				013DB80420D1F37500AA69FA /* NewAddWorkDetailViewController.m in Sources */,
 				11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */,
 				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
 				11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */,
@@ -963,7 +953,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SAHL399V;
+				DEVELOPMENT_TEAM = 9444W8MM84;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",
@@ -988,7 +978,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96SAHL399V;
+				DEVELOPMENT_TEAM = 9444W8MM84;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YL_Healthy/Tools/pay",

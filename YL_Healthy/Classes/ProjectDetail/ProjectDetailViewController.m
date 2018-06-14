@@ -12,6 +12,7 @@
 #import "UseDetailViewController.h"
 #import "AddDeviceProjectListViewController.h"
 #import "EditProViewController.h"
+#import "NewAddWorkDetailViewController.h"
 @interface ProjectDetailViewController ()
 @property (nonatomic, strong) ProjectDeatilModel *currentModel;
 @property (nonatomic, strong) UIScrollView *mainScoll;
@@ -261,7 +262,12 @@
     subView.backgroundColor = [UIColor whiteColor];
 }
 - (void)addWorks {
-    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
+//    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
+//    add.oldModel = self.currentModel;
+//    add.proCode = self.projectCode;
+//    add.vcType = @"1";
+//    [self.navigationController pushViewController:add animated:YES];
+    NewAddWorkDetailViewController *add = [NewAddWorkDetailViewController new];
     add.oldModel = self.currentModel;
     add.proCode = self.projectCode;
     add.vcType = @"1";

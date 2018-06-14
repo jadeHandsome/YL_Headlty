@@ -8,6 +8,7 @@
 
 #import "CommitItemController.h"
 #import "CommitDeviceController.h"
+#import "CommitSuccessController.h"
 @interface CommitItemController ()
 @property (weak, nonatomic) IBOutlet UITextField *itemNameField;
 @property (weak, nonatomic) IBOutlet UITextField *comNameField;
@@ -58,7 +59,21 @@
     NSDictionary *params = @{@"project_name":self.itemNameField.text,@"company_name":self.comNameField.text,@"project_code":self.projectCodeField.text,@"finish_days":@(self.daysTextField.text.integerValue),@"finish_state":@(statu)};
     CommitDeviceController *deviceVC = [CommitDeviceController new];
     deviceVC.preParams = params;
-    [self.navigationController pushViewController:deviceVC animated:YES];
+//    NSMutableArray *mut = [NSMutableArray array];
+//    [mut addObjectsFromArray:outArray];
+//    [mut addObjectsFromArray:shijiArray];
+//    [mut addObjectsFromArray:shiyanArray];
+    NSMutableDictionary *param1 = [NSMutableDictionary dictionaryWithDictionary:params];
+    param1[@"device_list"] = @[];
+    param1[@"project_type"] = @"0";
+    
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/saveinfo" params:param1 withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        if (!error) {
+            CommitSuccessController *successVC = [CommitSuccessController new];
+            [self.navigationController pushViewController:successVC animated:YES];
+        }
+    }];
+//    [self.navigationController pushViewController:deviceVC animated:YES];
 }
 - (IBAction)chooseStatus:(id)sender {
     NSArray *titleArray = @[@"已采样",@"已完成实验",@"已完成报告",@"已存档"];

@@ -106,9 +106,9 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     if ([self.vcType isEqualToString:@"1"]) {
-        [KRBaseTool showAlert:@"点击设备选择当天使用的设备" with_Controller:self with_titleArr:@[@"确定"] withShowType:UIAlertControllerStyleAlert with_Block:^(int index) {
-            
-        }];
+//        [KRBaseTool showAlert:@"点击设备选择当天使用的设备" with_Controller:self with_titleArr:@[@"确定"] withShowType:UIAlertControllerStyleAlert with_Block:^(int index) {
+//
+//        }];
     }
 }
 - (void)setTextInput {
