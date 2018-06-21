@@ -493,8 +493,13 @@
     return workView;
 }
 - (void)gotoDetail {
-    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
-//    add.oldModel = self.currentModel;
+//    AddDeviceProjectListViewController *add = [AddDeviceProjectListViewController new];
+////    add.oldModel = self.currentModel;
+//    add.proCode = self.projectCode;
+//    add.vcType = @"2";
+//    [self.navigationController pushViewController:add animated:YES];
+    NewAddWorkDetailViewController *add = [NewAddWorkDetailViewController new];
+    add.oldModel = self.currentModel;
     add.proCode = self.projectCode;
     add.vcType = @"2";
     [self.navigationController pushViewController:add animated:YES];

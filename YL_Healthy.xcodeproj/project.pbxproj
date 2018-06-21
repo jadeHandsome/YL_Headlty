@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		013DB80420D1F37500AA69FA /* NewAddWorkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DB80320D1F37500AA69FA /* NewAddWorkDetailViewController.m */; };
+		0160139720DB2EF20019D859 /* LYSDateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137520DB2EF10019D859 /* LYSDateBaseViewController.m */; };
+		0160139820DB2EF20019D859 /* LYSDateBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137720DB2EF10019D859 /* LYSDateBasicViewController.m */; };
+		0160139920DB2EF20019D859 /* LYSDateContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137920DB2EF10019D859 /* LYSDateContentView.m */; };
+		0160139A20DB2EF20019D859 /* LYSDateHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137B20DB2EF10019D859 /* LYSDateHeaderViewController.m */; };
+		0160139B20DB2EF20019D859 /* LYSDateIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137D20DB2EF10019D859 /* LYSDateIndicatorViewController.m */; };
+		0160139C20DB2EF20019D859 /* LYSDateLogicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160137F20DB2EF10019D859 /* LYSDateLogicViewController.m */; };
+		0160139D20DB2EF20019D859 /* LYSDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138120DB2EF10019D859 /* LYSDatePickerController.m */; };
+		0160139E20DB2EF20019D859 /* LYSDatePickerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138320DB2EF10019D859 /* LYSDatePickerHeaderView.m */; };
+		0160139F20DB2EF20019D859 /* LYSDatePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138520DB2EF10019D859 /* LYSDatePickerItem.m */; };
+		016013A020DB2EF20019D859 /* LYSDatePickerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138720DB2EF10019D859 /* LYSDatePickerLabel.m */; };
+		016013A120DB2EF20019D859 /* LYSDatePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138920DB2EF10019D859 /* LYSDatePickerManager.m */; };
+		016013A220DB2EF20019D859 /* LYSDatePickerTypeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138C20DB2EF10019D859 /* LYSDatePickerTypeBase.m */; };
+		016013A320DB2EF20019D859 /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160138E20DB2EF10019D859 /* LYSDatePickerTypeDayAndTimeDelegate.m */; };
+		016013A420DB2EF20019D859 /* LYSDatePickerTypeDayDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160139020DB2EF10019D859 /* LYSDatePickerTypeDayDelegate.m */; };
+		016013A520DB2EF20019D859 /* LYSDatePickerTypeTimeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160139220DB2EF10019D859 /* LYSDatePickerTypeTimeDelegate.m */; };
+		016013A620DB2EF20019D859 /* LYSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160139420DB2EF10019D859 /* LYSDatePickerViewController.m */; };
+		016013A720DB2EF20019D859 /* LYSDatePopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160139620DB2EF10019D859 /* LYSDatePopViewController.m */; };
 		110ED600206A222600EEA83C /* ItemManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED5FE206A222600EEA83C /* ItemManagerController.m */; };
 		110ED601206A222600EEA83C /* ItemManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110ED5FF206A222600EEA83C /* ItemManagerController.xib */; };
 		110ED606206B283700EEA83C /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110ED604206B283700EEA83C /* SettingController.m */; };
@@ -102,6 +119,41 @@
 /* Begin PBXFileReference section */
 		013DB80220D1F37500AA69FA /* NewAddWorkDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewAddWorkDetailViewController.h; sourceTree = "<group>"; };
 		013DB80320D1F37500AA69FA /* NewAddWorkDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewAddWorkDetailViewController.m; sourceTree = "<group>"; };
+		0160137420DB2EF10019D859 /* LYSDateBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateBaseViewController.h; sourceTree = "<group>"; };
+		0160137520DB2EF10019D859 /* LYSDateBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateBaseViewController.m; sourceTree = "<group>"; };
+		0160137620DB2EF10019D859 /* LYSDateBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateBasicViewController.h; sourceTree = "<group>"; };
+		0160137720DB2EF10019D859 /* LYSDateBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateBasicViewController.m; sourceTree = "<group>"; };
+		0160137820DB2EF10019D859 /* LYSDateContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateContentView.h; sourceTree = "<group>"; };
+		0160137920DB2EF10019D859 /* LYSDateContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateContentView.m; sourceTree = "<group>"; };
+		0160137A20DB2EF10019D859 /* LYSDateHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateHeaderViewController.h; sourceTree = "<group>"; };
+		0160137B20DB2EF10019D859 /* LYSDateHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateHeaderViewController.m; sourceTree = "<group>"; };
+		0160137C20DB2EF10019D859 /* LYSDateIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateIndicatorViewController.h; sourceTree = "<group>"; };
+		0160137D20DB2EF10019D859 /* LYSDateIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateIndicatorViewController.m; sourceTree = "<group>"; };
+		0160137E20DB2EF10019D859 /* LYSDateLogicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDateLogicViewController.h; sourceTree = "<group>"; };
+		0160137F20DB2EF10019D859 /* LYSDateLogicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDateLogicViewController.m; sourceTree = "<group>"; };
+		0160138020DB2EF10019D859 /* LYSDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerController.h; sourceTree = "<group>"; };
+		0160138120DB2EF10019D859 /* LYSDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerController.m; sourceTree = "<group>"; };
+		0160138220DB2EF10019D859 /* LYSDatePickerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerHeaderView.h; sourceTree = "<group>"; };
+		0160138320DB2EF10019D859 /* LYSDatePickerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerHeaderView.m; sourceTree = "<group>"; };
+		0160138420DB2EF10019D859 /* LYSDatePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerItem.h; sourceTree = "<group>"; };
+		0160138520DB2EF10019D859 /* LYSDatePickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerItem.m; sourceTree = "<group>"; };
+		0160138620DB2EF10019D859 /* LYSDatePickerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerLabel.h; sourceTree = "<group>"; };
+		0160138720DB2EF10019D859 /* LYSDatePickerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerLabel.m; sourceTree = "<group>"; };
+		0160138820DB2EF10019D859 /* LYSDatePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerManager.h; sourceTree = "<group>"; };
+		0160138920DB2EF10019D859 /* LYSDatePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerManager.m; sourceTree = "<group>"; };
+		0160138A20DB2EF10019D859 /* LYSDatePickerSelectDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerSelectDelegate.h; sourceTree = "<group>"; };
+		0160138B20DB2EF10019D859 /* LYSDatePickerTypeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeBase.h; sourceTree = "<group>"; };
+		0160138C20DB2EF10019D859 /* LYSDatePickerTypeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeBase.m; sourceTree = "<group>"; };
+		0160138D20DB2EF10019D859 /* LYSDatePickerTypeDayAndTimeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeDayAndTimeDelegate.h; sourceTree = "<group>"; };
+		0160138E20DB2EF10019D859 /* LYSDatePickerTypeDayAndTimeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeDayAndTimeDelegate.m; sourceTree = "<group>"; };
+		0160138F20DB2EF10019D859 /* LYSDatePickerTypeDayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeDayDelegate.h; sourceTree = "<group>"; };
+		0160139020DB2EF10019D859 /* LYSDatePickerTypeDayDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeDayDelegate.m; sourceTree = "<group>"; };
+		0160139120DB2EF10019D859 /* LYSDatePickerTypeTimeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerTypeTimeDelegate.h; sourceTree = "<group>"; };
+		0160139220DB2EF10019D859 /* LYSDatePickerTypeTimeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerTypeTimeDelegate.m; sourceTree = "<group>"; };
+		0160139320DB2EF10019D859 /* LYSDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePickerViewController.h; sourceTree = "<group>"; };
+		0160139420DB2EF10019D859 /* LYSDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePickerViewController.m; sourceTree = "<group>"; };
+		0160139520DB2EF10019D859 /* LYSDatePopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSDatePopViewController.h; sourceTree = "<group>"; };
+		0160139620DB2EF10019D859 /* LYSDatePopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSDatePopViewController.m; sourceTree = "<group>"; };
 		110ED5FD206A222600EEA83C /* ItemManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemManagerController.h; sourceTree = "<group>"; };
 		110ED5FE206A222600EEA83C /* ItemManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemManagerController.m; sourceTree = "<group>"; };
 		110ED5FF206A222600EEA83C /* ItemManagerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemManagerController.xib; sourceTree = "<group>"; };
@@ -279,6 +331,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0160137320DB2EF10019D859 /* LYSDatePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				0160137420DB2EF10019D859 /* LYSDateBaseViewController.h */,
+				0160137520DB2EF10019D859 /* LYSDateBaseViewController.m */,
+				0160137620DB2EF10019D859 /* LYSDateBasicViewController.h */,
+				0160137720DB2EF10019D859 /* LYSDateBasicViewController.m */,
+				0160137820DB2EF10019D859 /* LYSDateContentView.h */,
+				0160137920DB2EF10019D859 /* LYSDateContentView.m */,
+				0160137A20DB2EF10019D859 /* LYSDateHeaderViewController.h */,
+				0160137B20DB2EF10019D859 /* LYSDateHeaderViewController.m */,
+				0160137C20DB2EF10019D859 /* LYSDateIndicatorViewController.h */,
+				0160137D20DB2EF10019D859 /* LYSDateIndicatorViewController.m */,
+				0160137E20DB2EF10019D859 /* LYSDateLogicViewController.h */,
+				0160137F20DB2EF10019D859 /* LYSDateLogicViewController.m */,
+				0160138020DB2EF10019D859 /* LYSDatePickerController.h */,
+				0160138120DB2EF10019D859 /* LYSDatePickerController.m */,
+				0160138220DB2EF10019D859 /* LYSDatePickerHeaderView.h */,
+				0160138320DB2EF10019D859 /* LYSDatePickerHeaderView.m */,
+				0160138420DB2EF10019D859 /* LYSDatePickerItem.h */,
+				0160138520DB2EF10019D859 /* LYSDatePickerItem.m */,
+				0160138620DB2EF10019D859 /* LYSDatePickerLabel.h */,
+				0160138720DB2EF10019D859 /* LYSDatePickerLabel.m */,
+				0160138820DB2EF10019D859 /* LYSDatePickerManager.h */,
+				0160138920DB2EF10019D859 /* LYSDatePickerManager.m */,
+				0160138A20DB2EF10019D859 /* LYSDatePickerSelectDelegate.h */,
+				0160138B20DB2EF10019D859 /* LYSDatePickerTypeBase.h */,
+				0160138C20DB2EF10019D859 /* LYSDatePickerTypeBase.m */,
+				0160138D20DB2EF10019D859 /* LYSDatePickerTypeDayAndTimeDelegate.h */,
+				0160138E20DB2EF10019D859 /* LYSDatePickerTypeDayAndTimeDelegate.m */,
+				0160138F20DB2EF10019D859 /* LYSDatePickerTypeDayDelegate.h */,
+				0160139020DB2EF10019D859 /* LYSDatePickerTypeDayDelegate.m */,
+				0160139120DB2EF10019D859 /* LYSDatePickerTypeTimeDelegate.h */,
+				0160139220DB2EF10019D859 /* LYSDatePickerTypeTimeDelegate.m */,
+				0160139320DB2EF10019D859 /* LYSDatePickerViewController.h */,
+				0160139420DB2EF10019D859 /* LYSDatePickerViewController.m */,
+				0160139520DB2EF10019D859 /* LYSDatePopViewController.h */,
+				0160139620DB2EF10019D859 /* LYSDatePopViewController.m */,
+			);
+			path = LYSDatePickerController;
+			sourceTree = "<group>";
+		};
 		110ED5FC206A220C00EEA83C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +451,7 @@
 		11C5DA072058F564005F09CD /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0160137320DB2EF10019D859 /* LYSDatePickerController */,
 				11C5DA082058F564005F09CD /* Category */,
 				11C5DA0F2058F564005F09CD /* CBSegmentView.h */,
 				11C5DA102058F564005F09CD /* CBSegmentView.m */,
@@ -760,11 +855,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				110ED615206B2F9600EEA83C /* UserInfoController.m in Sources */,
+				016013A720DB2EF20019D859 /* LYSDatePopViewController.m in Sources */,
 				110ED600206A222600EEA83C /* ItemManagerController.m in Sources */,
 				1A440DFD20987D8000C1490D /* ProjectInfo.m in Sources */,
 				11C5DAE72058F565005F09CD /* YHArcSlider.m in Sources */,
 				110ED606206B283700EEA83C /* SettingController.m in Sources */,
 				11C5DAEE2058F565005F09CD /* MBProgressHUD+KR.m in Sources */,
+				0160139D20DB2EF20019D859 /* LYSDatePickerController.m in Sources */,
 				110ED621206B795A00EEA83C /* ItemCell.m in Sources */,
 				11C5DAC72058F565005F09CD /* CCDatePickerView.m in Sources */,
 				11C5DAE52058F565005F09CD /* TYTabPagerController.m in Sources */,
@@ -775,20 +872,30 @@
 				11C5DB0E20591038005F09CD /* CompleteInfoController.m in Sources */,
 				11C5DAF52058F565005F09CD /* NewPagedFlowView.m in Sources */,
 				110ED610206B2CBA00EEA83C /* AboutController.m in Sources */,
+				016013A620DB2EF20019D859 /* LYSDatePickerViewController.m in Sources */,
+				016013A320DB2EF20019D859 /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */,
 				11C5DACC2058F565005F09CD /* KRBaseTool.m in Sources */,
 				1ABBBDF6206BB59100EF5E73 /* ProjectIncidentModel.m in Sources */,
+				0160139720DB2EF20019D859 /* LYSDateBaseViewController.m in Sources */,
 				110ED61B206B492E00EEA83C /* ItemSearchController.m in Sources */,
 				1A4288002058C54500139197 /* main.m in Sources */,
 				11C5DAF12058F565005F09CD /* NSObject+KRExtention.m in Sources */,
 				113EE402206C903C00332DAE /* DeviceChooseController.m in Sources */,
+				016013A420DB2EF20019D859 /* LYSDatePickerTypeDayDelegate.m in Sources */,
+				0160139920DB2EF20019D859 /* LYSDateContentView.m in Sources */,
 				11C5DAE42058F565005F09CD /* TYTabButtonPagerController.m in Sources */,
+				016013A120DB2EF20019D859 /* LYSDatePickerManager.m in Sources */,
 				11C5DAF22058F565005F09CD /* NSString+CZNSStringExt.m in Sources */,
+				016013A520DB2EF20019D859 /* LYSDatePickerTypeTimeDelegate.m in Sources */,
 				11C5DAE82058F565005F09CD /* YHMath.m in Sources */,
 				11C5DAE12058F565005F09CD /* SDPhotoBrowser.m in Sources */,
+				0160139E20DB2EF20019D859 /* LYSDatePickerHeaderView.m in Sources */,
 				11C5DAF62058F565005F09CD /* PGIndexBannerSubiew.m in Sources */,
 				1ABBBDF0206BB36500EF5E73 /* ProjectDetailViewController.m in Sources */,
+				0160139820DB2EF20019D859 /* LYSDateBasicViewController.m in Sources */,
 				11C5DAC42058F565005F09CD /* UIImage+Color.m in Sources */,
 				11C5DAC82058F565005F09CD /* CodeView.m in Sources */,
+				016013A020DB2EF20019D859 /* LYSDatePickerLabel.m in Sources */,
 				11C5DAF02058F565005F09CD /* NSDictionary+deletNull.m in Sources */,
 				1ABBBDED206BB35600EF5E73 /* ProjectDeatilModel.m in Sources */,
 				11C5DAFD2058F7E4005F09CD /* BaseNaviViewController.m in Sources */,
@@ -798,7 +905,9 @@
 				1A4287F22058C54500139197 /* AppDelegate.m in Sources */,
 				013DB80420D1F37500AA69FA /* NewAddWorkDetailViewController.m in Sources */,
 				11C5DAEB2058F565005F09CD /* ZLPhotoHelper.m in Sources */,
+				0160139B20DB2EF20019D859 /* LYSDateIndicatorViewController.m in Sources */,
 				11C5DAFA2058F6F5005F09CD /* BaseViewController.m in Sources */,
+				016013A220DB2EF20019D859 /* LYSDatePickerTypeBase.m in Sources */,
 				11C5DB3E205A50AC005F09CD /* CommitSuccessController.m in Sources */,
 				11C5DAEC2058F565005F09CD /* ZLPickPhotoViewController.m in Sources */,
 				110ED60B206B2A2400EEA83C /* ChangePwdController.m in Sources */,
@@ -810,9 +919,11 @@
 				11C5DAE92058F565005F09CD /* ZLPhotoCell.m in Sources */,
 				11C5DAC62058F565005F09CD /* CBSegmentView.m in Sources */,
 				11C5DB092059017E005F09CD /* LoginViewController.m in Sources */,
+				0160139A20DB2EF20019D859 /* LYSDateHeaderViewController.m in Sources */,
 				1A440E06209986EB00C1490D /* AddDeviceProjectListViewController.m in Sources */,
 				11C5DAC52058F565005F09CD /* UIView+EX.m in Sources */,
 				1A440E002098AEEB00C1490D /* UseDetailViewController.m in Sources */,
+				0160139C20DB2EF20019D859 /* LYSDateLogicViewController.m in Sources */,
 				11C5DB3A205A1AF5005F09CD /* DeviceInfoView.m in Sources */,
 				11C5DAED2058F565005F09CD /* ZLShowImageViewController.m in Sources */,
 				11C5DAF32058F565005F09CD /* UITableView+KREmptyData.m in Sources */,
@@ -820,6 +931,7 @@
 				11C5DB12205919E9005F09CD /* KRDatePicker.m in Sources */,
 				1A15451C206F8CA200260AB3 /* AddWorkViewController.m in Sources */,
 				11C5DB35205A17C6005F09CD /* CommitDeviceController.m in Sources */,
+				0160139F20DB2EF20019D859 /* LYSDatePickerItem.m in Sources */,
 				11C5DACF2058F565005F09CD /* KRMyTextView.m in Sources */,
 				11C5DAF42058F565005F09CD /* UIView+BorderLine.m in Sources */,
 				11C5DAC32058F565005F09CD /* CALayer+CircleBoard.m in Sources */,

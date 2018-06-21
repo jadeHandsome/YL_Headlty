@@ -9,7 +9,7 @@
 #import "CommitItemController.h"
 #import "CommitDeviceController.h"
 #import "CommitSuccessController.h"
-@interface CommitItemController ()
+@interface CommitItemController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *itemNameField;
 @property (weak, nonatomic) IBOutlet UITextField *comNameField;
 @property (weak, nonatomic) IBOutlet UILabel *daysLabel;
@@ -30,8 +30,16 @@
     [super viewDidLoad];
     [self popOut];
     self.navigationItem.title = @"项目信息";
+    self.comNameField.delegate = self;
     LRViewBorderRadius(self.nextBtn, 22.5, 0, ThemeColor);
     // Do any additional setup after loading the view from its nib.
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    NSArray *titleArray = @[@"评价检测",@"定期检测",@"委托检测"];
+    [KRBaseTool showAlert:@"请选择检测类型" with_Controller:self with_titleArr:titleArray withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        self.comNameField.text = titleArray[index];
+    }];
+    return NO;
 }
 - (IBAction)chooseDay:(id)sender {
 }

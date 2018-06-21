@@ -8,7 +8,7 @@
 
 #import "EditProViewController.h"
 
-@interface EditProViewController ()
+@interface EditProViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *proNameTexyfiel;
 @property (weak, nonatomic) IBOutlet UITextField *proCode;
 @property (weak, nonatomic) IBOutlet UITextField *compantName;
@@ -26,6 +26,7 @@
     self.proCode.text = self.oldModel.project_code;
     self.compantName.text = self.oldModel.company_name;
     self.daysInput.text = self.oldModel.finish_days;
+    self.compantName.delegate = self;
 }
 - (IBAction)saveClick:(id)sender {
     if (self.proNameTexyfiel.text.length == 0) {
@@ -62,6 +63,13 @@
         [self performSelector:@selector(pop) withObject:nil afterDelay:1];
         
     }];
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    NSArray *titleArray = @[@"评价检测",@"定期检测",@"委托检测"];
+    [KRBaseTool showAlert:@"请选择检测类型" with_Controller:self with_titleArr:titleArray withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        self.compantName.text = titleArray[index];
+    }];
+    return NO;
 }
 - (void)pop {
     if (![self.proCode.text isEqualToString:self.oldModel.project_code]) {

@@ -9,12 +9,13 @@
 #import "NewAddWorkDetailViewController.h"
 #import "DeviceInfoView.h"
 #import "DeviceChooseController.h"
-
+#import "LYSDatePickerController.h"
 @interface InputModel : NSObject
 @property (nonatomic, strong) UITextField *canshuInputTextField;
 @property (nonatomic, strong) UITextField *userNameInput;
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, strong) NSString *devieCode;
+@property (nonatomic, strong) NSString *deviceName;
 @property (nonatomic, strong) UITextField *use_wind_speedInput;
 @property (nonatomic, strong) UITextField *use_pressureInput;
 @property (nonatomic, strong) UITextField *use_humidityInput;
@@ -40,6 +41,9 @@
 @property (nonatomic, strong) NSArray *detailModel;
 @property (nonatomic, strong) UIView *temp;
 @property (nonatomic, strong) NSMutableArray *viewsArr;
+@property (nonatomic, strong) NSString *timeStr;
+@property (nonatomic, strong) NSDate *chooseDate;
+@property (nonatomic, strong) LYSDatePickerController *datePickers;
 @end
 
 @implementation NewAddWorkDetailViewController
@@ -78,6 +82,9 @@
             make.bottom.equalTo(self.container).offset(-40);
             make.height.mas_offset(45);
         }];
+        if ([self.vcType isEqualToString:@"2"]) {
+            _addBtn.hidden = YES;
+        }
     }
     return _addBtn;
 }
@@ -142,11 +149,159 @@
     } else {
         //详情
         self.navigationItem.title = @"使用记录";
-        //        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"筛选" style:UIBarButtonItemStyleDone target:self action:@selector(shaiClick)];
-        //        [self getData];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"筛选" style:UIBarButtonItemStyleDone target:self action:@selector(shaiClick)];
+        [self getData];
         //        self.view.userInteractionEnabled = NO;
     }
-//    [self setUp];
+    //    [self setUp];
+}
+- (void)getData {
+    [[KRMainNetTool sharedKRMainNetTool] sendRequstWith:@"project/getdeviceuserecordlist" params:@{@"project_code":self.proCode} withModel:nil waitView:self.view complateHandle:^(id showdata, NSString *error) {
+        if (showdata == nil) {
+            return ;
+        }
+        self.detailModel = [showdata[@"device_use_list"] copy];
+        if (showdata) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"筛选" style:UIBarButtonItemStyleDone target:self action:@selector(shaiClick)];
+        }
+        if (self.detailModel > 0) {
+            [self resetData:0];
+        }
+        
+    }];
+}
+- (void)shaiClick {
+    //筛选
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSDictionary *dic in self.detailModel) {
+        [array addObject:[KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd hh:mm:ss"]];
+    }
+    [KRBaseTool showAlert:@"选择时间查看" with_Controller:self with_titleArr:array withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        [self resetData:index];
+    }];
+    
+    
+}
+- (void)resetData:(NSInteger)index {
+    outArray = nil;
+    self.dic = [NSMutableDictionary dictionary];
+    shijiArray = nil;
+    shiyanArray = nil;
+    NSMutableArray *allInputArrays = [NSMutableArray array];
+    NSDictionary *dic = self.detailModel[index];
+    for (NSDictionary *info in dic[@"date_list"]) {
+        if ([info[@"device_type"] integerValue] == 0) {
+            outArray = info[@"device_list"];
+            for (NSDictionary *dics in outArray) {
+                InputModel *model = [InputModel new];
+                model.devieCode = dics[@"device_code"];
+                model.deviceName = dics[@"device_name"];
+                model.type = [info[@"device_type"] integerValue];
+                UITextField *nameInput = [UITextField new];
+                nameInput.text = dics[@"use_name"];
+                UITextField *canshuInput = [UITextField new];
+                canshuInput.text = dics[@"check_parameter"];
+                UITextField *use_amountInput = [UITextField new];
+                use_amountInput.text = info[@"use_amount"];
+                UITextField *useWindInput = [UITextField new];
+                useWindInput.text = info[@"use_wind_speed"];
+                UITextField *usePressInput = [UITextField new];
+                usePressInput.text = info[@"use_pressure"];
+                UITextField *useHumInput = [UITextField new];
+                useHumInput.text = info[@"use_humidity"];
+                UITextField *userTempInput = [UITextField new];
+                userTempInput.text = info[@"use_temperature"];
+                model.userNameInput = nameInput;
+                model.canshuInputTextField = canshuInput;
+                model.use_amountInput = use_amountInput;
+                model.use_humidityInput = useHumInput;
+                model.use_temperatureInput = userTempInput;
+                model.use_pressureInput = usePressInput;
+                model.use_wind_speedInput = useWindInput;
+                [allInputArrays addObject:model];
+            }
+            self.dic[@"out_use_temperature"] = info[@"use_temperature"];
+            self.dic[@"out_use_pressure"] = info[@"use_pressure"];
+            self.dic[@"out_use_humidity"] = info[@"use_humidity"];
+            self.dic[@"out_use_wind_speed"] = info[@"use_wind_speed"];
+            self.dic[@"out_use_person"] = info[@"use_name"];
+        } else if ([info[@"device_type"] integerValue] == 2) {
+            shijiArray = info[@"device_list"];
+            for (NSDictionary *dics in shijiArray) {
+                InputModel *model = [InputModel new];
+                model.devieCode = dics[@"device_code"];
+                model.deviceName = dics[@"device_name"];
+                model.type = [info[@"device_type"] integerValue];
+                UITextField *nameInput = [UITextField new];
+                nameInput.text = dics[@"use_name"];
+                UITextField *canshuInput = [UITextField new];
+                canshuInput.text = dics[@"check_parameter"];
+                UITextField *use_amountInput = [UITextField new];
+                use_amountInput.text = info[@"use_amount"];
+                UITextField *useWindInput = [UITextField new];
+                useWindInput.text = info[@"use_wind_speed"];
+                UITextField *usePressInput = [UITextField new];
+                usePressInput.text = info[@"use_pressure"];
+                UITextField *useHumInput = [UITextField new];
+                useHumInput.text = info[@"use_humidity"];
+                UITextField *userTempInput = [UITextField new];
+                userTempInput.text = info[@"use_temperature"];
+                model.userNameInput = nameInput;
+                model.canshuInputTextField = canshuInput;
+                model.use_amountInput = use_amountInput;
+                model.use_humidityInput = useHumInput;
+                model.use_temperatureInput = userTempInput;
+                model.use_pressureInput = usePressInput;
+                model.use_wind_speedInput = useWindInput;
+                [allInputArrays addObject:model];
+            }
+            self.dic[@"shiji_use_amount"] = info[@"use_amount"];
+            self.dic[@"shiji_use_person"] = info[@"use_name"];
+        } else if ([info[@"device_type"] integerValue] == 1) {
+            shiyanArray = info[@"device_list"];
+            for (NSDictionary *dics in shiyanArray) {
+                InputModel *model = [InputModel new];
+                model.devieCode = dics[@"device_code"];
+                model.deviceName = dics[@"device_name"];
+                model.type = [info[@"device_type"] integerValue];
+                UITextField *nameInput = [UITextField new];
+                nameInput.text = dics[@"use_name"];
+                UITextField *canshuInput = [UITextField new];
+                canshuInput.text = dics[@"check_parameter"];
+                UITextField *use_amountInput = [UITextField new];
+                use_amountInput.text = info[@"use_amount"];
+                UITextField *useWindInput = [UITextField new];
+                useWindInput.text = info[@"use_wind_speed"];
+                UITextField *usePressInput = [UITextField new];
+                usePressInput.text = info[@"use_pressure"];
+                UITextField *useHumInput = [UITextField new];
+                useHumInput.text = info[@"use_humidity"];
+                UITextField *userTempInput = [UITextField new];
+                userTempInput.text = info[@"use_temperature"];
+                model.userNameInput = nameInput;
+                model.canshuInputTextField = canshuInput;
+                model.use_amountInput = use_amountInput;
+                model.use_humidityInput = useHumInput;
+                model.use_temperatureInput = userTempInput;
+                model.use_pressureInput = usePressInput;
+                model.use_wind_speedInput = useWindInput;
+                [allInputArrays addObject:model];
+            }
+            self.dic[@"shiYan_use_temperature"] = info[@"use_temperature"];
+            self.dic[@"shiYan_use_humidity"] = info[@"use_humidity"];
+            self.dic[@"shiyan_use_person"] = info[@"use_name"];
+            self.dic[@"canshu_use"] = info[@"check_parameter"];
+        }
+    }
+    allInputModel = [allInputArrays mutableCopy];
+//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    NSString *currentDate = [dateFormat stringFromDate:self.chooseDate];
+//    [timeBtn setTitle:currentDate forState:UIControlStateNormal];
+    self.dic[@"create_time"] = [KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd hh:mm:ss"];
+    
+    [self setUp];
+    //    [self setTextInput];
 }
 - (void)setUp {
     if (self.scollView) {
@@ -177,8 +332,11 @@
         }
         [sub removeFromSuperview];
     }
+    //    if ([self.vcType isEqualToString:@"1"]) {
     lastAllInputModel = [allInputModel copy];
     [allInputModel removeAllObjects];
+    //    }
+    
     
     UIView *timeView = [[UIView alloc]init];
     [self.container addSubview:timeView];
@@ -205,6 +363,13 @@
     self.timeBtn =  timeBtn;
     [timeBtn setTitleColor:LRRGBColor(169, 169, 169) forState:UIControlStateNormal];
     [timeBtn setTitle:@"点击选择" forState:UIControlStateNormal];
+    if (self.chooseDate) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *currentDate = [dateFormat stringFromDate:self.chooseDate];
+        [timeBtn setTitle:currentDate forState:UIControlStateNormal];
+        [timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
     [timeBtn addTarget:self action:@selector(timeClick) forControlEvents:UIControlEventTouchUpInside];
     if ([self.vcType isEqualToString:@"2"]) {
         [timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -213,7 +378,7 @@
     }
     
     UIView *temp = timeView;
-    if ([hasArray containsObject:@"1"]) {
+    if ([hasArray containsObject:@"1"] || outArray.count > 0) {
         UIView *sub = [self setDeViceWith:outArray type:OutDevice];
         [self.container addSubview:sub];
         [sub mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -227,7 +392,7 @@
         }];
         temp = sub;
     }
-    if ([hasArray containsObject:@"2"]) {
+    if ([hasArray containsObject:@"2"] || shiyanArray.count > 0) {
         UIView *sub = [self setDeViceWith:shiyanArray type:ExperimentDevice];
         [self.container addSubview:sub];
         [sub mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -241,7 +406,7 @@
         }];
         temp = sub;
     }
-    if ([hasArray containsObject:@"3"]) {
+    if ([hasArray containsObject:@"3"] || shijiArray.count > 0) {
         UIView *sub = [self setDeViceWith:shijiArray type:ChemicalDevice];
         [self.container addSubview:sub];
         [sub mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -272,7 +437,7 @@
                 model.use_humidityInput.text = model1.use_humidityInput.text;
                 model.use_temperatureInput.text = model1.use_temperatureInput.text;
                 model.use_amountInput.text = model1.use_amountInput.text;
-                model.userNameInput.text = model1.userNameInput.text;
+                model.canshuInputTextField.text = model1.canshuInputTextField.text;
             }
         }
     }
@@ -423,7 +588,7 @@
     [deviceView addSubview:bottomV];
     [bottomV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(centerView.mas_bottom);
-        make.height.equalTo(@((45 + (tag == 2 ? 90 : 45)) * (array.count) + 45));
+        make.height.equalTo(@((45 + (tag == 2 ? 90 : 45)) * (array.count) + ([self.vcType isEqualToString:@"1"] ? 45 : 0)));
         make.left.right.equalTo(deviceView);
         make.bottom.equalTo(deviceView.mas_bottom);
     }];
@@ -438,7 +603,7 @@
         } else if (type == ChemicalDevice) {
             //化学
             model.use_amountInput = mutInput[0];
-       
+            
         } else {
             //实验
             model.use_temperatureInput = mutInput[1];
@@ -449,7 +614,8 @@
         [inputView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(temp.mas_bottom);
             make.left.right.equalTo(bottomV);
-            make.height.equalTo(@(tag == 2 ? (45 + 90) : 90));
+            //            make.height.equalTo(@((tag == 2 ? (45 + 90) : 90) - ([self.vcType isEqualToString:@"2"] ? 45 :0)));
+            make.height.equalTo(@((tag == 2 ? (45 + 90) : 90)));
         }];
         UIView *sub = [self addCellStylewithtitleText:array[i][@"device_name"] detailText:array[i][@"device_code"]];
         model.devieCode = array[i][@"device_code"];
@@ -461,8 +627,8 @@
             make.height.equalTo(@45);
         }];
         if ([self.vcType isEqualToString:@"1"]) {
-//            UITapGestureRecognizer *lo = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickDevice:)];
-//            [sub addGestureRecognizer:lo];
+            //            UITapGestureRecognizer *lo = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickDevice:)];
+            //            [sub addGestureRecognizer:lo];
         }
         
         if (type == OutDevice) {
@@ -473,7 +639,7 @@
             sub.tag = i + 10000;
         }
         UIView *canshuInput = nil;
-       
+        
         if (tag == 2) {
             canshuInput = [[UIView alloc]init];
             [inputView addSubview:canshuInput];
@@ -585,6 +751,9 @@
     addBtn.tag = type;
     [addBtn setTitleColor:ThemeColor forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(addDevice:) forControlEvents:UIControlEventTouchUpInside];
+    if ([self.vcType isEqualToString:@"2"]) {
+        addBtn.hidden = YES;
+    }
     //    UIView *add = [[UIView alloc]init];
     //    [bottomV addSubview:add];
     //    [add mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -744,18 +913,35 @@
     
 }
 - (void)timeClick {
-    [UIView animateWithDuration:0.2 animations:^{
-        CGRect rect = self.dateView.frame;
-        if (rect.origin.y == [UIScreen mainScreen].bounds.size.height) {
-            rect.origin.y = [UIScreen mainScreen].bounds.size.height - 300;
-            //            self.tableView.scrollEnabled = NO;
-        }
-        else {
-            rect.origin.y = [UIScreen mainScreen].bounds.size.height;
-            //            self.tableView.scrollEnabled = YES;
-        }
-        self.dateView.frame = rect;
+    self.datePickers = [[LYSDatePickerController alloc] init];
+    self.datePickers.headerView.backgroundColor = [UIColor colorWithRed:84/255.0 green:150/255.0 blue:242/255.0 alpha:1];
+    self.datePickers.indicatorHeight = 1;
+    self.datePickers.delegate = self;
+    self.datePickers.headerView.centerItem.textColor = [UIColor whiteColor];
+    self.datePickers.headerView.leftItem.textColor = [UIColor whiteColor];
+    self.datePickers.headerView.rightItem.textColor = [UIColor whiteColor];
+    self.datePickers.pickHeaderHeight = 40;
+    self.datePickers.pickType = LYSDatePickerTypeDayAndTime;
+    self.datePickers.minuteLoop = YES;
+    self.datePickers.headerView.showTimeLabel = YES;
+    self.datePickers.weakDayType = LYSDatePickerWeakDayTypeUSShort;
+    self.datePickers.showWeakDay = YES;
+    if (![[self.timeBtn titleForState:UIControlStateNormal] isEqualToString:@"点击选择"]) {
+        [self.datePickers setSelectDate:self.chooseDate];
+    }
+    __weak typeof(self) weakSelf = self;
+    [self.datePickers setDidSelectDatePicker:^(NSDate *date) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *currentDate = [dateFormat stringFromDate:date];
+        [weakSelf.timeBtn setTitle:currentDate forState:UIControlStateNormal];
+        weakSelf.chooseDate = date;
+        [weakSelf.timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [weakSelf.timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        //        textField.text = currentDate;
+        //        textField.myDate = date;
     }];
+    [self.datePickers showDatePickerWithController:self];
 }
 - (void)setDateView {
     NSDateFormatter *dateformatter = [NSDateFormatter new];
@@ -817,6 +1003,7 @@
     }];
     if (sender.tag == 101) {
         [self.timeBtn setTitle:[KRBaseTool timeStringFromFormat:@"yyyy-MM-dd" withDate:self.datePicker.date] forState:UIControlStateNormal];
+        self.timeStr = [KRBaseTool timeStringFromFormat:@"yyyy-MM-dd" withDate:self.datePicker.date];
         [self.timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         //        self.timeLabel.text = [KRBaseTool timeStringFromFormat:@"yyyy-MM-dd" withDate:self.datePicker.date];
         
@@ -947,6 +1134,11 @@
     }
     if (outArray.count > 0) {
         //外出设备
+        NSMutableArray *deviceList = [NSMutableArray array];
+        for (InputModel *model in outArray) {
+            NSDictionary *dic = @{@"device_code":model.devieCode,@"use_name":model.userNameInput.text,@"check_parameter":(model.canshuInputTextField.text.length == 0 ? @"" : model.canshuInputTextField.text)};
+            [deviceList addObject:dic];
+        }
         InputModel *tempModel = outArray[0];
         NSMutableString *mutStr = [NSMutableString string];
         for (InputModel *model in outArray) {
@@ -960,16 +1152,22 @@
         NSMutableString *nameMut = [NSMutableString string];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"device_type"] = @"0";
-        dic[@"device_project_ids"] = mutStr;
+        //        dic[@"device_project_ids"] = mutStr;
         dic[@"use_temperature"] = tempModel.use_temperatureInput.text;
         dic[@"use_humidity"] = tempModel.use_humidityInput.text;
         dic[@"use_pressure"] = tempModel.use_pressureInput.text;
         dic[@"use_wind_speed"] = tempModel.use_wind_speedInput.text;
-        dic[@"use_name"] = tempModel.userNameInput.text;
+        //        dic[@"use_name"] = tempModel.userNameInput.text;
+        dic[@"device_list"] = deviceList;
         [result addObject:dic];
     }
     if (shijiArray.count > 0) {
         //试剂
+        NSMutableArray *deviceList = [NSMutableArray array];
+        for (InputModel *model in shijiArray) {
+            NSDictionary *dic = @{@"device_code":model.devieCode,@"use_name":model.userNameInput.text,@"check_parameter":(model.canshuInputTextField.text.length == 0 ? @"" : model.canshuInputTextField.text)};
+            [deviceList addObject:dic];
+        }
         InputModel *tempModel = shijiArray[0];
         NSMutableString *mutStr = [NSMutableString string];
         for (InputModel *model in shijiArray) {
@@ -982,13 +1180,19 @@
         }
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"device_type"] = @"2";
-        dic[@"device_project_ids"] = mutStr;
+        //        dic[@"device_project_ids"] = mutStr;
         dic[@"use_amount"] = tempModel.use_amountInput.text;
-        dic[@"use_name"] = tempModel.userNameInput.text;
+        dic[@"device_list"] = deviceList;
+        //        dic[@"use_name"] = tempModel.userNameInput.text;
         [result addObject:dic];
     }
     if (shiyanArray.count > 0) {
         //实验
+        NSMutableArray *deviceList = [NSMutableArray array];
+        for (InputModel *model in shiyanArray) {
+            NSDictionary *dic = @{@"device_code":model.devieCode,@"use_name":model.userNameInput.text,@"check_parameter":(model.canshuInputTextField.text.length == 0 ? @"" : model.canshuInputTextField.text)};
+            [deviceList addObject:dic];
+        }
         InputModel *tempModel = shiyanArray[0];
         NSMutableString *mutStr = [NSMutableString string];
         for (InputModel *model in shiyanArray) {
@@ -1001,12 +1205,13 @@
         }
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"device_type"] = @"1";
-        dic[@"device_project_ids"] = mutStr;
+        //        dic[@"device_project_ids"] = mutStr;
         dic[@"use_temperature"] = tempModel.use_temperatureInput.text;
         dic[@"use_humidity"] = tempModel.use_humidityInput.text;
-        dic[@"check_parameter"] = tempModel.canshuInputTextField.text;
-        dic[@"use_name"] = tempModel.userNameInput.text;
+        //        dic[@"check_parameter"] = tempModel.canshuInputTextField.text;
+        //        dic[@"use_name"] = tempModel.userNameInput.text;
         [result addObject:dic];
+        dic[@"device_list"] = deviceList;
     }
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"project_code"] = self.proCode;
@@ -1022,7 +1227,7 @@
 }
 - (BOOL)checkIsFull {
     if ([[self.timeBtn titleForState:UIControlStateNormal] isEqualToString:@"点击选择"]) {
-//        [self showHUDWithText:@"请选择时间"];
+        //        [self showHUDWithText:@"请选择时间"];
         return NO;
     }
     for (InputModel *model in allInputModel) {
@@ -1054,13 +1259,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
