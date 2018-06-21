@@ -8,7 +8,7 @@
 
 #import "AddManagerProViewController.h"
 
-@interface AddManagerProViewController ()
+@interface AddManagerProViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *proNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *proCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *proTypeTextField;
@@ -61,6 +61,13 @@
         self.dateView.frame = rect;
     }];
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    NSArray *titleArray = @[@"预评价",@"现状评价",@"控制效果评价",@"专篇",@"安全评价"];
+    [KRBaseTool showAlert:@"请选择项目类型" with_Controller:self with_titleArr:titleArray withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
+        self.proTypeTextField.text = titleArray[index];
+    }];
+    return NO;
+}
 - (void)setDateView {
     NSDateFormatter *dateformatter = [NSDateFormatter new];
     dateformatter.dateFormat = @"yyyy-MM-dd";
@@ -68,7 +75,7 @@
     _dateView.backgroundColor = LRRGBColor(80, 164, 105);
     self.datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 45, [UIScreen mainScreen].bounds.size.width, 270)];
     _datePicker.datePickerMode = UIDatePickerModeDate;
-    _datePicker.minimumDate = [NSDate date];
+//    _datePicker.minimumDate = [NSDate date];
     _datePicker.date = [NSDate dateWithTimeIntervalSinceNow:24 * 60 * 60 * 2];
     _datePicker.backgroundColor = [UIColor whiteColor];
     UIButton *cancle = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 50, 45)];
@@ -134,6 +141,7 @@
     [self popOut];
     self.navigationItem.title = @"添加项目";
     [self setDateView];
+    self.proTypeTextField.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)finishClick:(id)sender {

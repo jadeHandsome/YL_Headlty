@@ -174,7 +174,7 @@
     //筛选
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dic in self.detailModel) {
-        [array addObject:[KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd hh:mm:ss"]];
+        [array addObject:[KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd"]];
     }
     [KRBaseTool showAlert:@"选择时间查看" with_Controller:self with_titleArr:array withShowType:UIAlertControllerStyleActionSheet with_Block:^(int index) {
         [self resetData:index];
@@ -298,7 +298,7 @@
 //    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 //    NSString *currentDate = [dateFormat stringFromDate:self.chooseDate];
 //    [timeBtn setTitle:currentDate forState:UIControlStateNormal];
-    self.dic[@"create_time"] = [KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd hh:mm:ss"];
+    self.dic[@"create_time"] = [KRBaseTool timeWithTimeIntervalString:dic[@"create_time"] andFormate:@"yyyy-MM-dd"];
     
     [self setUp];
     //    [self setTextInput];
@@ -365,7 +365,7 @@
     [timeBtn setTitle:@"点击选择" forState:UIControlStateNormal];
     if (self.chooseDate) {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
         NSString *currentDate = [dateFormat stringFromDate:self.chooseDate];
         [timeBtn setTitle:currentDate forState:UIControlStateNormal];
         [timeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -921,7 +921,7 @@
     self.datePickers.headerView.leftItem.textColor = [UIColor whiteColor];
     self.datePickers.headerView.rightItem.textColor = [UIColor whiteColor];
     self.datePickers.pickHeaderHeight = 40;
-    self.datePickers.pickType = LYSDatePickerTypeDayAndTime;
+    self.datePickers.pickType = LYSDatePickerTypeDay;
     self.datePickers.minuteLoop = YES;
     self.datePickers.headerView.showTimeLabel = YES;
     self.datePickers.weakDayType = LYSDatePickerWeakDayTypeUSShort;
@@ -932,7 +932,7 @@
     __weak typeof(self) weakSelf = self;
     [self.datePickers setDidSelectDatePicker:^(NSDate *date) {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
         NSString *currentDate = [dateFormat stringFromDate:date];
         [weakSelf.timeBtn setTitle:currentDate forState:UIControlStateNormal];
         weakSelf.chooseDate = date;
