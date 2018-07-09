@@ -15,7 +15,9 @@
 @end
 
 @implementation DeviceChooseController
-
+{
+    BOOL isFirst;
+}
 - (NSMutableArray *)dataArr{
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
@@ -27,6 +29,7 @@
     [super viewDidLoad];
     [self popOut];
     self.page = 1;
+    isFirst = YES;
     self.navigationItem.title = @"设备选择";
     self.tableView.tableFooterView = [UIView new];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(doneClick)];
@@ -70,15 +73,21 @@
     }];
 }
 - (NSDictionary *)isIn:(NSDictionary *)dic {
-    NSMutableDictionary *mut = [dic mutableCopy];
-    BOOL isIn = false;
-    for (NSDictionary *dic1 in self.oldArray) {
-        if ([dic1[@"device_code"] isEqualToString:dic[@"device_code"]]) {
-            isIn = YES;
+    if (isFirst) {
+        isFirst = NO;
+        NSMutableDictionary *mut = [dic mutableCopy];
+        BOOL isIn = false;
+        for (NSDictionary *dic1 in self.oldArray) {
+            if ([dic1[@"device_code"] isEqualToString:dic[@"device_code"]]) {
+                isIn = YES;
+            }
         }
+        mut[@"choose"] = @(isIn);
+        return [mut copy];
+    } else {
+        return dic;
     }
-    mut[@"choose"] = @(isIn);
-    return [mut copy];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -172,7 +181,7 @@
         
         
     }
-    self.dataArr = [mut copy];
+    self.dataArr = [mut mutableCopy];
     
     [self.tableView reloadData];
 //    [self.navigationController popViewControllerAnimated:YES];
