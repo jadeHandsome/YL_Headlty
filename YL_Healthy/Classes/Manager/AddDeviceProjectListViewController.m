@@ -44,9 +44,9 @@
 - (NSArray *)outDevices{
     if (!_outDevices) {
         _outDevices = @[@{@"icon":@"温度计",@"title":@"温度",@"unit":@"℃"},
-                        @{@"icon":@"气压",@"title":@"气压",@"unit":@"Pa"},
-                        @{@"icon":@"湿度",@"title":@"湿度",@"unit":@"%rh"},
-                        @{@"icon":@"风速",@"title":@"风速",@"unit":@"mph"}];
+                        @{@"icon":@"气压",@"title":@"气压",@"unit":@"kPa"},
+                        @{@"icon":@"湿度",@"title":@"湿度",@"unit":@"%RH"},
+                        @{@"icon":@"风速",@"title":@"风速",@"unit":@"m/s"}];
     }
     return _outDevices;
 }

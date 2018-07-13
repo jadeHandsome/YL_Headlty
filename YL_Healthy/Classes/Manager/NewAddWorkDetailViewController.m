@@ -950,7 +950,7 @@
     _dateView.backgroundColor = LRRGBColor(80, 164, 105);
     self.datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 45, [UIScreen mainScreen].bounds.size.width, 270)];
     _datePicker.datePickerMode = UIDatePickerModeDate;
-    _datePicker.minimumDate = [NSDate date];
+//    _datePicker.minimumDate = [NSDate date];
     _datePicker.date = [NSDate dateWithTimeIntervalSinceNow:24 * 60 * 60 * 2];
     _datePicker.backgroundColor = [UIColor whiteColor];
     UIButton *cancle = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 50, 45)];
